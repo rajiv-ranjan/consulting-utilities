@@ -1,4 +1,4 @@
-***How to Use a postgresql image
+## How to Use a postgresql image
 Start a docker container
 
 ```sh
@@ -17,6 +17,9 @@ docker run --name some-app --link some-postgres:postgres -d application-that-use
 ```
 
 >https://github.com/docker-library/docs/tree/master/postgres/
+
+---
+
 
 |Command|Purpose|
 |----|----|
