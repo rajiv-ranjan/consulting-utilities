@@ -1,3 +1,23 @@
+***How to Use a postgresql image
+Start a docker container
+
+```sh
+docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+```
+Connect to it from psql
+
+```sh
+docker run -it --rm --link some-postgres:postgres postgres psql -h postgres -U postgres
+```
+
+Connect to it from an application
+
+```sh
+docker run --name some-app --link some-postgres:postgres -d application-that-uses-postgres
+```
+
+>https://github.com/docker-library/docs/tree/master/postgres/
+
 |Command|Purpose|
 |----|----|
 |psql -U dbUser -h localhost -p 5432 dbTasksMgmt| To login to a database dbTasksMgmt|
