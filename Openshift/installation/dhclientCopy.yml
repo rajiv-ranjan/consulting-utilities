@@ -1,0 +1,30 @@
+---
+- hosts: OSEv3
+  tasks:
+    - name: Changing dhclient to point to dns server
+      copy:
+        src: ./dhclient.conf
+        dest: /etc/dhcp/dhclient.conf
+        owner: root
+        group: root
+        mode: 0664
+      register: copy_result
+    - name: Reboot after dhclient.conf file copy to pick dns entries
+      shell: "sleep 10 && reboot"
+      async: 1
+      poll: 0
+      when: copy_result is changed
+    - name: Wait for the reboot to complete if there was a change.
+      wait_for_connection:
+        connect_timeout: 45
+        sleep: 35
+        delay: 35
+        timeout: 300
+      when: copy_result is changed
+    - name: Register nslookup hostname result
+      command: nslookup console-int.c1-ocp.morpheus.com
+      register: ns
+    - name: Value of nslookup 
+      debug: 
+        var: ns
+        verbosity: 4

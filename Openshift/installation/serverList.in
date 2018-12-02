@@ -1,0 +1,43 @@
+master-0.rajranja.lab.pnq2.cee.redhat.com master-1.rajranja.lab.pnq2.cee.redhat.com master-2.rajranja.lab.pnq2.cee.redhat.com infra-0.rajranja.lab.pnq2.cee.redhat.com infra-1.rajranja.lab.pnq2.cee.redhat.com node-0.rajranja.lab.pnq2.cee.redhat.com node-1.rajranja.lab.pnq2.cee.redhat.com node-2.rajranja.lab.pnq2.cee.redhat.com node-3.rajranja.lab.pnq2.cee.redhat.com node-4.rajranja.lab.pnq2.cee.redhat.com node-5.rajranja.lab.pnq2.cee.redhat.com node-6.rajranja.lab.pnq2.cee.redhat.com node-7.rajranja.lab.pnq2.cee.redhat.com node-8.rajranja.lab.pnq2.cee.redhat.com node-9.rajranja.lab.pnq2.cee.redhat.com lb-0.rajranja.lab.pnq2.cee.redhat.com
+
+################### VMs, IPs and PURPOSE
+
+# master nodes
+master-1.rajranja.lab.pnq2.cee.redhat.com ( 10.74.177.135 )
+master-2.rajranja.lab.pnq2.cee.redhat.com ( 10.74.176.238 )
+master-0.rajranja.lab.pnq2.cee.redhat.com ( 10.74.176.122 )
+
+# infra nodes
+infra-0.rajranja.lab.pnq2.cee.redhat.com ( 10.74.177.59 )
+infra-1.rajranja.lab.pnq2.cee.redhat.com ( 10.74.178.163 )
+
+# application node
+node-0.rajranja.lab.pnq2.cee.redhat.com ( 10.74.176.29 )
+node-1.rajranja.lab.pnq2.cee.redhat.com ( 10.74.177.48 )
+node-2.rajranja.lab.pnq2.cee.redhat.com ( 10.74.178.28 )
+node-3.rajranja.lab.pnq2.cee.redhat.com ( 10.74.178.179 )
+
+# Infra load balancer 
+node-4.rajranja.lab.pnq2.cee.redhat.com ( 10.74.178.193 )
+
+# nfs server for registry
+node-8.rajranja.lab.pnq2.cee.redhat.com ( 10.74.179.22 )
+
+# bastion and DNS server
+node-9.rajranja.lab.pnq2.cee.redhat.com ( 10.74.178.185 )
+
+# Master load balancer
+lb-0.rajranja.lab.pnq2.cee.redhat.com ( 10.74.178.24 )
+
+# DNS server
+node-6.rajranja.lab.pnq2.cee.redhat.com ( 10.74.178.26 )
+
+#spare
+node-5.rajranja.lab.pnq2.cee.redhat.com ( 10.74.177.34 )
+
+# rouge server
+node-7.rajranja.lab.pnq2.cee.redhat.com ( 10.74.178.230 ) ----> earlier it was DNS server
+
+domain name - c1-ocp.morpheus.com
+
+/usr/share/ansible/openshift-ansible

@@ -1,0 +1,75 @@
+ERROR - skopeo is not able to download the image from the registry from slower internet. Timeout is hard coded.
+
+https://github.com/openshift/openshift-ansible/issues/10741
+
+
+{
+    "changed": true,
+    "checks": {
+        "disk_availability": {
+            "skipped": true,
+            "skipped_reason": "Disabled by user request"
+        },
+        "docker_image_availability": {
+            "changed": true,
+            "failed": true,
+            "failures": [
+                ["OpenShiftCheckException", "One or more required container images are not available:\n    registry.redhat.io/openshift3/ose-control-plane:v3.11,\n    registry.redhat.io/openshift3/ose-deployer:v3.11,\n    registry.redhat.io/openshift3/ose-docker-registry:v3.11,\n    registry.redhat.io/openshift3/ose-haproxy-router:v3.11,\n    registry.redhat.io/openshift3/ose-pod:v3.11,\n    registry.redhat.io/openshift3/registry-console:v3.11,\n    registry.redhat.io/rhel7/etcd:3.2.22\nChecked with: skopeo inspect [--tls-verify=false] [--creds=<user>:<pass>] docker://<registry>/<image>\n"]
+            ],
+            "msg": "One or more required container images are not available:\n    registry.redhat.io/openshift3/ose-control-plane:v3.11,\n    registry.redhat.io/openshift3/ose-deployer:v3.11,\n    registry.redhat.io/openshift3/ose-docker-registry:v3.11,\n    registry.redhat.io/openshift3/ose-haproxy-router:v3.11,\n    registry.redhat.io/openshift3/ose-pod:v3.11,\n    registry.redhat.io/openshift3/registry-console:v3.11,\n    registry.redhat.io/rhel7/etcd:3.2.22\nChecked with: skopeo inspect [--tls-verify=false] [--creds=<user>:<pass>] docker://<registry>/<image>\n"
+        },
+        "docker_storage": {
+            "changed": true,
+            "data_pct_used": 0.09473155588020454,
+            "data_threshold": 90.0,
+            "data_total": "8.535 GB",
+            "data_total_bytes": 9164386467.84,
+            "data_used": "19.92 MB",
+            "data_used_bytes": 20887633.92,
+            "metadata_pct_used": 0.020758261276340697,
+            "metadata_threshold": 90.0,
+            "metadata_total": "25.17 MB",
+            "metadata_total_bytes": 26392657.92,
+            "metadata_used": "2.556 MB",
+            "metadata_used_bytes": 2680160.256,
+            "msg": "Thinpool usage is within thresholds.",
+            "vg_free": "12.00g",
+            "vg_free_bytes": 12884901888.0
+        },
+        "memory_availability": {
+            "skipped": true,
+            "skipped_reason": "Disabled by user request"
+        },
+        "package_availability": {
+            "changed": false,
+            "invocation": {
+                "module_args": {
+                    "packages": ["PyYAML", "atomic-openshift", "atomic-openshift-clients", "atomic-openshift-hyperkube", "atomic-openshift-node", "bash-completion", "bind", "ceph-common", "dnsmasq", "docker", "firewalld", "flannel", "glusterfs-fuse", "httpd-tools", "iptables", "iptables-services", "iscsi-initiator-utils", "libselinux-python", "nfs-utils", "ntp", "openssl", "pyparted", "python-httplib2", "yum-utils"]
+                }
+            }
+        },
+        "package_version": {
+            "changed": false,
+            "invocation": {
+                "module_args": {
+                    "package_list": [{
+                        "check_multi": true,
+                        "name": "atomic-openshift",
+                        "version": "3.11"
+                    }, {
+                        "check_multi": true,
+                        "name": "atomic-openshift-master",
+                        "version": "3.11"
+                    }, {
+                        "check_multi": true,
+                        "name": "atomic-openshift-node",
+                        "version": "3.11"
+                    }],
+                    "package_mgr": "yum"
+                }
+            }
+        }
+    },
+    "msg": "One or more checks failed",
+    "playbook_context": "install"
+}

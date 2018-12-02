@@ -1,0 +1,68 @@
+[root@node-7 ~]# journalctl -u named -n 25
+-- Logs begin at Sat 2018-11-17 04:37:44 EST, end at Sat 2018-12-01 01:03:15 EST. --
+Dec 01 00:30:48 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:12::d0d#53
+Dec 01 00:30:50 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:a8::e#53
+Dec 01 00:30:50 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:2f::f#53
+Dec 01 00:30:50 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:9f::42#53
+Dec 01 00:30:50 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:a8::e#53
+Dec 01 00:30:50 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:2f::f#53
+Dec 01 00:30:50 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:9f::42#53
+Dec 01 00:30:51 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:2d::d#53
+Dec 01 00:30:51 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:2d::d#53
+Dec 01 00:30:51 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:503:c27::2:30#53
+Dec 01 00:30:51 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:7fd::1#53
+Dec 01 00:30:51 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:503:c27::2:30#53
+Dec 01 00:30:51 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:7fd::1#53
+Dec 01 00:30:54 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:503:ba3e::2:30#53
+Dec 01 00:30:54 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:2::c#53
+Dec 01 00:30:54 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:503:ba3e::2:30#53
+Dec 01 00:30:54 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:2::c#53
+Dec 01 00:30:56 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:84::b#53
+Dec 01 00:30:56 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:84::b#53
+Dec 01 00:30:57 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:1::53#53
+Dec 01 00:30:57 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:1::53#53
+Dec 01 00:30:58 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: managed-keys-zone: Unable to fetch DNSKEY set '.': timed out
+Dec 01 01:00:14 node-7.rajranja.lab.pnq2.cee.redhat.com systemd[1]: Stopping Berkeley Internet Name Domain (DNS)...
+Dec 01 01:01:44 node-7.rajranja.lab.pnq2.cee.redhat.com systemd[1]: named.service stopping timed out. Terminating.
+Dec 01 01:03:15 node-7.rajranja.lab.pnq2.cee.redhat.com systemd[1]: named.service stop-sigterm timed out. Killing.
+
+[root@node-7 ~]# journalctl -u named -n 25
+-- Logs begin at Sat 2018-11-17 04:37:44 EST, end at Sat 2018-12-01 01:04:45 EST. --
+Dec 01 00:30:50 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:a8::e#53
+Dec 01 00:30:50 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:2f::f#53
+Dec 01 00:30:50 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:9f::42#53
+Dec 01 00:30:50 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:a8::e#53
+Dec 01 00:30:50 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:2f::f#53
+Dec 01 00:30:50 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:9f::42#53
+Dec 01 00:30:51 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:2d::d#53
+Dec 01 00:30:51 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:2d::d#53
+Dec 01 00:30:51 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:503:c27::2:30#53
+Dec 01 00:30:51 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:7fd::1#53
+Dec 01 00:30:51 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:503:c27::2:30#53
+Dec 01 00:30:51 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:7fd::1#53
+Dec 01 00:30:54 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:503:ba3e::2:30#53
+Dec 01 00:30:54 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:2::c#53
+Dec 01 00:30:54 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:503:ba3e::2:30#53
+Dec 01 00:30:54 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:2::c#53
+Dec 01 00:30:56 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:84::b#53
+Dec 01 00:30:56 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:84::b#53
+Dec 01 00:30:57 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './DNSKEY/IN': 2001:500:1::53#53
+Dec 01 00:30:57 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: network unreachable resolving './NS/IN': 2001:500:1::53#53
+Dec 01 00:30:58 node-7.rajranja.lab.pnq2.cee.redhat.com named[1139]: managed-keys-zone: Unable to fetch DNSKEY set '.': timed out
+Dec 01 01:00:14 node-7.rajranja.lab.pnq2.cee.redhat.com systemd[1]: Stopping Berkeley Internet Name Domain (DNS)...
+Dec 01 01:01:44 node-7.rajranja.lab.pnq2.cee.redhat.com systemd[1]: named.service stopping timed out. Terminating.
+Dec 01 01:03:15 node-7.rajranja.lab.pnq2.cee.redhat.com systemd[1]: named.service stop-sigterm timed out. Killing.
+Dec 01 01:04:45 node-7.rajranja.lab.pnq2.cee.redhat.com systemd[1]: named.service still around after SIGKILL. Ignoring.
+
+[root@node-7 ~]# reboot
+Connection to node-7.rajranja.lab.pnq2.cee.redhat.com closed by remote host.
+Connection to node-7.rajranja.lab.pnq2.cee.redhat.com closed.
+[quicklab@node-9 c1-ocp.morpheus.com]$ ssh -i quicklab.key -l quicklab node-7.rajranja.lab.pnq2.cee.redhat.com
+ssh: connect to host node-7.rajranja.lab.pnq2.cee.redhat.com port 22: Connection refused
+[quicklab@node-9 c1-ocp.morpheus.com]$ ssh -i quicklab.key -l quicklab node-7.rajranja.lab.pnq2.cee.redhat.com
+ssh: connect to host node-7.rajranja.lab.pnq2.cee.redhat.com port 22: Connection refused
+[quicklab@node-9 c1-ocp.morpheus.com]$ ssh -i quicklab.key -l quicklab node-7.rajranja.lab.pnq2.cee.redhat.com
+ssh: connect to host node-7.rajranja.lab.pnq2.cee.redhat.com port 22: Connection refused
+[quicklab@node-9 c1-ocp.morpheus.com]$ ssh -i quicklab.key -l quicklab node-7.rajranja.lab.pnq2.cee.redhat.com
+ssh: connect to host node-7.rajranja.lab.pnq2.cee.redhat.com port 22: Connection refused
+[quicklab@node-9 c1-ocp.morpheus.com]$

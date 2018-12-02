@@ -1,5 +1,11 @@
 # Query DNS servers for various DNS records
 
+
+###### Add few more here from https://www.cyberciti.biz/faq/unix-linux-dns-lookup-command/ 
+###### lilke list of all entries (A record, SOA record, ) for a FQDN in the DNS
+###### also highlight the parts of the response that's useful.
+
+
 ### DNS query without name server
 By default with no name server specified the DNS resolver in the /etc/resolv.conf file will be used, dig will also look for an A record with no other options specified.
 ```bash
