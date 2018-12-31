@@ -87,10 +87,13 @@ stackexchange.com.server.crt: OK
 ```
 
 # Create certificate chain to be used by OpenShift and LBs
-1. Generate Root key and read the key details (if you are interested). Please note the default is 2048 bit.
+1. Generate Root key and read the key details (if you are interested). 
 
 ```sh
 openssl genrsa -out RootCA.key
+```
+Please note the default is 2048 bit.
+```sh
 openssl rsa -in RootCA.key -text -noout
 ```
 2. Generate Root certificate
