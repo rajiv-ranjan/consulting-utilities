@@ -30,7 +30,7 @@ openssl x509 -req -days 3650 -in IntermediateCA.csr -CA RootCA.crt -CAkey RootCA
 cp *.crt /usr/local/share/ca-certificates/
 update-ca-certificates
 ```
-7. Generate RSA server key
+7. Generate RSA server key. Repeat step 7 to 11 for master, master internal and router certificates.
 ```sh
 openssl genrsa -out master.key
 ```
