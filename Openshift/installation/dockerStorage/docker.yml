@@ -1,0 +1,17 @@
+---
+- hosts: OSEv3
+  tasks:
+    - name: install docker
+      yum:
+        name: docker-1.13.1
+    - name: check docker rpm installed
+      command: rpm -V docker-1.13.1
+    - name: list the block devices
+      command: lsblk 
+    - name: Copy using the 'content' for inline data
+      copy:
+        content: ./docker-storage-setup-content
+        dest: /etc/sysconfig/docker-storage-setup
+#    - name: docker version
+#      command: docker version
+    

@@ -13,7 +13,7 @@ We need to understand couple of items before deciding how to refer to DNS Server
 # below will add search domain and DNS server on the top. They will be written before the data retrieved from DHCP Server.
 cat dhclient.conf
 interface "eth0" {
-	supersede domain-search "c1-ocp.morpheus.com" , "openstacklocal";
+	prepend domain-search "c1-ocp.morpheus.com" , "openstacklocal";
 	prepend domain-name-servers 10.74.178.230;
 }
 ```

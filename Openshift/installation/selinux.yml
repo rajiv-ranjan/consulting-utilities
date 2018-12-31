@@ -1,0 +1,9 @@
+---
+- hosts: OSEv3
+  tasks:
+    - name: enable selinux
+      selinux:
+        policy: targeted
+        state: enforcing
+
+        

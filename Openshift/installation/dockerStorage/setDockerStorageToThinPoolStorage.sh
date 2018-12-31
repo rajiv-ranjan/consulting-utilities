@@ -35,14 +35,16 @@ fdisk -l /dev/vdb
 # below is what i used with my clusters
 clear
 sudo su -
+#umount /mnt
+lsblk -fs
 cat <<EOF > /etc/sysconfig/docker-storage-setup
 WIPE_SIGNATURES=true
 DEVS=/dev/vdb
 VG=docker-vg
 EOF
-umount /mnt
 ### Run the docker storage setup
 sudo docker-storage-setup
+lsblk -fs
 exit
 exit
 

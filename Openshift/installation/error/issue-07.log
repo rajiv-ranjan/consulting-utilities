@@ -1,0 +1,322 @@
+PLAY RECAP *************************************************************************************************************************************************************************************************
+infra-0.rajranja.lab.pnq2.cee.redhat.com : ok=48   changed=8    unreachable=0    failed=0
+infra-1.rajranja.lab.pnq2.cee.redhat.com : ok=48   changed=8    unreachable=0    failed=0
+lb-0.rajranja.lab.pnq2.cee.redhat.com : ok=25   changed=6    unreachable=0    failed=0
+localhost                  : ok=13   changed=0    unreachable=0    failed=0
+master-0.rajranja.lab.pnq2.cee.redhat.com : ok=64   changed=8    unreachable=0    failed=0
+master-1.rajranja.lab.pnq2.cee.redhat.com : ok=51   changed=8    unreachable=0    failed=0
+master-2.rajranja.lab.pnq2.cee.redhat.com : ok=51   changed=8    unreachable=0    failed=0
+node-0.rajranja.lab.pnq2.cee.redhat.com : ok=48   changed=8    unreachable=0    failed=0
+node-1.rajranja.lab.pnq2.cee.redhat.com : ok=48   changed=8    unreachable=0    failed=0
+node-2.rajranja.lab.pnq2.cee.redhat.com : ok=48   changed=8    unreachable=0    failed=0
+node-3.rajranja.lab.pnq2.cee.redhat.com : ok=48   changed=8    unreachable=0    failed=0
+node-8.rajranja.lab.pnq2.cee.redhat.com : ok=25   changed=4    unreachable=0    failed=0
+
+
+INSTALLER STATUS *******************************************************************************************************************************************************************************************
+Initialization  : Complete (0:10:53)
+Wednesday 05 December 2018  19:42:45 -0500 (0:00:00.564)       0:17:58.319 ****
+===============================================================================
+Ensure openshift-ansible installer package deps are installed ------------------------------------------------------------------------------------------------------------------------------------- 446.70s
+openshift_excluder : Install docker excluder - yum ------------------------------------------------------------------------------------------------------------------------------------------------ 138.07s
+container_runtime : Install Docker ----------------------------------------------------------------------------------------------------------------------------------------------------------------- 95.69s
+openshift_repos : Ensure libselinux-python is installed -------------------------------------------------------------------------------------------------------------------------------------------- 62.06s
+os_firewall : Install firewalld packages ----------------------------------------------------------------------------------------------------------------------------------------------------------- 61.73s
+Run variable sanity checks ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 26.08s
+openshift_repos : refresh cache -------------------------------------------------------------------------------------------------------------------------------------------------------------------- 23.65s
+container_runtime : Get current installed Docker version ------------------------------------------------------------------------------------------------------------------------------------------- 22.94s
+Gathering Facts ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 22.45s
+Gathering Facts ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 20.52s
+Gather Cluster facts ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 12.72s
+Initialize openshift.node.sdn_mtu ------------------------------------------------------------------------------------------------------------------------------------------------------------------ 11.71s
+Query DNS for IP address of master-0.rajranja.lab.pnq2.cee.redhat.com ------------------------------------------------------------------------------------------------------------------------------- 6.82s
+os_firewall : Ensure iptables services are not enabled ---------------------------------------------------------------------------------------------------------------------------------------------- 2.97s
+set_fact openshift_portal_net if present on masters ------------------------------------------------------------------------------------------------------------------------------------------------- 2.36s
+os_firewall : Start and enable firewalld service ---------------------------------------------------------------------------------------------------------------------------------------------------- 2.29s
+get openshift_current_version ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- 1.97s
+container_runtime : Check for docker_storage_path/overlay2 ------------------------------------------------------------------------------------------------------------------------------------------ 1.97s
+container_runtime : Set registry params ------------------------------------------------------------------------------------------------------------------------------------------------------------- 1.84s
+container_runtime : Add enterprise registry, if necessary ------------------------------------------------------------------------------------------------------------------------------------------- 1.80s
+[quicklab@node-9 openshift-ansible]$
+[quicklab@node-9 openshift-ansible]$
+[quicklab@node-9 openshift-ansible]$
+[quicklab@node-9 openshift-ansible]$ ansible -i /home/quicklab/c1-ocp.morpheus.com/hosts OSEv3 -m 'ping'
+node-8.rajranja.lab.pnq2.cee.redhat.com | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+master-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+lb-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+master-2.rajranja.lab.pnq2.cee.redhat.com | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+master-1.rajranja.lab.pnq2.cee.redhat.com | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+node-1.rajranja.lab.pnq2.cee.redhat.com | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+node-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+node-2.rajranja.lab.pnq2.cee.redhat.com | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+node-3.rajranja.lab.pnq2.cee.redhat.com | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+infra-1.rajranja.lab.pnq2.cee.redhat.com | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+infra-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+[quicklab@node-9 openshift-ansible]$ ansible -i /home/quicklab/c1-ocp.morpheus.com/hosts OSEv3 -a 'nslookup console-int.c1-ocp.morpheus.com'
+node-1.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console-int.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+node-8.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console-int.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+master-2.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console-int.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+infra-1.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console-int.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+master-1.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console-int.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+node-3.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console-int.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+node-2.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console-int.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+master-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console-int.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+infra-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console-int.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+lb-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console-int.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+node-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console-int.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+
+[quicklab@node-9 openshift-ansible]$ ansible -i /home/quicklab/c1-ocp.morpheus.com/hosts OSEv3 -a 'nslookup console.c1-ocp.morpheus.com'
+node-1.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+node-8.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+lb-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+master-1.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+node-2.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+infra-1.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+master-2.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+node-3.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+master-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+infra-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+node-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	console.c1-ocp.morpheus.com
+Address: 10.74.177.44
+
+
+[quicklab@node-9 openshift-ansible]$ ansible -i /home/quicklab/c1-ocp.morpheus.com/hosts OSEv3 -a 'nslookup registry.apps.c1-ocp.morpheus.com'
+node-1.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	registry.apps.c1-ocp.morpheus.com
+Address: 10.74.177.88
+
+lb-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	registry.apps.c1-ocp.morpheus.com
+Address: 10.74.177.88
+
+node-8.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	registry.apps.c1-ocp.morpheus.com
+Address: 10.74.177.88
+
+node-2.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	registry.apps.c1-ocp.morpheus.com
+Address: 10.74.177.88
+
+node-3.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	registry.apps.c1-ocp.morpheus.com
+Address: 10.74.177.88
+
+infra-1.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	registry.apps.c1-ocp.morpheus.com
+Address: 10.74.177.88
+
+infra-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	registry.apps.c1-ocp.morpheus.com
+Address: 10.74.177.88
+
+master-2.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	registry.apps.c1-ocp.morpheus.com
+Address: 10.74.177.88
+
+master-1.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	registry.apps.c1-ocp.morpheus.com
+Address: 10.74.177.88
+
+master-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	registry.apps.c1-ocp.morpheus.com
+Address: 10.74.177.88
+
+node-0.rajranja.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
+Server:		10.74.177.84
+Address:	10.74.177.84#53
+
+Name:	registry.apps.c1-ocp.morpheus.com
+Address: 10.74.177.88

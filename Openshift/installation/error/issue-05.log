@@ -1,0 +1,48 @@
+TASK [openshift_control_plane : Check for file paths outside of /etc/origin/master in master's config] *****************************************************************************************************
+Wednesday 05 December 2018  10:24:29 -0500 (0:00:00.494)       0:01:18.787 ****
+fatal: [master-0.rajranja.lab.pnq2.cee.redhat.com]: FAILED! => {"msg": "A string value that appears to be a file path located outside of\n/dev/null, /etc/origin/master/, /var/lib/origin, /etc/origin/cloudprovider, /etc/origin/kubelet-plugins, /usr/libexec/kubernetes/kubelet-plugins has been found in /etc/origin/master/master-config.yaml.\nIn 3.10 and newer, all files needed by the master must reside inside of\nthose directories or a subdirectory or it will not be readable by the\nmaster process. Please migrate all files needed by the master into\none of /dev/null, /etc/origin/master/, /var/lib/origin, /etc/origin/cloudprovider, /etc/origin/kubelet-plugins, /usr/libexec/kubernetes/kubelet-plugins or a subdirectory and update your master configs before\nproceeding. The string found was: /var/log/audit-ocp.log\n***********************\nNOTE: the following items do not need to be migrated, they will be migrated\nfor you: oauthConfig.identityProviders"}
+fatal: [master-1.rajranja.lab.pnq2.cee.redhat.com]: FAILED! => {"msg": "A string value that appears to be a file path located outside of\n/dev/null, /etc/origin/master/, /var/lib/origin, /etc/origin/cloudprovider, /etc/origin/kubelet-plugins, /usr/libexec/kubernetes/kubelet-plugins has been found in /etc/origin/master/master-config.yaml.\nIn 3.10 and newer, all files needed by the master must reside inside of\nthose directories or a subdirectory or it will not be readable by the\nmaster process. Please migrate all files needed by the master into\none of /dev/null, /etc/origin/master/, /var/lib/origin, /etc/origin/cloudprovider, /etc/origin/kubelet-plugins, /usr/libexec/kubernetes/kubelet-plugins or a subdirectory and update your master configs before\nproceeding. The string found was: /var/log/audit-ocp.log\n***********************\nNOTE: the following items do not need to be migrated, they will be migrated\nfor you: oauthConfig.identityProviders"}
+fatal: [master-2.rajranja.lab.pnq2.cee.redhat.com]: FAILED! => {"msg": "A string value that appears to be a file path located outside of\n/dev/null, /etc/origin/master/, /var/lib/origin, /etc/origin/cloudprovider, /etc/origin/kubelet-plugins, /usr/libexec/kubernetes/kubelet-plugins has been found in /etc/origin/master/master-config.yaml.\nIn 3.10 and newer, all files needed by the master must reside inside of\nthose directories or a subdirectory or it will not be readable by the\nmaster process. Please migrate all files needed by the master into\none of /dev/null, /etc/origin/master/, /var/lib/origin, /etc/origin/cloudprovider, /etc/origin/kubelet-plugins, /usr/libexec/kubernetes/kubelet-plugins or a subdirectory and update your master configs before\nproceeding. The string found was: /var/log/audit-ocp.log\n***********************\nNOTE: the following items do not need to be migrated, they will be migrated\nfor you: oauthConfig.identityProviders"}
+
+NO MORE HOSTS LEFT *****************************************************************************************************************************************************************************************
+
+PLAY RECAP *************************************************************************************************************************************************************************************************
+infra-0.rajranja.lab.pnq2.cee.redhat.com : ok=8    changed=0    unreachable=0    failed=0
+infra-1.rajranja.lab.pnq2.cee.redhat.com : ok=8    changed=0    unreachable=0    failed=0
+lb-0.rajranja.lab.pnq2.cee.redhat.com : ok=8    changed=0    unreachable=0    failed=0
+localhost                  : ok=13   changed=0    unreachable=0    failed=0
+master-0.rajranja.lab.pnq2.cee.redhat.com : ok=12   changed=0    unreachable=0    failed=1
+master-1.rajranja.lab.pnq2.cee.redhat.com : ok=11   changed=0    unreachable=0    failed=1
+master-2.rajranja.lab.pnq2.cee.redhat.com : ok=11   changed=0    unreachable=0    failed=1
+node-0.rajranja.lab.pnq2.cee.redhat.com : ok=8    changed=0    unreachable=0    failed=0
+node-1.rajranja.lab.pnq2.cee.redhat.com : ok=8    changed=0    unreachable=0    failed=0
+node-2.rajranja.lab.pnq2.cee.redhat.com : ok=8    changed=0    unreachable=0    failed=0
+node-3.rajranja.lab.pnq2.cee.redhat.com : ok=8    changed=0    unreachable=0    failed=0
+node-8.rajranja.lab.pnq2.cee.redhat.com : ok=8    changed=0    unreachable=0    failed=0
+
+
+INSTALLER STATUS *******************************************************************************************************************************************************************************************
+Initialization  : In Progress (0:01:19)
+Wednesday 05 December 2018  10:24:30 -0500 (0:00:00.317)       0:01:19.104 ****
+===============================================================================
+Gathering Facts ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 32.40s
+Gathering Facts ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 21.11s
+openshift_sanitize_inventory : Standardize on latest variable names --------------------------------------------------------------------------------------------------------------------------------- 2.24s
+openshift_sanitize_inventory : At least one master is schedulable ----------------------------------------------------------------------------------------------------------------------------------- 2.06s
+openshift_sanitize_inventory : Check for usage of deprecated variables ------------------------------------------------------------------------------------------------------------------------------ 1.71s
+Detecting Operating System from ostree_booted ------------------------------------------------------------------------------------------------------------------------------------------------------- 1.42s
+openshift_sanitize_inventory : set_fact ------------------------------------------------------------------------------------------------------------------------------------------------------------- 1.14s
+openshift_sanitize_inventory : include_tasks -------------------------------------------------------------------------------------------------------------------------------------------------------- 1.13s
+openshift_control_plane : slurp --------------------------------------------------------------------------------------------------------------------------------------------------------------------- 1.09s
+initialize_facts set fact openshift_is_atomic ------------------------------------------------------------------------------------------------------------------------------------------------------- 1.08s
+openshift_sanitize_inventory : Normalize openshift_release ------------------------------------------------------------------------------------------------------------------------------------------ 1.06s
+openshift_control_plane : stat ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- 0.83s
+openshift_sanitize_inventory : Ensure that web console port matches API server port ----------------------------------------------------------------------------------------------------------------- 0.79s
+openshift_sanitize_inventory : Ensure removed web console extension variables are not set ----------------------------------------------------------------------------------------------------------- 0.78s
+openshift_sanitize_inventory : ensure provider configuration variables are defined ------------------------------------------------------------------------------------------------------------------ 0.73s
+openshift_sanitize_inventory : Abort when openshift_release is invalid ------------------------------------------------------------------------------------------------------------------------------ 0.73s
+openshift_sanitize_inventory : Ensure clusterid is set along with the cloudprovider ----------------------------------------------------------------------------------------------------------------- 0.72s
+openshift_sanitize_inventory : Ensure ansible_service_broker_remove and ansible_service_broker_install are mutually exclusive ----------------------------------------------------------------------- 0.71s
+assert atomic host docker version is 1.12 or later -------------------------------------------------------------------------------------------------------------------------------------------------- 0.70s
+openshift_sanitize_inventory : debug ---------------------------------------------------------------------------------------------------------------------------------------------------------------- 0.69s
+[quicklab@node-9 openshift-ansible]$

@@ -26,3 +26,7 @@ console	IN A	10.74.178.24
 console-int	IN A	10.74.178.24
 *.apps.c1-ocp.morpheus.com.	IN A	10.74.177.59
 
+# chown root:named /var/named/{forward,reverse}.zone
+
+to remove the errors from journald related to "unable to find...". Its related to ipv6.
+https://serverfault.com/questions/639061/network-unreachable-error-in-my-server-logs

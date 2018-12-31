@@ -1,0 +1,55 @@
+---
+- hosts: OSEv3
+  tasks:
+    - name: Register the cluster with Red Hat OCP Subscription
+      redhat_subscription:
+        state: present
+        username: "{{ username }}"
+        password: "{{ password }}"
+        pool_ids: "{{ pool_ids }}"
+    - name: Disable all RHSM repositories
+      rhsm_repository:
+        name: '*'
+        state: disabled
+    - name: Enable rhel 7 repo
+      rhsm_repository:
+        name: rhel-7-server-rpms
+        state: enabled
+    - name: Enable rhel 7 extra repo
+      rhsm_repository:
+        name: rhel-7-server-extras-rpms
+        state: enabled
+    - name: Enable rhel openshift ansible repo
+      rhsm_repository:
+        name: rhel-7-server-ansible-2.6-rpms
+        state: enabled
+    - name: Enable rhel openshift enterprise
+      rhsm_repository:
+        name: rhel-7-server-ose-3.11-rpms
+        state: enabled
+    - name: ensure a list of packages installed
+      yum:
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - wget
+        - git
+        - net-tools
+        - bind-utils 
+        - yum-utils 
+        - iptables-services 
+        - bridge-utils 
+        - bash-completion 
+        - kexec-tools 
+        - sos 
+        - psacct
+        - vim
+        - tree
+    - name: upgrade all packages
+      yum:
+        name: '*'
+        state: latest
+    - name: Get the red hat OS version
+      command: cat /etc/redhat-release
+    - name: reboot all servers
+      command: reboot 

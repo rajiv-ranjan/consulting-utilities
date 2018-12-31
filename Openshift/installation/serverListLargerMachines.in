@@ -1,0 +1,43 @@
+################### VMs, IPs and PURPOSE
+
+# master nodes  (4 cpu * 3 = 12) (1 Vol * 3 = 3)
+node-0.rajranjamaster.lab.pnq2.cee.redhat.com ( 10.74.176.18 )
+node-1.rajranjamaster.lab.pnq2.cee.redhat.com ( 10.74.176.74 )
+node-2.rajranjamaster.lab.pnq2.cee.redhat.com ( 10.74.176.219 )
+
+# infra nodes   (4 cpu * 3 = 12) (4 Vol * 3 = 12)
+node-0.rajranjainfra.lab.pnq2.cee.redhat.com ( 10.74.176.182 )
+node-1.rajranjainfra.lab.pnq2.cee.redhat.com ( 10.74.176.232 )
+node-2.rajranjainfra.lab.pnq2.cee.redhat.com ( 10.74.176.62 )
+
+# application node (4 cpu * 2 = 8) (2 Vol * 2 = 4)
+node-0.rajranjaapps.lab.pnq2.cee.redhat.com ( 10.74.176.89 )
+node-1.rajranjaapps.lab.pnq2.cee.redhat.com ( 10.74.177.44 )
+
+# nfs server (2 cpu * 1 = 2) (2 Vol * 2 = 4)
+node-0.rajranjanfs.lab.pnq2.cee.redhat.com ( 10.74.177.37 )
+
+# bastion (2 cpu * 1 = 2)
+node-0.rajranjabastion.lab.pnq2.cee.redhat.com ( 10.74.177.84 )
+
+
+# Infra load balancer (1 cpu * 2 = 1)
+# Master load balancer
+node-0.rajranjalb.lab.pnq2.cee.redhat.com ( 10.74.177.88 )
+
+# Infra load balancer
+node-1.rajranjalb.lab.pnq2.cee.redhat.com ( 10.74.177.89 )
+
+# DNS server
+#spare
+
+domain name - c1-ocp.surakshakavach.com
+
+master.c1-ocp.surakshakavach.com            10.74.177.88
+master-int.c1-ocp.surakshakavach.com        10.74.177.88
+*.apps.c1-ocp.surakshakavach.com            10.74.177.89
+
+/usr/share/ansible/openshift-ansible
+
+yaml where the resource limitations are given.
+https://gitlab.cee.redhat.com/cee_ops/quicklab/blob/master/playbooks/vars/defaults/osp.yaml#L26

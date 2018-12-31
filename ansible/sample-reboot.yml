@@ -1,0 +1,20 @@
+---
+- name: Do something that requires a reboot when it results in a change.
+  ...
+  register: task_result
+
+- name: Reboot immediately if there was a change.
+  shell: "sleep 5 && reboot"
+  async: 1
+  poll: 0
+  when: task_result is changed
+
+- name: Wait for the reboot to complete if there was a change.
+  wait_for_connection:
+    connect_timeout: 20
+    sleep: 5
+    delay: 5
+    timeout: 300
+  when: task_result is changed
+
+  # full article is at https://www.jeffgeerling.com/blog/2018/reboot-and-wait-reboot-complete-ansible-playbook

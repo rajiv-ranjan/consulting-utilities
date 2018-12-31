@@ -1,0 +1,106 @@
+### To get the certificat chain details 
+
+ ```sh
+ $ openssl s_client -connect stackexchange.com:443 -showcerts 
+
+ CONNECTED(00000003)
+depth=2 C = US, O = DigiCert Inc, OU = www.digicert.com, CN = DigiCert High Assurance EV Root CA
+verify return:1
+depth=1 C = US, O = DigiCert Inc, OU = www.digicert.com, CN = DigiCert SHA2 High Assurance Server CA
+verify return:1
+depth=0 C = US, ST = NY, L = New York, O = "Stack Exchange, Inc.", CN = *.stackexchange.com
+verify return:1
+---
+Certificate chain
+.....
+.....
+.....
+```
+
+### To read the certificate in pem format and show the details 
+
+```sh
+$ openssl s_client -showcerts -connect stackexchange.com:443 2>/dev/null | openssl x509 -inform pem -noout -text
+
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number:
+            07:65:c6:4e:74:e5:91:d6:80:39:ca:2a:84:75:63:f0
+    Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=US, O=DigiCert Inc, OU=www.digicert.com, CN=DigiCert SHA2 High Assurance Server CA
+        Validity
+            Not Before: Oct  5 00:00:00 2018 GMT
+            Not After : Aug 14 12:00:00 2019 GMT
+        Subject: C=US, ST=NY, L=New York, O=Stack Exchange, Inc., CN=*.stackexchange.com
+.....
+.....
+.....
+```
+### To create pem files with certificates 
+
+```sh
+$ openssl s_client -showcerts -verify 5 -connect stackexchange.com:443 < /dev/null | awk '/BEGIN/,/END/{ if(/BEGIN/){a++}; out="cert"a".pem"; print >out}' 
+
+verify depth is 5
+depth=2 C = US, O = DigiCert Inc, OU = www.digicert.com, CN = DigiCert High Assurance EV Root CA
+verify return:1
+depth=1 C = US, O = DigiCert Inc, OU = www.digicert.com, CN = DigiCert SHA2 High Assurance Server CA
+verify return:1
+depth=0 C = US, ST = NY, L = New York, O = "Stack Exchange, Inc.", CN = *.stackexchange.com
+verify return:1
+DONE
+```
+
+### To verify the certificate on the server. (Create the stackexchange.com.RootCA.crt from the Root CA cert from /etc/ssl/certs/ca-bundle.trust.crt -> /etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt)
+
+```sh
+$ ll stackexchange.com.*
+-rw-rw-r--. 1 quicklab quicklab 3152 Dec 31 01:13 stackexchange.com.CombinedCAChain.crt
+-rw-rw-r--. 1 quicklab quicklab 1464 Dec 31 01:05 stackexchange.com.RootCA.crt
+-rw-rw-r--. 1 quicklab quicklab 1688 Dec 31 00:14 stackexchange.com.intermediate.crt
+-rw-rw-r--. 1 quicklab quicklab 2914 Dec 31 00:13 stackexchange.com.server.crt
+
+$ cat stackexchange.com.intermediate.crt stackexchange.com.RootCA.crt > stackexchange.com.CombinedCAChain.crt 
+
+```
+
+```sh
+$ openssl verify -CAfile stackexchange.com.CombinedCAChain.crt  stackexchange.com.server.crt
+
+stackexchange.com.server.crt: OK
+```
+
+### To install a CA certificate on RHEL 7
+* download the CA certificate 
+* enable the dynamic CA configuration feature
+* copy the CA certificate to RHEL trusted CA source folder
+* extract and add the certificate
+* verify
+
+```sh
+# update-ca-trust enable
+# cp rapidSSL-ca.crt /etc/pki/ca-trust/source/anchors/
+# update-ca-trust extract
+# openssl verify rapidSSL-ca.crt
+# openssl verify server.crt
+```
+
+# Create certificate chain to be used by OpenShift and LBs
+1. Generate Root key and read the key details (if you are interested). Please note the default is 2048 bit.
+
+```sh
+openssl genrsa -out RootCA.key
+openssl rsa -in RootCA.key -text -noout
+```
+2. Generate Root certificate
+3. Generate Intermediate Certificate Authority key
+4. Create Intermediate Certificate Signing Request (CSR)
+5. Generate Intermediate Certificate signed by Root CA
+6. Add certificates to Operating system's trust (Debian/deb-ish)
+7. Generate RSA server key
+8. Create server certificate signing request, to be signed by intermediate
+9.  Sign CSR, by intermediate CA
+10. Verify everything
+11. Webserver
+12. verify again!

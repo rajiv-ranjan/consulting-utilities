@@ -1,0 +1,338 @@
+
+[quicklab@node-0 openshift-ansible]$ oc get daemonset.apps/local-volume-provisioner -o yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  annotations:
+    deprecated.daemonset.template.generation: "2"
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: 2018-12-16T16:17:47Z
+  generation: 2
+  labels:
+    app: local-volume-provisioner
+  name: local-volume-provisioner
+  namespace: local-storage
+  resourceVersion: "1452437"
+  selfLink: /apis/apps/v1/namespaces/local-storage/daemonsets/local-volume-provisioner
+  uid: 20707101-014e-11e9-908c-fa163e4feb58
+spec:
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: local-volume-provisioner
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: local-volume-provisioner
+    spec:
+      containers:
+      - env:
+        - name: MY_NODE_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: spec.nodeName
+        - name: MY_NAMESPACE
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+        - name: VOLUME_CONFIG_NAME
+          value: local-volume-config
+        image: registry.redhat.io/openshift3/local-storage-provisioner:v3.11
+        imagePullPolicy: IfNotPresent
+        name: provisioner
+        resources: {}
+        securityContext:
+          runAsUser: 0
+          seLinuxOptions:
+            level: s0:c0.c1023
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /mnt/local-storage
+          mountPropagation: HostToContainer
+          name: local-storage
+        - mountPath: /etc/provisioner/config
+          name: provisioner-config
+          readOnly: true
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        type: infra
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: local-storage-admin
+      serviceAccountName: local-storage-admin
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - hostPath:
+          path: /mnt/local-storage
+          type: ""
+        name: local-storage
+      - configMap:
+          defaultMode: 420
+          name: local-volume-config
+        name: provisioner-config
+  updateStrategy:
+    type: OnDelete
+status:
+  currentNumberScheduled: 0
+  desiredNumberScheduled: 0
+  numberMisscheduled: 0
+  numberReady: 0
+  observedGeneration: 2
+
+
+
+[quicklab@node-0 openshift-ansible]$ oc get nodes -o wide
+NAME                                            STATUS    ROLES     AGE       VERSION           INTERNAL-IP     EXTERNAL-IP   OS-IMAGE       KERNEL-VERSION              CONTAINER-RUNTIME
+node-0.rajranjaapps.lab.pnq2.cee.redhat.com     Ready     compute   6d        v1.11.0+d4cacc0   10.74.176.89    <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-0.rajranjainfra.lab.pnq2.cee.redhat.com    Ready     infra     6d        v1.11.0+d4cacc0   10.74.176.182   <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-0.rajranjamaster.lab.pnq2.cee.redhat.com   Ready     master    6d        v1.11.0+d4cacc0   10.74.176.18    <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-1.rajranjaapps.lab.pnq2.cee.redhat.com     Ready     compute   6d        v1.11.0+d4cacc0   10.74.177.44    <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-1.rajranjainfra.lab.pnq2.cee.redhat.com    Ready     infra     6d        v1.11.0+d4cacc0   10.74.176.232   <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-1.rajranjamaster.lab.pnq2.cee.redhat.com   Ready     master    6d        v1.11.0+d4cacc0   10.74.176.74    <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-2.rajranjainfra.lab.pnq2.cee.redhat.com    Ready     infra     6d        v1.11.0+d4cacc0   10.74.176.62    <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-2.rajranjamaster.lab.pnq2.cee.redhat.com   Ready     master    6d        v1.11.0+d4cacc0   10.74.176.219   <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+
+[quicklab@node-0 openshift-ansible]$ oc get nodes/node-0.rajranjainfra.lab.pnq2.cee.redhat.com
+NAME                                           STATUS    ROLES     AGE       VERSION
+node-0.rajranjainfra.lab.pnq2.cee.redhat.com   Ready     infra     6d        v1.11.0+d4cacc0
+
+
+[quicklab@node-0 openshift-ansible]$ oc get nodes/node-0.rajranjainfra.lab.pnq2.cee.redhat.com -o yaml
+apiVersion: v1
+kind: Node
+metadata:
+  annotations:
+    node.openshift.io/md5sum: 0f2360c644689b4bbf4f8f72817f39d1
+    volumes.kubernetes.io/controller-managed-attach-detach: "true"
+  creationTimestamp: 2018-12-10T14:33:17Z
+  labels:
+    beta.kubernetes.io/arch: amd64
+    beta.kubernetes.io/os: linux
+    kubernetes.io/hostname: node-0.rajranjainfra.lab.pnq2.cee.redhat.com
+    node-role.kubernetes.io/infra: "true"
+  name: node-0.rajranjainfra.lab.pnq2.cee.redhat.com
+  resourceVersion: "1453786"
+  selfLink: /api/v1/nodes/node-0.rajranjainfra.lab.pnq2.cee.redhat.com
+  uid: 88bfedf9-fc88-11e8-ae94-fa163e3bfc06
+spec: {}
+status:
+  addresses:
+  - address: 10.74.176.182
+    type: InternalIP
+  - address: node-0.rajranjainfra.lab.pnq2.cee.redhat.com
+    type: Hostname
+  allocatable:
+    cpu: "4"
+    hugepages-1Gi: "0"
+    hugepages-2Mi: "0"
+    memory: 7906436Ki
+    pods: "250"
+  capacity:
+    cpu: "4"
+    hugepages-1Gi: "0"
+    hugepages-2Mi: "0"
+    memory: 8008836Ki
+    pods: "250"
+  conditions:
+  - lastHeartbeatTime: 2018-12-16T16:59:56Z
+    lastTransitionTime: 2018-12-10T14:33:17Z
+    message: kubelet has sufficient disk space available
+    reason: KubeletHasSufficientDisk
+    status: "False"
+    type: OutOfDisk
+  - lastHeartbeatTime: 2018-12-16T16:59:56Z
+    lastTransitionTime: 2018-12-10T14:33:17Z
+    message: kubelet has sufficient memory available
+    reason: KubeletHasSufficientMemory
+    status: "False"
+    type: MemoryPressure
+  - lastHeartbeatTime: 2018-12-16T16:59:56Z
+    lastTransitionTime: 2018-12-10T14:33:17Z
+    message: kubelet has no disk pressure
+    reason: KubeletHasNoDiskPressure
+    status: "False"
+    type: DiskPressure
+  - lastHeartbeatTime: 2018-12-16T16:59:56Z
+    lastTransitionTime: 2018-12-10T14:33:17Z
+    message: kubelet has sufficient PID available
+    reason: KubeletHasSufficientPID
+    status: "False"
+    type: PIDPressure
+  - lastHeartbeatTime: 2018-12-16T16:59:56Z
+    lastTransitionTime: 2018-12-10T14:34:07Z
+spec:
+    message: kubelet is posting ready status
+    reason: KubeletReady
+    status: "True"
+    type: Ready
+  daemonEndpoints:
+    kubeletEndpoint:
+      Port: 10250
+  images:
+  - names:
+    - registry.redhat.io/openshift3/ose-node@sha256:e27ac7a2530cb9524ef656e74a55af34c4c5ec638ad37ba2da8071eba60914c7
+    - registry.redhat.io/openshift3/ose-node:v3.11
+    sizeBytes: 1169718517
+  - names:
+    - registry.redhat.io/openshift3/ose-haproxy-router@sha256:8ee644382ebeef9208b75f693bfc401b813056f79718fadb9ebd0a6877b1b3a2
+    - registry.redhat.io/openshift3/ose-haproxy-router:v3.11
+    sizeBytes: 378946753
+  - names:
+    - registry.redhat.io/openshift3/ose-docker-registry@sha256:e45d9731947216838e51b78f03f93edcf5c8446de596d7f083292bd5c6478162
+    - registry.redhat.io/openshift3/ose-docker-registry:v3.11
+    sizeBytes: 288114877
+  - names:
+    - registry.redhat.io/openshift3/ose-operator-lifecycle-manager@sha256:059cb826e68020a7aea3042a70917c00e709919f8c95125eae7430a55ad3ba61
+    - registry.redhat.io/openshift3/ose-operator-lifecycle-manager:v3.11
+    sizeBytes: 282816699
+  - names:
+    - registry.redhat.io/openshift3/ose-pod@sha256:12fe5af7f275eaca15d1a62fa90b79722052575a0d6884ba4dcfa7340e97d7de
+    - registry.redhat.io/openshift3/ose-pod:v3.11
+    - registry.redhat.io/openshift3/ose-pod:v3.11.43
+    sizeBytes: 238104292
+  nodeInfo:
+    architecture: amd64
+    bootID: b8a540ca-c3d2-42cb-96d9-48aed1444606
+    containerRuntimeVersion: docker://1.13.1
+    kernelVersion: 3.10.0-957.1.3.el7.x86_64
+    kubeProxyVersion: v1.11.0+d4cacc0
+    kubeletVersion: v1.11.0+d4cacc0
+    machineID: 3efe563f18d04c63817c70da618d70b7
+    operatingSystem: linux
+    osImage: Employee SKU
+    systemUUID: 3EFE563F-18D0-4C63-817C-70DA618D70B7
+
+
+[quicklab@node-0 openshift-ansible]$ oc get all
+NAME                                      DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+daemonset.apps/local-volume-provisioner   0         0         0         0            0           type=infra      44m
+
+[quicklab@node-0 openshift-ansible]$ oc edit daemonset.apps/local-volume-provisioner
+daemonset.apps/local-volume-provisioner edited
+
+
+[quicklab@node-0 openshift-ansible]$ oc get all
+NAME                                 READY     STATUS    RESTARTS   AGE
+pod/local-volume-provisioner-gkzvz   1/1       Running   0          6s
+pod/local-volume-provisioner-glmbx   1/1       Running   0          6s
+
+NAME                                      DESIRED   CURRENT   READY     UP-TO-DATE   AVAILABLE   NODE SELECTOR   AGE
+daemonset.apps/local-volume-provisioner   8         2         2         2            2           <none>          45m
+
+
+
+[quicklab@node-0 openshift-ansible]$ oc get nodes -o wide
+NAME                                            STATUS    ROLES     AGE       VERSION           INTERNAL-IP     EXTERNAL-IP   OS-IMAGE       KERNEL-VERSION              CONTAINER-RUNTIME
+node-0.rajranjaapps.lab.pnq2.cee.redhat.com     Ready     compute   6d        v1.11.0+d4cacc0   10.74.176.89    <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-0.rajranjainfra.lab.pnq2.cee.redhat.com    Ready     infra     6d        v1.11.0+d4cacc0   10.74.176.182   <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-0.rajranjamaster.lab.pnq2.cee.redhat.com   Ready     master    6d        v1.11.0+d4cacc0   10.74.176.18    <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-1.rajranjaapps.lab.pnq2.cee.redhat.com     Ready     compute   6d        v1.11.0+d4cacc0   10.74.177.44    <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-1.rajranjainfra.lab.pnq2.cee.redhat.com    Ready     infra     6d        v1.11.0+d4cacc0   10.74.176.232   <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-1.rajranjamaster.lab.pnq2.cee.redhat.com   Ready     master    6d        v1.11.0+d4cacc0   10.74.176.74    <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-2.rajranjainfra.lab.pnq2.cee.redhat.com    Ready     infra     6d        v1.11.0+d4cacc0   10.74.176.62    <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+node-2.rajranjamaster.lab.pnq2.cee.redhat.com   Ready     master    6d        v1.11.0+d4cacc0   10.74.176.219   <none>        Employee SKU   3.10.0-957.1.3.el7.x86_64   docker://1.13.1
+
+
+
+[quicklab@node-0 openshift-ansible]$ oc get pods
+NAME                             READY     STATUS    RESTARTS   AGE
+local-volume-provisioner-gkzvz   1/1       Running   0          1m
+local-volume-provisioner-glmbx   1/1       Running   0          1m
+
+
+
+[quicklab@node-0 openshift-ansible]$ oc get pods -o wide
+NAME                             READY     STATUS    RESTARTS   AGE       IP           NODE                                          NOMINATED NODE
+local-volume-provisioner-gkzvz   1/1       Running   0          1m        10.131.0.5   node-1.rajranjaapps.lab.pnq2.cee.redhat.com   <none>
+local-volume-provisioner-glmbx   1/1       Running   0          1m        10.128.2.4   node-0.rajranjaapps.lab.pnq2.cee.redhat.com   <none>
+[quicklab@node-0 openshift-ansible]$ oc get daemonset.apps/local-volume-provisioner -o yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  annotations:
+    deprecated.daemonset.template.generation: "3"
+    openshift.io/generated-by: OpenShiftNewApp
+  creationTimestamp: 2018-12-16T16:17:47Z
+  generation: 3
+  labels:
+    app: local-volume-provisioner
+  name: local-volume-provisioner
+  namespace: local-storage
+  resourceVersion: "1454324"
+  selfLink: /apis/apps/v1/namespaces/local-storage/daemonsets/local-volume-provisioner
+  uid: 20707101-014e-11e9-908c-fa163e4feb58
+spec:
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: local-volume-provisioner
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: local-volume-provisioner
+    spec:
+      containers:
+      - env:
+        - name: MY_NODE_NAME
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: spec.nodeName
+        - name: MY_NAMESPACE
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+        - name: VOLUME_CONFIG_NAME
+          value: local-volume-config
+        image: registry.redhat.io/openshift3/local-storage-provisioner:v3.11
+        imagePullPolicy: IfNotPresent
+        name: provisioner
+        resources: {}
+        securityContext:
+          runAsUser: 0
+          seLinuxOptions:
+            level: s0:c0.c1023
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /mnt/local-storage
+          mountPropagation: HostToContainer
+          name: local-storage
+        - mountPath: /etc/provisioner/config
+          name: provisioner-config
+          readOnly: true
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      serviceAccount: local-storage-admin
+      serviceAccountName: local-storage-admin
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - hostPath:
+          path: /mnt/local-storage
+          type: ""
+        name: local-storage
+      - configMap:
+          defaultMode: 420
+          name: local-volume-config
+        name: provisioner-config
+  updateStrategy:
+    type: OnDelete
+status:
+  currentNumberScheduled: 2
+  desiredNumberScheduled: 8
+  numberAvailable: 2
+  numberMisscheduled: 0
+  numberReady: 2
+  numberUnavailable: 6
+  observedGeneration: 3
+  updatedNumberScheduled: 2
+[quicklab@node-0 openshift-ansible]$

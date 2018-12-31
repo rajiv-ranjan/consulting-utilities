@@ -1,0 +1,37 @@
+---
+- hosts: OSEv3
+  tasks:
+    - name: Changing dhclient to point to dns server
+      command: lsblk -fs
+      register: lsblk_result
+    - name: Value of lsblk 
+      debug: 
+        var: lsblk_result
+        verbosity: 4
+
+    - name: umount the vdb disk
+      command: umount /dev/vdb
+      ignore_errors: yes
+      register: umount_result
+    - name: umount_result
+      debug: 
+        var: umount_result
+        verbosity: 4
+
+    - name: wipe the fs
+      command: wipefs -a
+      register: wipefs_result
+    - name: wipefs_result
+      debug: 
+        var: wipefs_result
+        verbosity: 4
+# below copy is not coping the content of the file rather the file path. revisit
+    - name: Copy using the content for inline data
+      copy:
+        content: 'DEVS=/dev/vdb'
+        dest: /etc/sysconfig/docker-storage-setup
+
+    - name: Run docker-storage-setup command
+      command: docker-storage-setup
+
+## WIPE_SIGNATURES=true can be used in the docker-storage-setup file

@@ -1,0 +1,659 @@
+TASK [openshift_control_plane : Start and enable self-hosting node] ****************************************************************************************************************************************
+Wednesday 05 December 2018  11:33:30 -0500 (0:00:00.246)       0:07:14.304 ****
+changed: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+changed: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+changed: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : Get node logs] *************************************************************************************************************************************************************
+Wednesday 05 December 2018  11:33:32 -0500 (0:00:01.578)       0:07:15.882 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : debug] *********************************************************************************************************************************************************************
+Wednesday 05 December 2018  11:33:32 -0500 (0:00:00.237)       0:07:16.119 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : fail] **********************************************************************************************************************************************************************
+Wednesday 05 December 2018  11:33:32 -0500 (0:00:00.229)       0:07:16.349 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : Wait for control plane pods to appear] *************************************************************************************************************************************
+Wednesday 05 December 2018  11:33:32 -0500 (0:00:00.246)       0:07:16.596 ****
+FAILED - RETRYING: Wait for control plane pods to appear (60 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (59 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (58 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (60 retries left).
+ok: [master-2.rajranja.lab.pnq2.cee.redhat.com] => (item=etcd)
+FAILED - RETRYING: Wait for control plane pods to appear (60 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (59 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (59 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (57 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (58 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (58 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (56 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (57 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (57 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (55 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (56 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (56 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (54 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (55 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (55 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (53 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (54 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (52 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (53 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (52 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (51 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (54 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (50 retries left).
+ok: [master-0.rajranja.lab.pnq2.cee.redhat.com] => (item=etcd)
+FAILED - RETRYING: Wait for control plane pods to appear (53 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (49 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (52 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (60 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (51 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (59 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (58 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (48 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (50 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (57 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (47 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (56 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (46 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (49 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (55 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (45 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (48 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (54 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (44 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (47 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (53 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (43 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (46 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (52 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (42 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (45 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (51 retries left).
+ok: [master-2.rajranja.lab.pnq2.cee.redhat.com] => (item=api)
+FAILED - RETRYING: Wait for control plane pods to appear (60 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (44 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (50 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (59 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (43 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (49 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (58 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (42 retries left).
+ok: [master-0.rajranja.lab.pnq2.cee.redhat.com] => (item=api)
+ok: [master-0.rajranja.lab.pnq2.cee.redhat.com] => (item=controllers)
+FAILED - RETRYING: Wait for control plane pods to appear (57 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (41 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (56 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (40 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (55 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (39 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (54 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (38 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (53 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (37 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (52 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (36 retries left).
+ok: [master-2.rajranja.lab.pnq2.cee.redhat.com] => (item=controllers)
+FAILED - RETRYING: Wait for control plane pods to appear (35 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (34 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (33 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (32 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (31 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (30 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (29 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (28 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (27 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (26 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (25 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (24 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (23 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (22 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (21 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (20 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (19 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (18 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (17 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (16 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (15 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (14 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (13 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (12 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (11 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (10 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (9 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (8 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (7 retries left).
+ok: [master-1.rajranja.lab.pnq2.cee.redhat.com] => (item=etcd)
+FAILED - RETRYING: Wait for control plane pods to appear (60 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (59 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (58 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (57 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (56 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (55 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (54 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (53 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (52 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (51 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (50 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (49 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (48 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (47 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (46 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (45 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (44 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (43 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (42 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (41 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (40 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (39 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (38 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (37 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (36 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (35 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (34 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (33 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (32 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (31 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (30 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (29 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (28 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (27 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (26 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (25 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (24 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (23 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (22 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (21 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (20 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (19 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (18 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (17 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (16 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (15 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (14 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (13 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (12 retries left).
+ok: [master-1.rajranja.lab.pnq2.cee.redhat.com] => (item=api)
+FAILED - RETRYING: Wait for control plane pods to appear (60 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (59 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (58 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (57 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (56 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (55 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (54 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (53 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (52 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (51 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (50 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (49 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (48 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (47 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (46 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (45 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (44 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (43 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (42 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (41 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (40 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (39 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (38 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (37 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (36 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (35 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (34 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (33 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (32 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (31 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (30 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (29 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (28 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (27 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (26 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (25 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (24 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (23 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (22 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (21 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (20 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (19 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (18 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (17 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (16 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (15 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (14 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (13 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (12 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (11 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (10 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (9 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (8 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (7 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (6 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (5 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (4 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (3 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (2 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (1 retries left).
+failed: [master-1.rajranja.lab.pnq2.cee.redhat.com] (item=controllers) => {"attempts": 60, "changed": false, "item": "controllers", "msg": {"cmd": "/bin/oc get pod master-controllers-master-1.rajranja.lab.pnq2.cee.redhat.com -o json -n kube-system", "results": [{}], "returncode": 1, "stderr": "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\n", "stdout": ""}}
+...ignoring
+
+TASK [openshift_control_plane : Check status in the kube-system namespace] *********************************************************************************************************************************
+Wednesday 05 December 2018  11:50:31 -0500 (0:16:58.374)       0:24:14.970 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+fatal: [master-1.rajranja.lab.pnq2.cee.redhat.com]: FAILED! => {"changed": true, "cmd": ["oc", "status", "--config=/etc/origin/master/admin.kubeconfig", "-n", "kube-system"], "delta": "0:00:00.286334", "end": "2018-12-05 11:50:32.136567", "msg": "non-zero return code", "rc": 1, "start": "2018-12-05 11:50:31.850233", "stderr": "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host\nUnable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "stderr_lines": ["Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+TASK [openshift_control_plane : debug] *********************************************************************************************************************************************************************
+Wednesday 05 December 2018  11:50:32 -0500 (0:00:00.855)       0:24:15.826 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+ok: [master-1.rajranja.lab.pnq2.cee.redhat.com] => {
+    "msg": []
+}
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : Get pods in the kube-system namespace] *************************************************************************************************************************************
+Wednesday 05 December 2018  11:50:32 -0500 (0:00:00.338)       0:24:16.164 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+fatal: [master-1.rajranja.lab.pnq2.cee.redhat.com]: FAILED! => {"changed": true, "cmd": ["oc", "get", "pods", "--config=/etc/origin/master/admin.kubeconfig", "-n", "kube-system", "-o", "wide"], "delta": "0:00:00.339194", "end": "2018-12-05 11:50:33.315093", "msg": "non-zero return code", "rc": 1, "start": "2018-12-05 11:50:32.975899", "stderr": "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "stderr_lines": ["Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+TASK [openshift_control_plane : debug] *********************************************************************************************************************************************************************
+Wednesday 05 December 2018  11:50:33 -0500 (0:00:00.837)       0:24:17.001 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+ok: [master-1.rajranja.lab.pnq2.cee.redhat.com] => {
+    "msg": []
+}
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : Get events in the kube-system namespace] ***********************************************************************************************************************************
+Wednesday 05 December 2018  11:50:33 -0500 (0:00:00.265)       0:24:17.267 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+fatal: [master-1.rajranja.lab.pnq2.cee.redhat.com]: FAILED! => {"changed": true, "cmd": ["oc", "get", "events", "--config=/etc/origin/master/admin.kubeconfig", "-n", "kube-system"], "delta": "0:00:00.332798", "end": "2018-12-05 11:50:34.405499", "msg": "non-zero return code", "rc": 1, "start": "2018-12-05 11:50:34.072701", "stderr": "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host", "stderr_lines": ["Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.91:53: no such host"], "stdout": "", "stdout_lines": []}
+...ignoring
+
+TASK [openshift_control_plane : debug] *********************************************************************************************************************************************************************
+Wednesday 05 December 2018  11:50:34 -0500 (0:00:00.826)       0:24:18.093 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+ok: [master-1.rajranja.lab.pnq2.cee.redhat.com] => {
+    "msg": []
+}
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : Get node logs] *************************************************************************************************************************************************************
+Wednesday 05 December 2018  11:50:34 -0500 (0:00:00.282)       0:24:18.376 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+changed: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : debug] *********************************************************************************************************************************************************************
+Wednesday 05 December 2018  11:50:35 -0500 (0:00:00.667)       0:24:19.043 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+ok: [master-1.rajranja.lab.pnq2.cee.redhat.com] => {
+    "msg": [
+        "-- Logs begin at Tue 2018-12-04 11:51:58 EST, end at Wed 2018-12-05 11:50:35 EST. --",
+        "Dec 05 11:49:37 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:49:37.850165   15227 kubelet.go:2101] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:49:38 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:38.025833   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:49:39 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:39.605975   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 443, Path: healthz",
+        "Dec 05 11:49:39 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:39.606010   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:49:39 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:39.613762   15227 http.go:96] Probe succeeded for https://10.74.177.91:443/healthz, Response: {200 OK 200 HTTP/2.0 2 0 map[Audit-Id:[f1b60d29-17a0-4e43-b4e0-d273a8fddad0] Cache-Control:[no-store] Content-Type:[text/plain; charset=utf-8] Content-Length:[2] Date:[Wed, 05 Dec 2018 16:49:39 GMT]] 0xc421813540 2 [] false false map[] 0xc421a6fe00 0xc4212b3600}",
+        "Dec 05 11:49:39 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:39.613863   15227 prober.go:118] Liveness probe for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa):api\" succeeded",
+        "Dec 05 11:49:40 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:40.025996   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:49:41 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:41.195746   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 443, Path: healthz/ready",
+        "Dec 05 11:49:41 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:41.195785   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:49:41 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:41.202599   15227 http.go:96] Probe succeeded for https://10.74.177.91:443/healthz/ready, Response: {200 OK 200 HTTP/2.0 2 0 map[Audit-Id:[fe1109bd-f3da-4356-a0cb-85a09b9ed5a6] Cache-Control:[no-store] Content-Type:[text/plain; charset=utf-8] Content-Length:[2] Date:[Wed, 05 Dec 2018 16:49:41 GMT]] 0xc422795fa0 2 [] false false map[] 0xc4223fea00 0xc4221742c0}",
+        "Dec 05 11:49:41 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:41.202638   15227 prober.go:118] Readiness probe for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa):api\" succeeded",
+        "Dec 05 11:49:42 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:42.025780   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:49:42 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: W1205 11:49:42.851596   15227 cni.go:172] Unable to update cni config: No networks found in /etc/cni/net.d",
+        "Dec 05 11:49:42 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:42.851710   15227 kubelet.go:2098] Container runtime status: Runtime Conditions: RuntimeReady=true reason: message:, NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:49:42 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:49:42.851746   15227 kubelet.go:2101] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:49:44 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:44.025800   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:45.416211   15227 eviction_manager.go:226] eviction manager: synchronize housekeeping",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:49:45.445050   15227 summary.go:102] Failed to get system container stats for \"/system.slice/atomic-openshift-node.service\": failed to get cgroup stats for \"/system.slice/atomic-openshift-node.service\": failed to get container info for \"/system.slice/atomic-openshift-node.service\": unknown container \"/system.slice/atomic-openshift-node.service\"",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:45.446830   15227 helpers.go:836] eviction manager: observations: signal=allocatableMemory.available, available: 15533820Ki, capacity: 16266696Ki, time: 2018-12-05 11:49:45.44674228 -0500 EST m=+973.973524741",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:45.446881   15227 helpers.go:836] eviction manager: observations: signal=nodefs.available, available: 7419748Ki, capacity: 10474476Ki, time: 2018-12-05 11:49:45.41743343 -0500 EST m=+973.944215902",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:45.446891   15227 helpers.go:836] eviction manager: observations: signal=nodefs.inodesFree, available: 5187405, capacity: 5242304, time: 2018-12-05 11:49:45.41743343 -0500 EST m=+973.944215902",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:45.446914   15227 helpers.go:836] eviction manager: observations: signal=imagefs.available, available: 6541Mi, capacity: 8140Mi, time: 2018-12-05 11:49:45.41743343 -0500 EST m=+973.944215902",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:45.446925   15227 helpers.go:836] eviction manager: observations: signal=pid.available, available: 32403, capacity: 32Ki, time: 2018-12-05 11:49:45.44501957 -0500 EST m=+973.971802017",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:45.446934   15227 helpers.go:836] eviction manager: observations: signal=memory.available, available: 14595676Ki, capacity: 16266696Ki, time: 2018-12-05 11:49:45.41743343 -0500 EST m=+973.944215902",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:45.447024   15227 eviction_manager.go:317] eviction manager: no resources are starved",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:45.676789   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 8444, Path: healthz",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:45.676829   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:45.684770   15227 http.go:96] Probe succeeded for https://10.74.177.91:8444/healthz, Response: {200 OK 200 HTTP/1.1 1 1 map[Date:[Wed, 05 Dec 2018 16:49:45 GMT] Content-Length:[2] Content-Type:[text/plain; charset=utf-8]] 0xc421458dc0 2 [] true false map[] 0xc421844f00 0xc421a7d810}",
+        "Dec 05 11:49:45 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:45.684816   15227 prober.go:118] Liveness probe for \"master-controllers-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(c1e6d2ffeb886b64c52fff654d5f1c9a):controllers\" succeeded",
+        "Dec 05 11:49:46 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:46.025938   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:49:46 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:46.738138   15227 prober.go:150] Exec-Probe Pod: &Pod{ObjectMeta:k8s_io_apimachinery_pkg_apis_meta_v1.ObjectMeta{Name:master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com,GenerateName:,Namespace:kube-system,SelfLink:/api/v1/namespaces/kube-system/pods/master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com,UID:70627197b2c629fb6455f53915d7a0f8,ResourceVersion:,Generation:0,CreationTimestamp:0001-01-01 00:00:00 +0000 UTC,DeletionTimestamp:<nil>,DeletionGracePeriodSeconds:nil,Labels:map[string]string{openshift.io/component: etcd,openshift.io/control-plane: true,},Annotations:map[string]string{kubernetes.io/config.hash: 70627197b2c629fb6455f53915d7a0f8,kubernetes.io/config.seen: 2018-12-05T11:33:51.879727464-05:00,kubernetes.io/config.source: file,scheduler.alpha.kubernetes.io/critical-pod: ,},OwnerReferences:[],Finalizers:[],ClusterName:,Initializers:nil,},Spec:PodSpec{Volumes:[{master-config {HostPathVolumeSource{Path:/etc/etcd/,Type:*,} nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil}} {master-data {&HostPathVolumeSource{Path:/var/lib/etcd,Type:*,} nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil}}],Containers:[{etcd registry.redhat.io/rhel7/etcd:3.2.22 [/bin/sh -c] [#!/bin/sh",
+        "Dec 05 11:49:46 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: set -o allexport",
+        "Dec 05 11:49:46 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: source /etc/etcd/etcd.conf",
+        "Dec 05 11:49:46 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: exec etcd",
+        "Dec 05 11:49:46 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: ] /var/lib/etcd [] [] [] {map[] map[]} [{master-config true /etc/etcd/  <nil>} {master-data false /var/lib/etcd/  <nil>}] [] Probe{Handler:Handler{Exec:&ExecAction{Command:[etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health],},HTTPGet:nil,TCPSocket:nil,},InitialDelaySeconds:45,TimeoutSeconds:1,PeriodSeconds:10,SuccessThreshold:1,FailureThreshold:3,} nil nil /dev/termination-log File IfNotPresent &SecurityContext{Capabilities:nil,Privileged:*true,SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,ReadOnlyRootFilesystem:nil,AllowPrivilegeEscalation:nil,RunAsGroup:nil,} false false false}],RestartPolicy:Always,TerminationGracePeriodSeconds:*30,ActiveDeadlineSeconds:nil,DNSPolicy:ClusterFirst,NodeSelector:map[string]string{},ServiceAccountName:,DeprecatedServiceAccount:,NodeName:master-1.rajranja.lab.pnq2.cee.redhat.com,HostNetwork:true,HostPID:false,HostIPC:false,SecurityContext:&PodSecurityContext{SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,SupplementalGroups:[],FSGroup:nil,RunAsGroup:nil,Sysctls:[],},ImagePullSecrets:[],Hostname:,Subdomain:,Affinity:nil,SchedulerName:default-scheduler,InitContainers:[],AutomountServiceAccountToken:nil,Tolerations:[{ Exists  NoExecute <nil>}],HostAliases:[],PriorityClassName:system-node-critical,Priority:nil,DNSConfig:nil,ShareProcessNamespace:nil,ReadinessGates:[],},Status:PodStatus{Phase:Pending,Conditions:[],Message:,Reason:,HostIP:,PodIP:,StartTime:<nil>,ContainerStatuses:[],QOSClass:,InitContainerStatuses:[],NominatedNodeName:,},}, Container: {etcd registry.redhat.io/rhel7/etcd:3.2.22 [/bin/sh -c] [#!/bin/sh",
+        "Dec 05 11:49:46 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: set -o allexport",
+        "Dec 05 11:49:46 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: source /etc/etcd/etcd.conf",
+        "Dec 05 11:49:46 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: exec etcd",
+        "Dec 05 11:49:46 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: ] /var/lib/etcd [] [] [] {map[] map[]} [{master-config true /etc/etcd/  <nil>} {master-data false /var/lib/etcd/  <nil>}] [] &Probe{Handler:Handler{Exec:&ExecAction{Command:[etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health],},HTTPGet:nil,TCPSocket:nil,},InitialDelaySeconds:45,TimeoutSeconds:1,PeriodSeconds:10,SuccessThreshold:1,FailureThreshold:3,} nil nil /dev/termination-log File IfNotPresent &SecurityContext{Capabilities:nil,Privileged:*true,SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,ReadOnlyRootFilesystem:nil,AllowPrivilegeEscalation:nil,RunAsGroup:nil,} false false false}, Command: [etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health]",
+        "Dec 05 11:49:47 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:47.043751   15227 exec.go:38] Exec probe response: \"member ad394f8dea0eb29 is healthy: got healthy result from https://10.74.176.68:2379\\nmember 30f12365b88412bb is healthy: got healthy result from https://10.74.177.85:2379\\nmember 68841e3ceb7b8795 is healthy: got healthy result from https://10.74.177.91:2379\\ncluster is healthy\\n\"",
+        "Dec 05 11:49:47 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:47.043804   15227 prober.go:118] Liveness probe for \"master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(70627197b2c629fb6455f53915d7a0f8):etcd\" succeeded",
+        "Dec 05 11:49:47 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: W1205 11:49:47.853235   15227 cni.go:172] Unable to update cni config: No networks found in /etc/cni/net.d",
+        "Dec 05 11:49:47 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:47.853366   15227 kubelet.go:2098] Container runtime status: Runtime Conditions: RuntimeReady=true reason: message:, NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:49:47 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:49:47.853384   15227 kubelet.go:2101] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:49:48 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:48.025811   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:49:49 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:49.605946   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 443, Path: healthz",
+        "Dec 05 11:49:49 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:49.605982   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:49:49 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:49.614036   15227 http.go:96] Probe succeeded for https://10.74.177.91:443/healthz, Response: {200 OK 200 HTTP/2.0 2 0 map[Audit-Id:[2903acdd-4dc8-4639-8d63-3deb684e2162] Cache-Control:[no-store] Content-Type:[text/plain; charset=utf-8] Content-Length:[2] Date:[Wed, 05 Dec 2018 16:49:49 GMT]] 0xc421968760 2 [] false false map[] 0xc42213e400 0xc4215f46e0}",
+        "Dec 05 11:49:49 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:49.614072   15227 prober.go:118] Liveness probe for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa):api\" succeeded",
+        "Dec 05 11:49:50 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:50.025862   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:49:51 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:51.195994   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 443, Path: healthz/ready",
+        "Dec 05 11:49:51 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:51.196027   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:49:51 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:51.204791   15227 http.go:96] Probe succeeded for https://10.74.177.91:443/healthz/ready, Response: {200 OK 200 HTTP/2.0 2 0 map[Content-Type:[text/plain; charset=utf-8] Content-Length:[2] Date:[Wed, 05 Dec 2018 16:49:51 GMT] Audit-Id:[d547e981-f2c5-401f-909c-b248446c9631] Cache-Control:[no-store]] 0xc4215cd380 2 [] false false map[] 0xc42213fd00 0xc42235a8f0}",
+        "Dec 05 11:49:51 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:51.204876   15227 prober.go:118] Readiness probe for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa):api\" succeeded",
+        "Dec 05 11:49:51 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:51.870126   15227 file.go:199] Reading config file \"/etc/origin/node/pods/apiserver.yaml\"",
+        "Dec 05 11:49:51 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:51.871269   15227 file.go:199] Reading config file \"/etc/origin/node/pods/controller.yaml\"",
+        "Dec 05 11:49:51 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:51.872239   15227 file.go:199] Reading config file \"/etc/origin/node/pods/etcd.yaml\"",
+        "Dec 05 11:49:51 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:51.872774   15227 config.go:303] Setting pods for source file",
+        "Dec 05 11:49:52 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:52.025830   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:49:52 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: W1205 11:49:52.855018   15227 cni.go:172] Unable to update cni config: No networks found in /etc/cni/net.d",
+        "Dec 05 11:49:52 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:52.855160   15227 kubelet.go:2098] Container runtime status: Runtime Conditions: RuntimeReady=true reason: message:, NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:49:52 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:49:52.855207   15227 kubelet.go:2101] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:49:54 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:54.025862   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.025783   15227 kubelet.go:1884] SyncLoop (SYNC): 1 pods; master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa)",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.025901   15227 kubelet_pods.go:1326] Generating status for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa)\"",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.026052   15227 status_manager.go:361] Ignoring same status for pod \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa)\", status: {Phase:Running Conditions:[{Type:Initialized Status:True LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:2018-12-05 11:33:51 -0500 EST Reason: Message:} {Type:Ready Status:True LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:2018-12-05 11:34:01 -0500 EST Reason: Message:} {Type:ContainersReady Status:True LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:0001-01-01 00:00:00 +0000 UTC Reason: Message:} {Type:PodScheduled Status:True LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:2018-12-05 11:33:51 -0500 EST Reason: Message:}] Message: Reason: NominatedNodeName: HostIP:10.74.177.91 PodIP:10.74.177.91 StartTime:2018-12-05 11:33:51 -0500 EST InitContainerStatuses:[] ContainerStatuses:[{Name:api State:{Waiting:nil Running:&ContainerStateRunning{StartedAt:2018-12-05 10:55:23 -0500 EST,} Terminated:nil} LastTerminationState:{Waiting:nil Running:nil Terminated:nil} Ready:true RestartCount:0 Image:registry.redhat.io/openshift3/ose-control-plane:v3.11 ImageID:docker-pullable://registry.redhat.io/openshift3/ose-control-plane@sha256:adf53b055e13699154b6e084603b84e0ae7df8c33454e43e9530fd3eb5533977 ContainerID:docker://0eb9d24a318e4a22027521095eb4c6588f13fd61721b4c0655444ccba419b32b}] QOSClass:BestEffort}",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.026396   15227 volume_manager.go:347] Waiting for volumes to attach and mount for pod \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa)\"",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.049067   15227 desired_state_of_world_populator.go:320] Added volume \"master-config\" (volSpec=\"master-config\") for pod \"e505cdb7c17b8f3d9cb85e21d76129aa\" to desired state.",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.049099   15227 desired_state_of_world_populator.go:320] Added volume \"master-cloud-provider\" (volSpec=\"master-cloud-provider\") for pod \"e505cdb7c17b8f3d9cb85e21d76129aa\" to desired state.",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.049117   15227 desired_state_of_world_populator.go:320] Added volume \"master-data\" (volSpec=\"master-data\") for pod \"e505cdb7c17b8f3d9cb85e21d76129aa\" to desired state.",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.049134   15227 desired_state_of_world_populator.go:320] Added volume \"master-pki\" (volSpec=\"master-pki\") for pod \"e505cdb7c17b8f3d9cb85e21d76129aa\" to desired state.",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.326636   15227 volume_manager.go:380] All volumes are attached and mounted for pod \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa)\"",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.326795   15227 kuberuntime_manager.go:570] computePodActions got {KillPod:false CreateSandbox:false SandboxID:29a90a628a1cf251e81e52c84bdae507be66bacaf27d9753210bc7a0f24d600b Attempt:0 NextInitContainerToStart:nil ContainersToStart:[] ContainersToKill:map[]} for pod \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa)\"",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.447218   15227 eviction_manager.go:226] eviction manager: synchronize housekeeping",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:49:55.476427   15227 summary.go:102] Failed to get system container stats for \"/system.slice/atomic-openshift-node.service\": failed to get cgroup stats for \"/system.slice/atomic-openshift-node.service\": failed to get container info for \"/system.slice/atomic-openshift-node.service\": unknown container \"/system.slice/atomic-openshift-node.service\"",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.476484   15227 helpers.go:836] eviction manager: observations: signal=nodefs.inodesFree, available: 5187405, capacity: 5242304, time: 2018-12-05 11:49:55.448557778 -0500 EST m=+983.975340251",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.476507   15227 helpers.go:836] eviction manager: observations: signal=imagefs.available, available: 6541Mi, capacity: 8140Mi, time: 2018-12-05 11:49:55.448557778 -0500 EST m=+983.975340251",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.476520   15227 helpers.go:836] eviction manager: observations: signal=pid.available, available: 32403, capacity: 32Ki, time: 2018-12-05 11:49:55.475000825 -0500 EST m=+984.001783311",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.476529   15227 helpers.go:836] eviction manager: observations: signal=memory.available, available: 14595412Ki, capacity: 16266696Ki, time: 2018-12-05 11:49:55.448557778 -0500 EST m=+983.975340251",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.476538   15227 helpers.go:836] eviction manager: observations: signal=allocatableMemory.available, available: 15533628Ki, capacity: 16266696Ki, time: 2018-12-05 11:49:55.476339222 -0500 EST m=+984.003121688",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.476547   15227 helpers.go:836] eviction manager: observations: signal=nodefs.available, available: 7419748Ki, capacity: 10474476Ki, time: 2018-12-05 11:49:55.448557778 -0500 EST m=+983.975340251",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.476564   15227 eviction_manager.go:317] eviction manager: no resources are starved",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.676874   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 8444, Path: healthz",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.676929   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.683110   15227 http.go:96] Probe succeeded for https://10.74.177.91:8444/healthz, Response: {200 OK 200 HTTP/1.1 1 1 map[Date:[Wed, 05 Dec 2018 16:49:55 GMT] Content-Length:[2] Content-Type:[text/plain; charset=utf-8]] 0xc422493e00 2 [] true false map[] 0xc42256dc00 0xc42235bc30}",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.683150   15227 prober.go:118] Liveness probe for \"master-controllers-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(c1e6d2ffeb886b64c52fff654d5f1c9a):controllers\" succeeded",
+        "Dec 05 11:49:55 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:55.851714   15227 reflector.go:359] k8s.io/kubernetes/pkg/kubelet/config/apiserver.go:47: Watch close - *v1.Pod total 0 items received",
+        "Dec 05 11:49:56 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:56.025857   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:49:56 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:56.738100   15227 prober.go:150] Exec-Probe Pod: &Pod{ObjectMeta:k8s_io_apimachinery_pkg_apis_meta_v1.ObjectMeta{Name:master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com,GenerateName:,Namespace:kube-system,SelfLink:/api/v1/namespaces/kube-system/pods/master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com,UID:70627197b2c629fb6455f53915d7a0f8,ResourceVersion:,Generation:0,CreationTimestamp:0001-01-01 00:00:00 +0000 UTC,DeletionTimestamp:<nil>,DeletionGracePeriodSeconds:nil,Labels:map[string]string{openshift.io/component: etcd,openshift.io/control-plane: true,},Annotations:map[string]string{kubernetes.io/config.hash: 70627197b2c629fb6455f53915d7a0f8,kubernetes.io/config.seen: 2018-12-05T11:33:51.879727464-05:00,kubernetes.io/config.source: file,scheduler.alpha.kubernetes.io/critical-pod: ,},OwnerReferences:[],Finalizers:[],ClusterName:,Initializers:nil,},Spec:PodSpec{Volumes:[{master-config {HostPathVolumeSource{Path:/etc/etcd/,Type:*,} nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil}} {master-data {&HostPathVolumeSource{Path:/var/lib/etcd,Type:*,} nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil}}],Containers:[{etcd registry.redhat.io/rhel7/etcd:3.2.22 [/bin/sh -c] [#!/bin/sh",
+        "Dec 05 11:49:56 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: set -o allexport",
+        "Dec 05 11:49:56 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: source /etc/etcd/etcd.conf",
+        "Dec 05 11:49:56 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: exec etcd",
+        "Dec 05 11:49:56 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: ] /var/lib/etcd [] [] [] {map[] map[]} [{master-config true /etc/etcd/  <nil>} {master-data false /var/lib/etcd/  <nil>}] [] Probe{Handler:Handler{Exec:&ExecAction{Command:[etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health],},HTTPGet:nil,TCPSocket:nil,},InitialDelaySeconds:45,TimeoutSeconds:1,PeriodSeconds:10,SuccessThreshold:1,FailureThreshold:3,} nil nil /dev/termination-log File IfNotPresent &SecurityContext{Capabilities:nil,Privileged:*true,SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,ReadOnlyRootFilesystem:nil,AllowPrivilegeEscalation:nil,RunAsGroup:nil,} false false false}],RestartPolicy:Always,TerminationGracePeriodSeconds:*30,ActiveDeadlineSeconds:nil,DNSPolicy:ClusterFirst,NodeSelector:map[string]string{},ServiceAccountName:,DeprecatedServiceAccount:,NodeName:master-1.rajranja.lab.pnq2.cee.redhat.com,HostNetwork:true,HostPID:false,HostIPC:false,SecurityContext:&PodSecurityContext{SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,SupplementalGroups:[],FSGroup:nil,RunAsGroup:nil,Sysctls:[],},ImagePullSecrets:[],Hostname:,Subdomain:,Affinity:nil,SchedulerName:default-scheduler,InitContainers:[],AutomountServiceAccountToken:nil,Tolerations:[{ Exists  NoExecute <nil>}],HostAliases:[],PriorityClassName:system-node-critical,Priority:nil,DNSConfig:nil,ShareProcessNamespace:nil,ReadinessGates:[],},Status:PodStatus{Phase:Pending,Conditions:[],Message:,Reason:,HostIP:,PodIP:,StartTime:<nil>,ContainerStatuses:[],QOSClass:,InitContainerStatuses:[],NominatedNodeName:,},}, Container: {etcd registry.redhat.io/rhel7/etcd:3.2.22 [/bin/sh -c] [#!/bin/sh",
+        "Dec 05 11:49:56 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: set -o allexport",
+        "Dec 05 11:49:56 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: source /etc/etcd/etcd.conf",
+        "Dec 05 11:49:56 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: exec etcd",
+        "Dec 05 11:49:56 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: ] /var/lib/etcd [] [] [] {map[] map[]} [{master-config true /etc/etcd/  <nil>} {master-data false /var/lib/etcd/  <nil>}] [] &Probe{Handler:Handler{Exec:&ExecAction{Command:[etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health],},HTTPGet:nil,TCPSocket:nil,},InitialDelaySeconds:45,TimeoutSeconds:1,PeriodSeconds:10,SuccessThreshold:1,FailureThreshold:3,} nil nil /dev/termination-log File IfNotPresent &SecurityContext{Capabilities:nil,Privileged:*true,SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,ReadOnlyRootFilesystem:nil,AllowPrivilegeEscalation:nil,RunAsGroup:nil,} false false false}, Command: [etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health]",
+        "Dec 05 11:49:57 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:57.056971   15227 exec.go:38] Exec probe response: \"member ad394f8dea0eb29 is healthy: got healthy result from https://10.74.176.68:2379\\nmember 30f12365b88412bb is healthy: got healthy result from https://10.74.177.85:2379\\nmember 68841e3ceb7b8795 is healthy: got healthy result from https://10.74.177.91:2379\\ncluster is healthy\\n\"",
+        "Dec 05 11:49:57 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:57.057001   15227 prober.go:118] Liveness probe for \"master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(70627197b2c629fb6455f53915d7a0f8):etcd\" succeeded",
+        "Dec 05 11:49:57 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: W1205 11:49:57.856943   15227 cni.go:172] Unable to update cni config: No networks found in /etc/cni/net.d",
+        "Dec 05 11:49:57 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:57.857062   15227 kubelet.go:2098] Container runtime status: Runtime Conditions: RuntimeReady=true reason: message:, NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:49:57 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:49:57.857085   15227 kubelet.go:2101] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:49:58 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:58.025900   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:49:59 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:59.605976   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 443, Path: healthz",
+        "Dec 05 11:49:59 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:59.606028   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:49:59 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:59.617048   15227 http.go:96] Probe succeeded for https://10.74.177.91:443/healthz, Response: {200 OK 200 HTTP/2.0 2 0 map[Date:[Wed, 05 Dec 2018 16:49:59 GMT] Audit-Id:[7945a513-361e-4b41-8da7-0c7a22da0002] Cache-Control:[no-store] Content-Type:[text/plain; charset=utf-8] Content-Length:[2]] 0xc420e30040 2 [] false false map[] 0xc421185a00 0xc42235a160}",
+        "Dec 05 11:49:59 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:49:59.617136   15227 prober.go:118] Liveness probe for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa):api\" succeeded",
+        "Dec 05 11:50:00 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:00.025943   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:01 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:01.195780   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 443, Path: healthz/ready",
+        "Dec 05 11:50:01 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:01.195810   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:50:01 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:01.202857   15227 http.go:96] Probe succeeded for https://10.74.177.91:443/healthz/ready, Response: {200 OK 200 HTTP/2.0 2 0 map[Cache-Control:[no-store] Content-Type:[text/plain; charset=utf-8] Content-Length:[2] Date:[Wed, 05 Dec 2018 16:50:01 GMT] Audit-Id:[9a7575fe-473d-48be-9742-797af724759c]] 0xc420ea7f20 2 [] false false map[] 0xc420c95000 0xc4215f56b0}",
+        "Dec 05 11:50:01 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:01.202894   15227 prober.go:118] Readiness probe for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa):api\" succeeded",
+        "Dec 05 11:50:02 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:02.025813   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:02 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: W1205 11:50:02.859927   15227 cni.go:172] Unable to update cni config: No networks found in /etc/cni/net.d",
+        "Dec 05 11:50:02 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:02.860055   15227 kubelet.go:2098] Container runtime status: Runtime Conditions: RuntimeReady=true reason: message:, NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:02 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:50:02.860075   15227 kubelet.go:2101] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:04 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:04.025914   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:05.476635   15227 eviction_manager.go:226] eviction manager: synchronize housekeeping",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:50:05.508263   15227 summary.go:102] Failed to get system container stats for \"/system.slice/atomic-openshift-node.service\": failed to get cgroup stats for \"/system.slice/atomic-openshift-node.service\": failed to get container info for \"/system.slice/atomic-openshift-node.service\": unknown container \"/system.slice/atomic-openshift-node.service\"",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:05.508297   15227 helpers.go:836] eviction manager: observations: signal=memory.available, available: 14595108Ki, capacity: 16266696Ki, time: 2018-12-05 11:50:05.478122366 -0500 EST m=+994.004904864",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:05.508323   15227 helpers.go:836] eviction manager: observations: signal=allocatableMemory.available, available: 15533444Ki, capacity: 16266696Ki, time: 2018-12-05 11:50:05.508104404 -0500 EST m=+994.034886916",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:05.508333   15227 helpers.go:836] eviction manager: observations: signal=nodefs.available, available: 7419748Ki, capacity: 10474476Ki, time: 2018-12-05 11:50:05.478122366 -0500 EST m=+994.004904864",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:05.508342   15227 helpers.go:836] eviction manager: observations: signal=nodefs.inodesFree, available: 5187405, capacity: 5242304, time: 2018-12-05 11:50:05.478122366 -0500 EST m=+994.004904864",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:05.508352   15227 helpers.go:836] eviction manager: observations: signal=imagefs.available, available: 6541Mi, capacity: 8140Mi, time: 2018-12-05 11:50:05.478122366 -0500 EST m=+994.004904864",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:05.508360   15227 helpers.go:836] eviction manager: observations: signal=pid.available, available: 32403, capacity: 32Ki, time: 2018-12-05 11:50:05.507035776 -0500 EST m=+994.033818253",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:05.508379   15227 eviction_manager.go:317] eviction manager: no resources are starved",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:05.676878   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 8444, Path: healthz",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:05.676940   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:05.683287   15227 http.go:96] Probe succeeded for https://10.74.177.91:8444/healthz, Response: {200 OK 200 HTTP/1.1 1 1 map[Date:[Wed, 05 Dec 2018 16:50:05 GMT] Content-Length:[2] Content-Type:[text/plain; charset=utf-8]] 0xc421eddc20 2 [] true false map[] 0xc420d21600 0xc420b52a50}",
+        "Dec 05 11:50:05 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:05.683326   15227 prober.go:118] Liveness probe for \"master-controllers-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(c1e6d2ffeb886b64c52fff654d5f1c9a):controllers\" succeeded",
+        "Dec 05 11:50:06 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:06.025859   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:06 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:06.738186   15227 prober.go:150] Exec-Probe Pod: &Pod{ObjectMeta:k8s_io_apimachinery_pkg_apis_meta_v1.ObjectMeta{Name:master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com,GenerateName:,Namespace:kube-system,SelfLink:/api/v1/namespaces/kube-system/pods/master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com,UID:70627197b2c629fb6455f53915d7a0f8,ResourceVersion:,Generation:0,CreationTimestamp:0001-01-01 00:00:00 +0000 UTC,DeletionTimestamp:<nil>,DeletionGracePeriodSeconds:nil,Labels:map[string]string{openshift.io/component: etcd,openshift.io/control-plane: true,},Annotations:map[string]string{kubernetes.io/config.hash: 70627197b2c629fb6455f53915d7a0f8,kubernetes.io/config.seen: 2018-12-05T11:33:51.879727464-05:00,kubernetes.io/config.source: file,scheduler.alpha.kubernetes.io/critical-pod: ,},OwnerReferences:[],Finalizers:[],ClusterName:,Initializers:nil,},Spec:PodSpec{Volumes:[{master-config {HostPathVolumeSource{Path:/etc/etcd/,Type:*,} nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil}} {master-data {&HostPathVolumeSource{Path:/var/lib/etcd,Type:*,} nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil}}],Containers:[{etcd registry.redhat.io/rhel7/etcd:3.2.22 [/bin/sh -c] [#!/bin/sh",
+        "Dec 05 11:50:06 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: set -o allexport",
+        "Dec 05 11:50:06 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: source /etc/etcd/etcd.conf",
+        "Dec 05 11:50:06 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: exec etcd",
+        "Dec 05 11:50:06 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: ] /var/lib/etcd [] [] [] {map[] map[]} [{master-config true /etc/etcd/  <nil>} {master-data false /var/lib/etcd/  <nil>}] [] Probe{Handler:Handler{Exec:&ExecAction{Command:[etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health],},HTTPGet:nil,TCPSocket:nil,},InitialDelaySeconds:45,TimeoutSeconds:1,PeriodSeconds:10,SuccessThreshold:1,FailureThreshold:3,} nil nil /dev/termination-log File IfNotPresent &SecurityContext{Capabilities:nil,Privileged:*true,SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,ReadOnlyRootFilesystem:nil,AllowPrivilegeEscalation:nil,RunAsGroup:nil,} false false false}],RestartPolicy:Always,TerminationGracePeriodSeconds:*30,ActiveDeadlineSeconds:nil,DNSPolicy:ClusterFirst,NodeSelector:map[string]string{},ServiceAccountName:,DeprecatedServiceAccount:,NodeName:master-1.rajranja.lab.pnq2.cee.redhat.com,HostNetwork:true,HostPID:false,HostIPC:false,SecurityContext:&PodSecurityContext{SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,SupplementalGroups:[],FSGroup:nil,RunAsGroup:nil,Sysctls:[],},ImagePullSecrets:[],Hostname:,Subdomain:,Affinity:nil,SchedulerName:default-scheduler,InitContainers:[],AutomountServiceAccountToken:nil,Tolerations:[{ Exists  NoExecute <nil>}],HostAliases:[],PriorityClassName:system-node-critical,Priority:nil,DNSConfig:nil,ShareProcessNamespace:nil,ReadinessGates:[],},Status:PodStatus{Phase:Pending,Conditions:[],Message:,Reason:,HostIP:,PodIP:,StartTime:<nil>,ContainerStatuses:[],QOSClass:,InitContainerStatuses:[],NominatedNodeName:,},}, Container: {etcd registry.redhat.io/rhel7/etcd:3.2.22 [/bin/sh -c] [#!/bin/sh",
+        "Dec 05 11:50:06 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: set -o allexport",
+        "Dec 05 11:50:06 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: source /etc/etcd/etcd.conf",
+        "Dec 05 11:50:06 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: exec etcd",
+        "Dec 05 11:50:06 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: ] /var/lib/etcd [] [] [] {map[] map[]} [{master-config true /etc/etcd/  <nil>} {master-data false /var/lib/etcd/  <nil>}] [] &Probe{Handler:Handler{Exec:&ExecAction{Command:[etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health],},HTTPGet:nil,TCPSocket:nil,},InitialDelaySeconds:45,TimeoutSeconds:1,PeriodSeconds:10,SuccessThreshold:1,FailureThreshold:3,} nil nil /dev/termination-log File IfNotPresent &SecurityContext{Capabilities:nil,Privileged:*true,SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,ReadOnlyRootFilesystem:nil,AllowPrivilegeEscalation:nil,RunAsGroup:nil,} false false false}, Command: [etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health]",
+        "Dec 05 11:50:06 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:06.847667   15227 reflector.go:359] k8s.io/kubernetes/pkg/kubelet/kubelet.go:455: Watch close - *v1.Service total 0 items received",
+        "Dec 05 11:50:07 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:07.001105   15227 exec.go:38] Exec probe response: \"member ad394f8dea0eb29 is healthy: got healthy result from https://10.74.176.68:2379\\nmember 30f12365b88412bb is healthy: got healthy result from https://10.74.177.85:2379\\nmember 68841e3ceb7b8795 is healthy: got healthy result from https://10.74.177.91:2379\\ncluster is healthy\\n\"",
+        "Dec 05 11:50:07 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:07.001135   15227 prober.go:118] Liveness probe for \"master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(70627197b2c629fb6455f53915d7a0f8):etcd\" succeeded",
+        "Dec 05 11:50:07 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: W1205 11:50:07.861792   15227 cni.go:172] Unable to update cni config: No networks found in /etc/cni/net.d",
+        "Dec 05 11:50:07 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:07.861954   15227 kubelet.go:2098] Container runtime status: Runtime Conditions: RuntimeReady=true reason: message:, NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:07 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:50:07.861971   15227 kubelet.go:2101] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:08 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:08.025853   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:09 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:09.605948   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 443, Path: healthz",
+        "Dec 05 11:50:09 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:09.605979   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:50:09 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:09.613420   15227 http.go:96] Probe succeeded for https://10.74.177.91:443/healthz, Response: {200 OK 200 HTTP/2.0 2 0 map[Content-Length:[2] Date:[Wed, 05 Dec 2018 16:50:09 GMT] Audit-Id:[81dbe76c-bec2-4bf6-80db-39583b959544] Cache-Control:[no-store] Content-Type:[text/plain; charset=utf-8]] 0xc420a1f260 2 [] false false map[] 0xc42289f000 0xc421a7ce70}",
+        "Dec 05 11:50:09 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:09.613469   15227 prober.go:118] Liveness probe for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa):api\" succeeded",
+        "Dec 05 11:50:10 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:10.025827   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:11 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:11.195779   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 443, Path: healthz/ready",
+        "Dec 05 11:50:11 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:11.195813   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:50:11 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:11.203105   15227 http.go:96] Probe succeeded for https://10.74.177.91:443/healthz/ready, Response: {200 OK 200 HTTP/2.0 2 0 map[Date:[Wed, 05 Dec 2018 16:50:11 GMT] Audit-Id:[c692b6a0-dba3-4213-b0c4-2ed165697328] Cache-Control:[no-store] Content-Type:[text/plain; charset=utf-8] Content-Length:[2]] 0xc421f5c520 2 [] false false map[] 0xc42256d800 0xc421a7d340}",
+        "Dec 05 11:50:11 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:11.203151   15227 prober.go:118] Readiness probe for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa):api\" succeeded",
+        "Dec 05 11:50:11 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:11.870354   15227 file.go:199] Reading config file \"/etc/origin/node/pods/apiserver.yaml\"",
+        "Dec 05 11:50:11 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:11.871502   15227 file.go:199] Reading config file \"/etc/origin/node/pods/controller.yaml\"",
+        "Dec 05 11:50:11 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:11.872236   15227 file.go:199] Reading config file \"/etc/origin/node/pods/etcd.yaml\"",
+        "Dec 05 11:50:11 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:11.872765   15227 config.go:303] Setting pods for source file",
+        "Dec 05 11:50:12 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:12.025786   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:12 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: W1205 11:50:12.863969   15227 cni.go:172] Unable to update cni config: No networks found in /etc/cni/net.d",
+        "Dec 05 11:50:12 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:12.864133   15227 kubelet.go:2098] Container runtime status: Runtime Conditions: RuntimeReady=true reason: message:, NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:12 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:50:12.864149   15227 kubelet.go:2101] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:14 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:14.025801   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:15.508567   15227 eviction_manager.go:226] eviction manager: synchronize housekeeping",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:50:15.537929   15227 summary.go:102] Failed to get system container stats for \"/system.slice/atomic-openshift-node.service\": failed to get cgroup stats for \"/system.slice/atomic-openshift-node.service\": failed to get container info for \"/system.slice/atomic-openshift-node.service\": unknown container \"/system.slice/atomic-openshift-node.service\"",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:15.539229   15227 helpers.go:836] eviction manager: observations: signal=memory.available, available: 14594680Ki, capacity: 16266696Ki, time: 2018-12-05 11:50:15.51002011 -0500 EST m=+1004.036802570",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:15.539264   15227 helpers.go:836] eviction manager: observations: signal=allocatableMemory.available, available: 15533156Ki, capacity: 16266696Ki, time: 2018-12-05 11:50:15.539121188 -0500 EST m=+1004.065903658",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:15.539275   15227 helpers.go:836] eviction manager: observations: signal=nodefs.available, available: 7403280Ki, capacity: 10474476Ki, time: 2018-12-05 11:50:15.51002011 -0500 EST m=+1004.036802570",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:15.539283   15227 helpers.go:836] eviction manager: observations: signal=nodefs.inodesFree, available: 5187405, capacity: 5242304, time: 2018-12-05 11:50:15.51002011 -0500 EST m=+1004.036802570",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:15.539294   15227 helpers.go:836] eviction manager: observations: signal=imagefs.available, available: 6541Mi, capacity: 8140Mi, time: 2018-12-05 11:50:15.51002011 -0500 EST m=+1004.036802570",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:15.539303   15227 helpers.go:836] eviction manager: observations: signal=pid.available, available: 32403, capacity: 32Ki, time: 2018-12-05 11:50:15.537897786 -0500 EST m=+1004.064680272",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:15.539323   15227 eviction_manager.go:317] eviction manager: no resources are starved",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:15.676832   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 8444, Path: healthz",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:15.676925   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:15.683396   15227 http.go:96] Probe succeeded for https://10.74.177.91:8444/healthz, Response: {200 OK 200 HTTP/1.1 1 1 map[Date:[Wed, 05 Dec 2018 16:50:15 GMT] Content-Length:[2] Content-Type:[text/plain; charset=utf-8]] 0xc42209bf20 2 [] true false map[] 0xc420d21b00 0xc4212b29a0}",
+        "Dec 05 11:50:15 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:15.683440   15227 prober.go:118] Liveness probe for \"master-controllers-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(c1e6d2ffeb886b64c52fff654d5f1c9a):controllers\" succeeded",
+        "Dec 05 11:50:16 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:16.025804   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:16 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:16.738110   15227 prober.go:150] Exec-Probe Pod: &Pod{ObjectMeta:k8s_io_apimachinery_pkg_apis_meta_v1.ObjectMeta{Name:master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com,GenerateName:,Namespace:kube-system,SelfLink:/api/v1/namespaces/kube-system/pods/master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com,UID:70627197b2c629fb6455f53915d7a0f8,ResourceVersion:,Generation:0,CreationTimestamp:0001-01-01 00:00:00 +0000 UTC,DeletionTimestamp:<nil>,DeletionGracePeriodSeconds:nil,Labels:map[string]string{openshift.io/component: etcd,openshift.io/control-plane: true,},Annotations:map[string]string{kubernetes.io/config.hash: 70627197b2c629fb6455f53915d7a0f8,kubernetes.io/config.seen: 2018-12-05T11:33:51.879727464-05:00,kubernetes.io/config.source: file,scheduler.alpha.kubernetes.io/critical-pod: ,},OwnerReferences:[],Finalizers:[],ClusterName:,Initializers:nil,},Spec:PodSpec{Volumes:[{master-config {HostPathVolumeSource{Path:/etc/etcd/,Type:*,} nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil}} {master-data {&HostPathVolumeSource{Path:/var/lib/etcd,Type:*,} nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil}}],Containers:[{etcd registry.redhat.io/rhel7/etcd:3.2.22 [/bin/sh -c] [#!/bin/sh",
+        "Dec 05 11:50:16 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: set -o allexport",
+        "Dec 05 11:50:16 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: source /etc/etcd/etcd.conf",
+        "Dec 05 11:50:16 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: exec etcd",
+        "Dec 05 11:50:16 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: ] /var/lib/etcd [] [] [] {map[] map[]} [{master-config true /etc/etcd/  <nil>} {master-data false /var/lib/etcd/  <nil>}] [] Probe{Handler:Handler{Exec:&ExecAction{Command:[etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health],},HTTPGet:nil,TCPSocket:nil,},InitialDelaySeconds:45,TimeoutSeconds:1,PeriodSeconds:10,SuccessThreshold:1,FailureThreshold:3,} nil nil /dev/termination-log File IfNotPresent &SecurityContext{Capabilities:nil,Privileged:*true,SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,ReadOnlyRootFilesystem:nil,AllowPrivilegeEscalation:nil,RunAsGroup:nil,} false false false}],RestartPolicy:Always,TerminationGracePeriodSeconds:*30,ActiveDeadlineSeconds:nil,DNSPolicy:ClusterFirst,NodeSelector:map[string]string{},ServiceAccountName:,DeprecatedServiceAccount:,NodeName:master-1.rajranja.lab.pnq2.cee.redhat.com,HostNetwork:true,HostPID:false,HostIPC:false,SecurityContext:&PodSecurityContext{SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,SupplementalGroups:[],FSGroup:nil,RunAsGroup:nil,Sysctls:[],},ImagePullSecrets:[],Hostname:,Subdomain:,Affinity:nil,SchedulerName:default-scheduler,InitContainers:[],AutomountServiceAccountToken:nil,Tolerations:[{ Exists  NoExecute <nil>}],HostAliases:[],PriorityClassName:system-node-critical,Priority:nil,DNSConfig:nil,ShareProcessNamespace:nil,ReadinessGates:[],},Status:PodStatus{Phase:Pending,Conditions:[],Message:,Reason:,HostIP:,PodIP:,StartTime:<nil>,ContainerStatuses:[],QOSClass:,InitContainerStatuses:[],NominatedNodeName:,},}, Container: {etcd registry.redhat.io/rhel7/etcd:3.2.22 [/bin/sh -c] [#!/bin/sh",
+        "Dec 05 11:50:16 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: set -o allexport",
+        "Dec 05 11:50:16 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: source /etc/etcd/etcd.conf",
+        "Dec 05 11:50:16 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: exec etcd",
+        "Dec 05 11:50:16 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: ] /var/lib/etcd [] [] [] {map[] map[]} [{master-config true /etc/etcd/  <nil>} {master-data false /var/lib/etcd/  <nil>}] [] &Probe{Handler:Handler{Exec:&ExecAction{Command:[etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health],},HTTPGet:nil,TCPSocket:nil,},InitialDelaySeconds:45,TimeoutSeconds:1,PeriodSeconds:10,SuccessThreshold:1,FailureThreshold:3,} nil nil /dev/termination-log File IfNotPresent &SecurityContext{Capabilities:nil,Privileged:*true,SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,ReadOnlyRootFilesystem:nil,AllowPrivilegeEscalation:nil,RunAsGroup:nil,} false false false}, Command: [etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health]",
+        "Dec 05 11:50:16 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:16.993929   15227 exec.go:38] Exec probe response: \"member ad394f8dea0eb29 is healthy: got healthy result from https://10.74.176.68:2379\\nmember 30f12365b88412bb is healthy: got healthy result from https://10.74.177.85:2379\\nmember 68841e3ceb7b8795 is healthy: got healthy result from https://10.74.177.91:2379\\ncluster is healthy\\n\"",
+        "Dec 05 11:50:16 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:16.993962   15227 prober.go:118] Liveness probe for \"master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(70627197b2c629fb6455f53915d7a0f8):etcd\" succeeded",
+        "Dec 05 11:50:17 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: W1205 11:50:17.866417   15227 cni.go:172] Unable to update cni config: No networks found in /etc/cni/net.d",
+        "Dec 05 11:50:17 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:17.866623   15227 kubelet.go:2098] Container runtime status: Runtime Conditions: RuntimeReady=true reason: message:, NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:17 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:50:17.866650   15227 kubelet.go:2101] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:18 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:18.025905   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:19 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:19.605908   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 443, Path: healthz",
+        "Dec 05 11:50:19 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:19.605936   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:50:19 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:19.614109   15227 http.go:96] Probe succeeded for https://10.74.177.91:443/healthz, Response: {200 OK 200 HTTP/2.0 2 0 map[Audit-Id:[558266bb-d783-4ea4-9539-a0ba2b1c8ed6] Cache-Control:[no-store] Content-Type:[text/plain; charset=utf-8] Content-Length:[2] Date:[Wed, 05 Dec 2018 16:50:19 GMT]] 0xc421575b40 2 [] false false map[] 0xc421382200 0xc4212b3600}",
+        "Dec 05 11:50:19 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:19.614169   15227 prober.go:118] Liveness probe for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa):api\" succeeded",
+        "Dec 05 11:50:20 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:20.025846   15227 kubelet.go:1884] SyncLoop (SYNC): 1 pods; master-controllers-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(c1e6d2ffeb886b64c52fff654d5f1c9a)",
+        "Dec 05 11:50:20 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:20.025915   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:20 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:20.031993   15227 kubelet_pods.go:1326] Generating status for \"master-controllers-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(c1e6d2ffeb886b64c52fff654d5f1c9a)\"",
+        "Dec 05 11:50:20 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:20.032163   15227 status_manager.go:361] Ignoring same status for pod \"master-controllers-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(c1e6d2ffeb886b64c52fff654d5f1c9a)\", status: {Phase:Running Conditions:[{Type:Initialized Status:True LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:2018-12-05 10:55:17 -0500 EST Reason: Message:} {Type:Ready Status:True LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:2018-12-05 10:55:23 -0500 EST Reason: Message:} {Type:ContainersReady Status:True LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:0001-01-01 00:00:00 +0000 UTC Reason: Message:} {Type:PodScheduled Status:True LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:2018-12-05 10:55:17 -0500 EST Reason: Message:}] Message: Reason: NominatedNodeName: HostIP:10.74.177.91 PodIP:10.74.177.91 StartTime:2018-12-05 10:55:17 -0500 EST InitContainerStatuses:[] ContainerStatuses:[{Name:controllers State:{Waiting:nil Running:&ContainerStateRunning{StartedAt:2018-12-05 10:55:21 -0500 EST,} Terminated:nil} LastTerminationState:{Waiting:nil Running:nil Terminated:nil} Ready:true RestartCount:0 Image:registry.redhat.io/openshift3/ose-control-plane:v3.11 ImageID:docker-pullable://registry.redhat.io/openshift3/ose-control-plane@sha256:adf53b055e13699154b6e084603b84e0ae7df8c33454e43e9530fd3eb5533977 ContainerID:docker://50ab93aac67f0a0d6d17ea09fba1072e596d7b7e3a21a543fcf48e7f88772a01}] QOSClass:BestEffort}",
+        "Dec 05 11:50:20 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:20.032517   15227 volume_manager.go:347] Waiting for volumes to attach and mount for pod \"master-controllers-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(c1e6d2ffeb886b64c52fff654d5f1c9a)\"",
+        "Dec 05 11:50:20 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:20.036311   15227 desired_state_of_world_populator.go:320] Added volume \"master-config\" (volSpec=\"master-config\") for pod \"c1e6d2ffeb886b64c52fff654d5f1c9a\" to desired state.",
+        "Dec 05 11:50:20 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:20.036341   15227 desired_state_of_world_populator.go:320] Added volume \"master-cloud-provider\" (volSpec=\"master-cloud-provider\") for pod \"c1e6d2ffeb886b64c52fff654d5f1c9a\" to desired state.",
+        "Dec 05 11:50:20 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:20.036357   15227 desired_state_of_world_populator.go:320] Added volume \"signature-import\" (volSpec=\"signature-import\") for pod \"c1e6d2ffeb886b64c52fff654d5f1c9a\" to desired state.",
+        "Dec 05 11:50:20 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:20.036371   15227 desired_state_of_world_populator.go:320] Added volume \"kubelet-plugins\" (volSpec=\"kubelet-plugins\") for pod \"c1e6d2ffeb886b64c52fff654d5f1c9a\" to desired state.",
+        "Dec 05 11:50:20 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:20.036386   15227 desired_state_of_world_populator.go:320] Added volume \"master-pki\" (volSpec=\"master-pki\") for pod \"c1e6d2ffeb886b64c52fff654d5f1c9a\" to desired state.",
+        "Dec 05 11:50:20 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:20.332863   15227 volume_manager.go:380] All volumes are attached and mounted for pod \"master-controllers-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(c1e6d2ffeb886b64c52fff654d5f1c9a)\"",
+        "Dec 05 11:50:20 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:20.333014   15227 kuberuntime_manager.go:570] computePodActions got {KillPod:false CreateSandbox:false SandboxID:719eac1470c61333f1348bd08057b459667b0b88a1a4505c941874974516d45f Attempt:0 NextInitContainerToStart:nil ContainersToStart:[] ContainersToKill:map[]} for pod \"master-controllers-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(c1e6d2ffeb886b64c52fff654d5f1c9a)\"",
+        "Dec 05 11:50:21 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:21.195763   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 443, Path: healthz/ready",
+        "Dec 05 11:50:21 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:21.195805   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:50:21 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:21.205181   15227 http.go:96] Probe succeeded for https://10.74.177.91:443/healthz/ready, Response: {200 OK 200 HTTP/2.0 2 0 map[Audit-Id:[c0a2cb6b-f8ea-426f-9098-563fc9a62787] Cache-Control:[no-store] Content-Type:[text/plain; charset=utf-8] Content-Length:[2] Date:[Wed, 05 Dec 2018 16:50:21 GMT]] 0xc42196b060 2 [] false false map[] 0xc421382e00 0xc420b529a0}",
+        "Dec 05 11:50:21 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:21.205217   15227 prober.go:118] Readiness probe for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa):api\" succeeded",
+        "Dec 05 11:50:22 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:22.025876   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:22 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: W1205 11:50:22.868667   15227 cni.go:172] Unable to update cni config: No networks found in /etc/cni/net.d",
+        "Dec 05 11:50:22 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:22.868783   15227 kubelet.go:2098] Container runtime status: Runtime Conditions: RuntimeReady=true reason: message:, NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:22 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:50:22.868801   15227 kubelet.go:2101] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:24 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:24.025863   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:25.539494   15227 eviction_manager.go:226] eviction manager: synchronize housekeeping",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:50:25.567851   15227 summary.go:102] Failed to get system container stats for \"/system.slice/atomic-openshift-node.service\": failed to get cgroup stats for \"/system.slice/atomic-openshift-node.service\": failed to get container info for \"/system.slice/atomic-openshift-node.service\": unknown container \"/system.slice/atomic-openshift-node.service\"",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:25.569103   15227 helpers.go:836] eviction manager: observations: signal=memory.available, available: 14556104Ki, capacity: 16266696Ki, time: 2018-12-05 11:50:25.540935859 -0500 EST m=+1014.067718336",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:25.569134   15227 helpers.go:836] eviction manager: observations: signal=allocatableMemory.available, available: 15535596Ki, capacity: 16266696Ki, time: 2018-12-05 11:50:25.569012775 -0500 EST m=+1014.095795289",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:25.569146   15227 helpers.go:836] eviction manager: observations: signal=nodefs.available, available: 7403092Ki, capacity: 10474476Ki, time: 2018-12-05 11:50:25.540935859 -0500 EST m=+1014.067718336",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:25.569157   15227 helpers.go:836] eviction manager: observations: signal=nodefs.inodesFree, available: 5187401, capacity: 5242304, time: 2018-12-05 11:50:25.540935859 -0500 EST m=+1014.067718336",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:25.569168   15227 helpers.go:836] eviction manager: observations: signal=imagefs.available, available: 6541Mi, capacity: 8140Mi, time: 2018-12-05 11:50:25.540935859 -0500 EST m=+1014.067718336",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:25.569179   15227 helpers.go:836] eviction manager: observations: signal=pid.available, available: 32390, capacity: 32Ki, time: 2018-12-05 11:50:25.567810337 -0500 EST m=+1014.094592782",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:25.569199   15227 eviction_manager.go:317] eviction manager: no resources are starved",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:25.676798   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 8444, Path: healthz",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:25.676847   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:25.683623   15227 http.go:96] Probe succeeded for https://10.74.177.91:8444/healthz, Response: {200 OK 200 HTTP/1.1 1 1 map[Date:[Wed, 05 Dec 2018 16:50:25 GMT] Content-Length:[2] Content-Type:[text/plain; charset=utf-8]] 0xc421468300 2 [] true false map[] 0xc42213f100 0xc42235abb0}",
+        "Dec 05 11:50:25 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:25.683664   15227 prober.go:118] Liveness probe for \"master-controllers-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(c1e6d2ffeb886b64c52fff654d5f1c9a):controllers\" succeeded",
+        "Dec 05 11:50:26 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:26.025863   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:26 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:26.738109   15227 prober.go:150] Exec-Probe Pod: &Pod{ObjectMeta:k8s_io_apimachinery_pkg_apis_meta_v1.ObjectMeta{Name:master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com,GenerateName:,Namespace:kube-system,SelfLink:/api/v1/namespaces/kube-system/pods/master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com,UID:70627197b2c629fb6455f53915d7a0f8,ResourceVersion:,Generation:0,CreationTimestamp:0001-01-01 00:00:00 +0000 UTC,DeletionTimestamp:<nil>,DeletionGracePeriodSeconds:nil,Labels:map[string]string{openshift.io/component: etcd,openshift.io/control-plane: true,},Annotations:map[string]string{kubernetes.io/config.hash: 70627197b2c629fb6455f53915d7a0f8,kubernetes.io/config.seen: 2018-12-05T11:33:51.879727464-05:00,kubernetes.io/config.source: file,scheduler.alpha.kubernetes.io/critical-pod: ,},OwnerReferences:[],Finalizers:[],ClusterName:,Initializers:nil,},Spec:PodSpec{Volumes:[{master-config {HostPathVolumeSource{Path:/etc/etcd/,Type:*,} nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil}} {master-data {&HostPathVolumeSource{Path:/var/lib/etcd,Type:*,} nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil nil}}],Containers:[{etcd registry.redhat.io/rhel7/etcd:3.2.22 [/bin/sh -c] [#!/bin/sh",
+        "Dec 05 11:50:26 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: set -o allexport",
+        "Dec 05 11:50:26 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: source /etc/etcd/etcd.conf",
+        "Dec 05 11:50:26 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: exec etcd",
+        "Dec 05 11:50:26 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: ] /var/lib/etcd [] [] [] {map[] map[]} [{master-config true /etc/etcd/  <nil>} {master-data false /var/lib/etcd/  <nil>}] [] Probe{Handler:Handler{Exec:&ExecAction{Command:[etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health],},HTTPGet:nil,TCPSocket:nil,},InitialDelaySeconds:45,TimeoutSeconds:1,PeriodSeconds:10,SuccessThreshold:1,FailureThreshold:3,} nil nil /dev/termination-log File IfNotPresent &SecurityContext{Capabilities:nil,Privileged:*true,SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,ReadOnlyRootFilesystem:nil,AllowPrivilegeEscalation:nil,RunAsGroup:nil,} false false false}],RestartPolicy:Always,TerminationGracePeriodSeconds:*30,ActiveDeadlineSeconds:nil,DNSPolicy:ClusterFirst,NodeSelector:map[string]string{},ServiceAccountName:,DeprecatedServiceAccount:,NodeName:master-1.rajranja.lab.pnq2.cee.redhat.com,HostNetwork:true,HostPID:false,HostIPC:false,SecurityContext:&PodSecurityContext{SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,SupplementalGroups:[],FSGroup:nil,RunAsGroup:nil,Sysctls:[],},ImagePullSecrets:[],Hostname:,Subdomain:,Affinity:nil,SchedulerName:default-scheduler,InitContainers:[],AutomountServiceAccountToken:nil,Tolerations:[{ Exists  NoExecute <nil>}],HostAliases:[],PriorityClassName:system-node-critical,Priority:nil,DNSConfig:nil,ShareProcessNamespace:nil,ReadinessGates:[],},Status:PodStatus{Phase:Pending,Conditions:[],Message:,Reason:,HostIP:,PodIP:,StartTime:<nil>,ContainerStatuses:[],QOSClass:,InitContainerStatuses:[],NominatedNodeName:,},}, Container: {etcd registry.redhat.io/rhel7/etcd:3.2.22 [/bin/sh -c] [#!/bin/sh",
+        "Dec 05 11:50:26 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: set -o allexport",
+        "Dec 05 11:50:26 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: source /etc/etcd/etcd.conf",
+        "Dec 05 11:50:26 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: exec etcd",
+        "Dec 05 11:50:26 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: ] /var/lib/etcd [] [] [] {map[] map[]} [{master-config true /etc/etcd/  <nil>} {master-data false /var/lib/etcd/  <nil>}] [] &Probe{Handler:Handler{Exec:&ExecAction{Command:[etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health],},HTTPGet:nil,TCPSocket:nil,},InitialDelaySeconds:45,TimeoutSeconds:1,PeriodSeconds:10,SuccessThreshold:1,FailureThreshold:3,} nil nil /dev/termination-log File IfNotPresent &SecurityContext{Capabilities:nil,Privileged:*true,SELinuxOptions:nil,RunAsUser:nil,RunAsNonRoot:nil,ReadOnlyRootFilesystem:nil,AllowPrivilegeEscalation:nil,RunAsGroup:nil,} false false false}, Command: [etcdctl --cert-file /etc/etcd/peer.crt --key-file /etc/etcd/peer.key --ca-file /etc/etcd/ca.crt --endpoints https://10.74.177.91:2379 cluster-health]",
+        "Dec 05 11:50:27 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:27.002474   15227 exec.go:38] Exec probe response: \"member ad394f8dea0eb29 is healthy: got healthy result from https://10.74.176.68:2379\\nmember 30f12365b88412bb is healthy: got healthy result from https://10.74.177.85:2379\\nmember 68841e3ceb7b8795 is healthy: got healthy result from https://10.74.177.91:2379\\ncluster is healthy\\n\"",
+        "Dec 05 11:50:27 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:27.002533   15227 prober.go:118] Liveness probe for \"master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(70627197b2c629fb6455f53915d7a0f8):etcd\" succeeded",
+        "Dec 05 11:50:27 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: W1205 11:50:27.870791   15227 cni.go:172] Unable to update cni config: No networks found in /etc/cni/net.d",
+        "Dec 05 11:50:27 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:27.870939   15227 kubelet.go:2098] Container runtime status: Runtime Conditions: RuntimeReady=true reason: message:, NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:27 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:50:27.870957   15227 kubelet.go:2101] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:28 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:28.025792   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:29 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:29.605974   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 443, Path: healthz",
+        "Dec 05 11:50:29 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:29.606007   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:50:29 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:29.617552   15227 http.go:96] Probe succeeded for https://10.74.177.91:443/healthz, Response: {200 OK 200 HTTP/2.0 2 0 map[Date:[Wed, 05 Dec 2018 16:50:29 GMT] Audit-Id:[533540b4-b0de-42cf-82a2-2867c671814a] Cache-Control:[no-store] Content-Type:[text/plain; charset=utf-8] Content-Length:[2]] 0xc422143500 2 [] false false map[] 0xc4227eb600 0xc4215f5ad0}",
+        "Dec 05 11:50:29 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:29.617586   15227 prober.go:118] Liveness probe for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa):api\" succeeded",
+        "Dec 05 11:50:30 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:30.025803   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:31 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:31.195760   15227 prober.go:165] HTTP-Probe Host: https://10.74.177.91, Port: 443, Path: healthz/ready",
+        "Dec 05 11:50:31 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:31.195787   15227 prober.go:168] HTTP-Probe Headers: map[]",
+        "Dec 05 11:50:31 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:31.203509   15227 http.go:96] Probe succeeded for https://10.74.177.91:443/healthz/ready, Response: {200 OK 200 HTTP/2.0 2 0 map[Content-Length:[2] Date:[Wed, 05 Dec 2018 16:50:31 GMT] Audit-Id:[61218f40-acfd-49c3-b309-1bdf2b7165d2] Cache-Control:[no-store] Content-Type:[text/plain; charset=utf-8]] 0xc420fce140 2 [] false false map[] 0xc421fba200 0xc4215f4370}",
+        "Dec 05 11:50:31 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:31.203582   15227 prober.go:118] Readiness probe for \"master-api-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(e505cdb7c17b8f3d9cb85e21d76129aa):api\" succeeded",
+        "Dec 05 11:50:31 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:31.870218   15227 file.go:199] Reading config file \"/etc/origin/node/pods/apiserver.yaml\"",
+        "Dec 05 11:50:31 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:31.871354   15227 file.go:199] Reading config file \"/etc/origin/node/pods/controller.yaml\"",
+        "Dec 05 11:50:31 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:31.872183   15227 file.go:199] Reading config file \"/etc/origin/node/pods/etcd.yaml\"",
+        "Dec 05 11:50:31 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:31.872763   15227 config.go:303] Setting pods for source file",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.028004   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.222708   15227 kubelet.go:1226] Container garbage collection succeeded",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401496   15227 factory.go:118] Factory \"docker\" was unable to handle container \"/system.slice/sys-kernel-debug.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401532   15227 factory.go:111] Factory \"systemd\" can handle container \"/system.slice/sys-kernel-debug.mount\", but ignoring.",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401543   15227 manager.go:957] ignoring container \"/system.slice/sys-kernel-debug.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401550   15227 factory.go:118] Factory \"docker\" was unable to handle container \"/system.slice/dev-hugepages.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401556   15227 factory.go:111] Factory \"systemd\" can handle container \"/system.slice/dev-hugepages.mount\", but ignoring.",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401564   15227 manager.go:957] ignoring container \"/system.slice/dev-hugepages.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401570   15227 factory.go:118] Factory \"docker\" was unable to handle container \"/system.slice/-.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401576   15227 factory.go:111] Factory \"systemd\" can handle container \"/system.slice/-.mount\", but ignoring.",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401583   15227 manager.go:957] ignoring container \"/system.slice/-.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401590   15227 factory.go:118] Factory \"docker\" was unable to handle container \"/system.slice/var-lib-nfs-rpc_pipefs.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401596   15227 factory.go:111] Factory \"systemd\" can handle container \"/system.slice/var-lib-nfs-rpc_pipefs.mount\", but ignoring.",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401603   15227 manager.go:957] ignoring container \"/system.slice/var-lib-nfs-rpc_pipefs.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401610   15227 factory.go:118] Factory \"docker\" was unable to handle container \"/system.slice/dev-mqueue.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401617   15227 factory.go:111] Factory \"systemd\" can handle container \"/system.slice/dev-mqueue.mount\", but ignoring.",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401624   15227 manager.go:957] ignoring container \"/system.slice/dev-mqueue.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401630   15227 factory.go:118] Factory \"docker\" was unable to handle container \"/system.slice/var-lib-docker-devicemapper.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401637   15227 factory.go:111] Factory \"systemd\" can handle container \"/system.slice/var-lib-docker-devicemapper.mount\", but ignoring.",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401645   15227 manager.go:957] ignoring container \"/system.slice/var-lib-docker-devicemapper.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401652   15227 factory.go:118] Factory \"docker\" was unable to handle container \"/system.slice/var-lib-docker-containers.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401659   15227 factory.go:111] Factory \"systemd\" can handle container \"/system.slice/var-lib-docker-containers.mount\", but ignoring.",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401666   15227 manager.go:957] ignoring container \"/system.slice/var-lib-docker-containers.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401672   15227 factory.go:118] Factory \"docker\" was unable to handle container \"/system.slice/sys-kernel-config.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401679   15227 factory.go:111] Factory \"systemd\" can handle container \"/system.slice/sys-kernel-config.mount\", but ignoring.",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.401686   15227 manager.go:957] ignoring container \"/system.slice/sys-kernel-config.mount\"",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.402042   15227 qos_container_manager_linux.go:338] [ContainerManager]: Updated QoS cgroup configuration",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: W1205 11:50:32.873568   15227 cni.go:172] Unable to update cni config: No networks found in /etc/cni/net.d",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:32.873705   15227 kubelet.go:2098] Container runtime status: Runtime Conditions: RuntimeReady=true reason: message:, NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:32 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: E1205 11:50:32.873724   15227 kubelet.go:2101] Container runtime network not ready: NetworkReady=false reason:NetworkPluginNotReady message:docker: network plugin is not ready: cni config uninitialized",
+        "Dec 05 11:50:34 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:34.025765   15227 kubelet.go:1884] SyncLoop (SYNC): 1 pods; master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(70627197b2c629fb6455f53915d7a0f8)",
+        "Dec 05 11:50:34 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:34.025851   15227 kubelet.go:1907] SyncLoop (housekeeping)",
+        "Dec 05 11:50:34 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:34.034385   15227 kubelet_pods.go:1326] Generating status for \"master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(70627197b2c629fb6455f53915d7a0f8)\"",
+        "Dec 05 11:50:34 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:34.034524   15227 status_manager.go:361] Ignoring same status for pod \"master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(70627197b2c629fb6455f53915d7a0f8)\", status: {Phase:Running Conditions:[{Type:Initialized Status:True LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:2018-12-05 10:55:17 -0500 EST Reason: Message:} {Type:Ready Status:True LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:2018-12-05 10:55:17 -0500 EST Reason: Message:} {Type:ContainersReady Status:True LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:0001-01-01 00:00:00 +0000 UTC Reason: Message:} {Type:PodScheduled Status:True LastProbeTime:0001-01-01 00:00:00 +0000 UTC LastTransitionTime:2018-12-05 10:55:17 -0500 EST Reason: Message:}] Message: Reason: NominatedNodeName: HostIP:10.74.177.91 PodIP:10.74.177.91 StartTime:2018-12-05 10:55:17 -0500 EST InitContainerStatuses:[] ContainerStatuses:[{Name:etcd State:{Waiting:nil Running:&ContainerStateRunning{StartedAt:2018-12-05 09:49:40 -0500 EST,} Terminated:nil} LastTerminationState:{Waiting:nil Running:nil Terminated:nil} Ready:true RestartCount:0 Image:registry.redhat.io/rhel7/etcd:3.2.22 ImageID:docker-pullable://registry.redhat.io/rhel7/etcd@sha256:6f5b73f472277b9b3f66148bf20247e33f04121236ad25715c1c272af29e620c ContainerID:docker://962ce8376bb6c20f623be10c6ca8a543f45255d71fc20242ca05a55f41cc877a}] QOSClass:BestEffort}",
+        "Dec 05 11:50:34 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:34.041751   15227 volume_manager.go:347] Waiting for volumes to attach and mount for pod \"master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(70627197b2c629fb6455f53915d7a0f8)\"",
+        "Dec 05 11:50:34 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:34.069828   15227 desired_state_of_world_populator.go:320] Added volume \"master-config\" (volSpec=\"master-config\") for pod \"70627197b2c629fb6455f53915d7a0f8\" to desired state.",
+        "Dec 05 11:50:34 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:34.069872   15227 desired_state_of_world_populator.go:320] Added volume \"master-data\" (volSpec=\"master-data\") for pod \"70627197b2c629fb6455f53915d7a0f8\" to desired state.",
+        "Dec 05 11:50:34 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:34.342204   15227 volume_manager.go:380] All volumes are attached and mounted for pod \"master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(70627197b2c629fb6455f53915d7a0f8)\"",
+        "Dec 05 11:50:34 master-1.rajranja.lab.pnq2.cee.redhat.com atomic-openshift-node[15227]: I1205 11:50:34.342341   15227 kuberuntime_manager.go:570] computePodActions got {KillPod:false CreateSandbox:false SandboxID:7ab3562139d86b6ea67a5607f1c20b633d37e44be78aef7988f65b884af6df11 Attempt:0 NextInitContainerToStart:nil ContainersToStart:[] ContainersToKill:map[]} for pod \"master-etcd-master-1.rajranja.lab.pnq2.cee.redhat.com_kube-system(70627197b2c629fb6455f53915d7a0f8)\""
+    ]
+}
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : Report control plane errors] ***********************************************************************************************************************************************
+Wednesday 05 December 2018  11:50:35 -0500 (0:00:00.317)       0:24:19.360 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+fatal: [master-1.rajranja.lab.pnq2.cee.redhat.com]: FAILED! => {"changed": false, "msg": "Control plane pods didn't come up"}
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+NO MORE HOSTS LEFT *****************************************************************************************************************************************************************************************
+
+PLAY RECAP *************************************************************************************************************************************************************************************************
+infra-0.rajranja.lab.pnq2.cee.redhat.com : ok=14   changed=0    unreachable=0    failed=0
+infra-1.rajranja.lab.pnq2.cee.redhat.com : ok=14   changed=0    unreachable=0    failed=0
+lb-0.rajranja.lab.pnq2.cee.redhat.com : ok=14   changed=0    unreachable=0    failed=0
+localhost                  : ok=13   changed=0    unreachable=0    failed=0
+master-0.rajranja.lab.pnq2.cee.redhat.com : ok=138  changed=20   unreachable=0    failed=0
+master-1.rajranja.lab.pnq2.cee.redhat.com : ok=117  changed=19   unreachable=0    failed=1
+master-2.rajranja.lab.pnq2.cee.redhat.com : ok=109  changed=15   unreachable=0    failed=0
+node-0.rajranja.lab.pnq2.cee.redhat.com : ok=14   changed=0    unreachable=0    failed=0
+node-1.rajranja.lab.pnq2.cee.redhat.com : ok=14   changed=0    unreachable=0    failed=0
+node-2.rajranja.lab.pnq2.cee.redhat.com : ok=14   changed=0    unreachable=0    failed=0
+node-3.rajranja.lab.pnq2.cee.redhat.com : ok=14   changed=0    unreachable=0    failed=0
+node-8.rajranja.lab.pnq2.cee.redhat.com : ok=13   changed=0    unreachable=0    failed=0
+
+
+INSTALLER STATUS *******************************************************************************************************************************************************************************************
+Initialization  : Complete (0:02:30)
+Master Install  : In Progress (0:21:48)
+	This phase can be restarted by running: playbooks/openshift-master/config.yml
+Wednesday 05 December 2018  11:50:35 -0500 (0:00:00.223)       0:24:19.583 ****
+===============================================================================
+openshift_control_plane : Wait for control plane pods to appear ---------------------------------------------------------------------------------------------------------------------------------- 1018.37s
+openshift_excluder : Install docker excluder - yum ------------------------------------------------------------------------------------------------------------------------------------------------- 40.10s
+openshift_excluder : Install openshift excluder - yum ---------------------------------------------------------------------------------------------------------------------------------------------- 38.48s
+Gathering Facts ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 32.70s
+Run variable sanity checks ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 31.00s
+openshift_ca : Install the base package for admin tooling ------------------------------------------------------------------------------------------------------------------------------------------ 25.22s
+openshift_cli : Install bash completion for oc tools ----------------------------------------------------------------------------------------------------------------------------------------------- 24.45s
+openshift_control_plane : Install httpd-tools if needed -------------------------------------------------------------------------------------------------------------------------------------------- 24.40s
+openshift_cli : Install clients -------------------------------------------------------------------------------------------------------------------------------------------------------------------- 24.32s
+Gathering Facts ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ 21.03s
+Initialize openshift.node.sdn_mtu ------------------------------------------------------------------------------------------------------------------------------------------------------------------ 12.44s
+Gather Cluster facts ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 12.12s
+openshift_master_certificates : Check status of master certificates --------------------------------------------------------------------------------------------------------------------------------- 3.26s
+openshift_control_plane : Add firewalld allow rules ------------------------------------------------------------------------------------------------------------------------------------------------- 3.09s
+openshift_control_plane : Prepare master static pods ------------------------------------------------------------------------------------------------------------------------------------------------ 2.63s
+openshift_control_plane : Copy static master scripts ------------------------------------------------------------------------------------------------------------------------------------------------ 2.61s
+openshift_sanitize_inventory : Standardize on latest variable names --------------------------------------------------------------------------------------------------------------------------------- 2.39s
+openshift_sanitize_inventory : At least one master is schedulable ----------------------------------------------------------------------------------------------------------------------------------- 2.18s
+set_fact openshift_portal_net if present on masters ------------------------------------------------------------------------------------------------------------------------------------------------- 1.98s
+get openshift_current_version ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- 1.87s

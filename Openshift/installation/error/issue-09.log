@@ -1,0 +1,13 @@
+TASK [openshift_excluder : Install docker excluder - yum] **************************************************************************************************************************************************
+Monday 10 December 2018  07:25:05 -0500 (0:00:00.455)       0:07:42.598 *******
+FAILED - RETRYING: Install docker excluder - yum (3 retries left).
+ok: [node-0.rajranjamaster.lab.pnq2.cee.redhat.com]
+ok: [node-1.rajranjamaster.lab.pnq2.cee.redhat.com]
+ok: [node-2.rajranjamaster.lab.pnq2.cee.redhat.com]
+ok: [node-0.rajranjaapps.lab.pnq2.cee.redhat.com]
+ok: [node-2.rajranjainfra.lab.pnq2.cee.redhat.com]
+ok: [node-1.rajranjainfra.lab.pnq2.cee.redhat.com]
+ok: [node-1.rajranjaapps.lab.pnq2.cee.redhat.com]
+FAILED - RETRYING: Install docker excluder - yum (2 retries left).
+FAILED - RETRYING: Install docker excluder - yum (1 retries left).
+fatal: [node-0.rajranjainfra.lab.pnq2.cee.redhat.com]: FAILED! => {"attempts": 3, "changed": false, "msg": "No package matching 'atomic-openshift-docker-excluder-3.11.43*' found available, installed or updated", "rc": 126, "results": ["No package matching 'atomic-openshift-docker-excluder-3.11.43*' found available, installed or updated"]}

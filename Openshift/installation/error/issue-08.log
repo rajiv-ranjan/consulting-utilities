@@ -1,0 +1,503 @@
+TASK [openshift_control_plane : fail] **********************************************************************************************************************************************************************
+Wednesday 05 December 2018  22:08:30 -0500 (0:00:00.201)       0:40:37.295 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : Wait for control plane pods to appear] *************************************************************************************************************************************
+Wednesday 05 December 2018  22:08:30 -0500 (0:00:00.200)       0:40:37.496 ****
+FAILED - RETRYING: Wait for control plane pods to appear (60 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (60 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (60 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (59 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (59 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (59 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (58 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (58 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (58 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (57 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (57 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (57 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (56 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (56 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (56 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (55 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (55 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (55 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (54 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (54 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (54 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (53 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (53 retries left).
+ok: [master-0.rajranja.lab.pnq2.cee.redhat.com] => (item=etcd)
+ok: [master-0.rajranja.lab.pnq2.cee.redhat.com] => (item=api)
+ok: [master-0.rajranja.lab.pnq2.cee.redhat.com] => (item=controllers)
+ok: [master-2.rajranja.lab.pnq2.cee.redhat.com] => (item=etcd)
+FAILED - RETRYING: Wait for control plane pods to appear (52 retries left).
+ok: [master-2.rajranja.lab.pnq2.cee.redhat.com] => (item=api)
+ok: [master-2.rajranja.lab.pnq2.cee.redhat.com] => (item=controllers)
+FAILED - RETRYING: Wait for control plane pods to appear (51 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (50 retries left).
+FAILED - RETRYING: Wait for control plane pods to appear (49 retries left).
+ok: [master-1.rajranja.lab.pnq2.cee.redhat.com] => (item=etcd)
+ok: [master-1.rajranja.lab.pnq2.cee.redhat.com] => (item=api)
+ok: [master-1.rajranja.lab.pnq2.cee.redhat.com] => (item=controllers)
+
+TASK [openshift_control_plane : Check status in the kube-system namespace] *********************************************************************************************************************************
+Wednesday 05 December 2018  22:10:23 -0500 (0:01:52.892)       0:42:30.389 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : debug] *********************************************************************************************************************************************************************
+Wednesday 05 December 2018  22:10:23 -0500 (0:00:00.202)       0:42:30.592 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : Get pods in the kube-system namespace] *************************************************************************************************************************************
+Wednesday 05 December 2018  22:10:23 -0500 (0:00:00.207)       0:42:30.799 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : debug] *********************************************************************************************************************************************************************
+Wednesday 05 December 2018  22:10:24 -0500 (0:00:00.250)       0:42:31.049 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : Get events in the kube-system namespace] ***********************************************************************************************************************************
+Wednesday 05 December 2018  22:10:24 -0500 (0:00:00.218)       0:42:31.267 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : debug] *********************************************************************************************************************************************************************
+Wednesday 05 December 2018  22:10:24 -0500 (0:00:00.200)       0:42:31.468 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : Get node logs] *************************************************************************************************************************************************************
+Wednesday 05 December 2018  22:10:24 -0500 (0:00:00.210)       0:42:31.679 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : debug] *********************************************************************************************************************************************************************
+Wednesday 05 December 2018  22:10:25 -0500 (0:00:00.201)       0:42:31.880 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : Report control plane errors] ***********************************************************************************************************************************************
+Wednesday 05 December 2018  22:10:25 -0500 (0:00:00.210)       0:42:32.091 ****
+skipping: [master-0.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-1.rajranja.lab.pnq2.cee.redhat.com]
+skipping: [master-2.rajranja.lab.pnq2.cee.redhat.com]
+
+TASK [openshift_control_plane : Wait for all control plane pods to become ready] ***************************************************************************************************************************
+Wednesday 05 December 2018  22:10:25 -0500 (0:00:00.205)       0:42:32.297 ****
+FAILED - RETRYING: Wait for all control plane pods to become ready (60 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (60 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (60 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (59 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (59 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (59 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (58 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (58 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (58 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (57 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (57 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (56 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (56 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (55 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (55 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (57 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (54 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (54 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (56 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (53 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (53 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (55 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (52 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (52 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (54 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (51 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (51 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (53 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (50 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (50 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (52 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (49 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (49 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (51 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (48 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (48 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (50 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (47 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (47 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (49 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (46 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (46 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (48 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (45 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (45 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (47 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (44 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (44 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (46 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (43 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (43 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (45 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (42 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (42 retries left).
+ok: [master-1.rajranja.lab.pnq2.cee.redhat.com] => (item=etcd)
+ok: [master-1.rajranja.lab.pnq2.cee.redhat.com] => (item=api)
+FAILED - RETRYING: Wait for all control plane pods to become ready (60 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (41 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (41 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (59 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (40 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (40 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (58 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (39 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (39 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (57 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (38 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (38 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (56 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (37 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (37 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (55 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (36 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (36 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (54 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (35 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (35 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (53 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (34 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (34 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (52 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (33 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (33 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (51 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (32 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (32 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (50 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (31 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (31 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (49 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (30 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (30 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (48 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (29 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (29 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (47 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (28 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (28 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (46 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (27 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (27 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (45 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (26 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (26 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (44 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (25 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (25 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (43 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (24 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (24 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (42 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (23 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (23 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (41 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (22 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (22 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (40 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (21 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (21 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (39 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (20 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (20 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (38 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (19 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (19 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (37 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (18 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (18 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (36 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (17 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (17 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (35 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (16 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (16 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (34 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (15 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (15 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (33 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (14 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (14 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (32 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (13 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (13 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (31 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (12 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (12 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (30 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (11 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (11 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (29 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (10 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (10 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (28 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (9 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (9 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (27 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (8 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (8 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (26 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (7 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (7 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (25 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (6 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (6 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (24 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (5 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (5 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (23 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (4 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (4 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (22 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (3 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (3 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (21 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (2 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (2 retries left).
+ok: [master-1.rajranja.lab.pnq2.cee.redhat.com] => (item=controllers)
+FAILED - RETRYING: Wait for all control plane pods to become ready (1 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (1 retries left).
+failed: [master-2.rajranja.lab.pnq2.cee.redhat.com] (item=etcd) => {"attempts": 60, "changed": false, "item": "etcd", "msg": {"cmd": "/bin/oc get pod master-etcd-master-2.rajranja.lab.pnq2.cee.redhat.com -o json -n kube-system", "results": [{}], "returncode": 1, "stderr": "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.177.85:53: no such host\n", "stdout": ""}}
+failed: [master-0.rajranja.lab.pnq2.cee.redhat.com] (item=etcd) => {"attempts": 60, "changed": false, "item": "etcd", "msg": {"cmd": "/bin/oc get pod master-etcd-master-0.rajranja.lab.pnq2.cee.redhat.com -o json -n kube-system", "results": [{}], "returncode": 1, "stderr": "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.176.68:53: no such host\n", "stdout": ""}}
+FAILED - RETRYING: Wait for all control plane pods to become ready (60 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (60 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (59 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (59 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (58 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (58 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (57 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (57 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (56 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (56 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (55 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (55 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (54 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (54 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (53 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (53 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (52 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (51 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (50 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (52 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (49 retries left).
+ok: [master-2.rajranja.lab.pnq2.cee.redhat.com] => (item=api)
+FAILED - RETRYING: Wait for all control plane pods to become ready (60 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (48 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (59 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (47 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (58 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (46 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (57 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (45 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (56 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (44 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (55 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (43 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (54 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (42 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (53 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (41 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (52 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (40 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (51 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (39 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (50 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (38 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (49 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (37 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (48 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (36 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (47 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (35 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (46 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (34 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (45 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (33 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (44 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (32 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (43 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (31 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (42 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (30 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (41 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (29 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (40 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (28 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (39 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (27 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (38 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (26 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (37 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (25 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (36 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (24 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (35 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (23 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (34 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (22 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (33 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (21 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (32 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (20 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (31 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (19 retries left).
+ok: [master-2.rajranja.lab.pnq2.cee.redhat.com] => (item=controllers)
+FAILED - RETRYING: Wait for all control plane pods to become ready (18 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (17 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (16 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (15 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (14 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (13 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (12 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (11 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (10 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (9 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (8 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (7 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (6 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (5 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (4 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (3 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (2 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (1 retries left).
+failed: [master-0.rajranja.lab.pnq2.cee.redhat.com] (item=api) => {"attempts": 60, "changed": false, "item": "api", "msg": {"cmd": "/bin/oc get pod master-api-master-0.rajranja.lab.pnq2.cee.redhat.com -o json -n kube-system", "results": [{}], "returncode": 1, "stderr": "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.176.68:53: no such host\n", "stdout": ""}}
+FAILED - RETRYING: Wait for all control plane pods to become ready (60 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (59 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (58 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (57 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (56 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (55 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (54 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (53 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (52 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (51 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (50 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (49 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (48 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (47 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (46 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (45 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (44 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (43 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (42 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (41 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (40 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (39 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (38 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (37 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (36 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (35 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (34 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (33 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (32 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (31 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (30 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (29 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (28 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (27 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (26 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (25 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (24 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (23 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (22 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (21 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (20 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (19 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (18 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (17 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (16 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (15 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (14 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (13 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (12 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (11 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (10 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (9 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (8 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (7 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (6 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (5 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (4 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (3 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (2 retries left).
+FAILED - RETRYING: Wait for all control plane pods to become ready (1 retries left).
+failed: [master-0.rajranja.lab.pnq2.cee.redhat.com] (item=controllers) => {"attempts": 60, "changed": false, "item": "controllers", "msg": {"cmd": "/bin/oc get pod master-controllers-master-0.rajranja.lab.pnq2.cee.redhat.com -o json -n kube-system", "results": [{}], "returncode": 1, "stderr": "Unable to connect to the server: dial tcp: lookup console-int.c1-ocp.morpheus.com on 10.74.176.68:53: no such host\n", "stdout": ""}}
+
+NO MORE HOSTS LEFT *****************************************************************************************************************************************************************************************
+
+PLAY RECAP *************************************************************************************************************************************************************************************************
+infra-0.rajranja.lab.pnq2.cee.redhat.com : ok=101  changed=33   unreachable=0    failed=0
+infra-1.rajranja.lab.pnq2.cee.redhat.com : ok=101  changed=33   unreachable=0    failed=0
+lb-0.rajranja.lab.pnq2.cee.redhat.com : ok=29   changed=6    unreachable=0    failed=0
+localhost                  : ok=13   changed=0    unreachable=0    failed=0
+master-0.rajranja.lab.pnq2.cee.redhat.com : ok=297  changed=120  unreachable=0    failed=1
+master-1.rajranja.lab.pnq2.cee.redhat.com : ok=241  changed=101  unreachable=0    failed=0
+master-2.rajranja.lab.pnq2.cee.redhat.com : ok=242  changed=103  unreachable=0    failed=1
+node-0.rajranja.lab.pnq2.cee.redhat.com : ok=101  changed=33   unreachable=0    failed=0
+node-1.rajranja.lab.pnq2.cee.redhat.com : ok=103  changed=35   unreachable=0    failed=0
+node-2.rajranja.lab.pnq2.cee.redhat.com : ok=103  changed=35   unreachable=0    failed=0
+node-3.rajranja.lab.pnq2.cee.redhat.com : ok=101  changed=33   unreachable=0    failed=0
+node-8.rajranja.lab.pnq2.cee.redhat.com : ok=24   changed=1    unreachable=0    failed=0
+
+
+INSTALLER STATUS *******************************************************************************************************************************************************************************************
+Initialization              : Complete (0:02:16)
+Health Check                : Complete (0:01:57)
+Node Bootstrap Preparation  : Complete (0:19:30)
+etcd Install                : Complete (0:05:51)
+NFS Install                 : Complete (0:01:06)
+Load Balancer Install       : Complete (0:05:15)
+Master Install              : In Progress (0:23:20)
+	This phase can be restarted by running: playbooks/openshift-master/config.yml
+Wednesday 05 December 2018  22:27:10 -0500 (0:16:44.753)       0:59:17.050 ****
+===============================================================================
+openshift_control_plane : Wait for all control plane pods to become ready ------------------------------------------------------------------------------------------------------------------------ 1004.75s
+openshift_loadbalancer : Install haproxy ---------------------------------------------------------------------------------------------------------------------------------------------------------- 290.23s
+openshift_node : Install node, clients, and conntrack packages ------------------------------------------------------------------------------------------------------------------------------------ 256.38s
+etcd : Install etcd ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 246.29s
+openshift_node : install needed rpm(s) ------------------------------------------------------------------------------------------------------------------------------------------------------------ 244.69s
+openshift_excluder : Install openshift excluder - yum --------------------------------------------------------------------------------------------------------------------------------------------- 135.84s
+Run health checks (install) - EL ------------------------------------------------------------------------------------------------------------------------------------------------------------------ 116.14s
+openshift_control_plane : Wait for control plane pods to appear ----------------------------------------------------------------------------------------------------------------------------------- 112.89s
+openshift_excluder : Install docker excluder - yum ------------------------------------------------------------------------------------------------------------------------------------------------- 95.86s
+openshift_ca : Install the base package for admin tooling ------------------------------------------------------------------------------------------------------------------------------------------ 83.36s
+openshift_node : Install dnsmasq ------------------------------------------------------------------------------------------------------------------------------------------------------------------- 61.88s
+openshift_storage_nfs : Install nfs-utils ---------------------------------------------------------------------------------------------------------------------------------------------------------- 45.47s
+openshift_node : Install iSCSI storage plugin dependencies ----------------------------------------------------------------------------------------------------------------------------------------- 41.65s
+openshift_node : Install NFS storage plugin dependencies ------------------------------------------------------------------------------------------------------------------------------------------- 35.42s
+openshift_node : Install Ceph storage plugin dependencies ------------------------------------------------------------------------------------------------------------------------------------------ 33.59s
+nickhammond.logrotate : nickhammond.logrotate | Install logrotate ---------------------------------------------------------------------------------------------------------------------------------- 32.61s
+openshift_node : Install GlusterFS storage plugin dependencies ------------------------------------------------------------------------------------------------------------------------------------- 32.08s
+Run variable sanity checks ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- 26.20s
+openshift_control_plane : Install httpd-tools if needed -------------------------------------------------------------------------------------------------------------------------------------------- 24.48s
+openshift_cli : Install clients -------------------------------------------------------------------------------------------------------------------------------------------------------------------- 24.07s
+
+
+Failure summary:
+
+
+  1. Hosts:    master-0.rajranja.lab.pnq2.cee.redhat.com, master-2.rajranja.lab.pnq2.cee.redhat.com
+     Play:     Configure masters
+     Task:     Wait for all control plane pods to become ready
+     Message:  All items completed

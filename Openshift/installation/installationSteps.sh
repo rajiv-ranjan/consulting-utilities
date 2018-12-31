@@ -109,3 +109,24 @@ done
 ### check the DNS name resolution
 # below will show all the entries for the FQDN in DNS. Run a loop for all the hosts.
 # dig +noall +answer lb-0.rajranja.lab.pnq2.cee.redhat.com
+
+### verify certificates and key matches and validity
+./certificateCheck.sh
+
+
+ansible -i hosts OSEv3 -m ping 
+ansible -i hosts OSEv3 -a 'subscription-manager register --username rajranja@redhat.com --password=""'
+ansible -i hosts OSEv3 -a 'subscription-manager refresh'
+ansible -i hosts OSEv3 -a 'subscription-manager attach --pool='
+ansible -i hosts OSEv3 -a 'subscription-manager repos --disable="*"'
+ansible -i hosts OSEv3 -a 'yum-config-manager --disable \*'
+ansible -i hosts OSEv3 -a 'subscription-manager repos --enable="rhel-7-server-rpms" --enable="rhel-7-server-extras-rpms" --enable="rhel-7-server-ose-3.11-rpms" --enable="rhel-7-server-ansible-2.6-rpms"'
+ansible -i hosts OSEv3 -a 'yum install wget git net-tools bind-utils yum-utils iptables-services bridge-utils bash-completion kexec-tools sos psacct -y'
+
+ansible -i hosts OSEv3 -a 'yum update -y && reboot'
+
+ansible -i hosts OSEv3 -a 'yum install docker-1.13.1'
+
+ansible -i hosts OSEv3 -a 'systemctl enable docker'
+ansible -i hosts OSEv3 -a 'systemctl start docker'
+ansible -i hosts OSEv3 -a 'systemctl is-active docker'

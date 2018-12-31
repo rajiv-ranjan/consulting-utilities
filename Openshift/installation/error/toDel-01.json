@@ -1,0 +1,126 @@
+{
+    "apiVersion": "apps/v1",
+    "kind": "DaemonSet",
+    "metadata": {
+        "annotations": {
+            "deprecated.daemonset.template.generation": "1",
+            "openshift.io/generated-by": "OpenShiftNewApp"
+        },
+        "creationTimestamp": "2018-12-16T16:17:47Z",
+        "generation": 1,
+        "labels": {
+            "app": "local-volume-provisioner"
+        },
+        "name": "local-volume-provisioner",
+        "namespace": "local-storage",
+        "resourceVersion": "1446849",
+        "selfLink": "/apis/apps/v1/namespaces/local-storage/daemonsets/local-volume-provisioner",
+        "uid": "20707101-014e-11e9-908c-fa163e4feb58"
+    },
+    "spec": {
+        "revisionHistoryLimit": 10,
+        "selector": {
+            "matchLabels": {
+                "app": "local-volume-provisioner"
+            }
+        },
+        "template": {
+            "metadata": {
+                "creationTimestamp": null,
+                "labels": {
+                    "app": "local-volume-provisioner"
+                }
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "env": [
+                            {
+                                "name": "MY_NODE_NAME",
+                                "valueFrom": {
+                                    "fieldRef": {
+                                        "apiVersion": "v1",
+                                        "fieldPath": "spec.nodeName"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "MY_NAMESPACE",
+                                "valueFrom": {
+                                    "fieldRef": {
+                                        "apiVersion": "v1",
+                                        "fieldPath": "metadata.namespace"
+                                    }
+                                }
+                            },
+                            {
+                                "name": "VOLUME_CONFIG_NAME",
+                                "value": "local-volume-config"
+                            }
+                        ],
+                        "image": "registry.redhat.io/openshift3/local-storage-provisioner:v3.11",
+                        "imagePullPolicy": "IfNotPresent",
+                        "name": "provisioner",
+                        "resources": {},
+                        "securityContext": {
+                            "runAsUser": 0,
+                            "seLinuxOptions": {
+                                "level": "s0:c0.c1023"
+                            }
+                        },
+                        "terminationMessagePath": "/dev/termination-log",
+                        "terminationMessagePolicy": "File",
+                        "volumeMounts": [
+                            {
+                                "mountPath": "/mnt/local-storage",
+                                "mountPropagation": "HostToContainer",
+                                "name": "local-storage"
+                            },
+                            {
+                                "mountPath": "/etc/provisioner/config",
+                                "name": "provisioner-config",
+                                "readOnly": true
+                            }
+                        ]
+                    }
+                ],
+                "dnsPolicy": "ClusterFirst",
+                "restartPolicy": "Always",
+                "schedulerName": "default-scheduler",
+                "securityContext": {},
+                "serviceAccount": "local-storage-admin",
+                "serviceAccountName": "local-storage-admin",
+                "terminationGracePeriodSeconds": 30,
+                "volumes": [
+                    {
+                        "hostPath": {
+                            "path": "/mnt/local-storage",
+                            "type": ""
+                        },
+                        "name": "local-storage"
+                    },
+                    {
+                        "configMap": {
+                            "defaultMode": 420,
+                            "name": "local-volume-config"
+                        },
+                        "name": "provisioner-config"
+                    }
+                ]
+            }
+        },
+        "updateStrategy": {
+            "type": "OnDelete"
+        }
+    },
+    "status": {
+        "currentNumberScheduled": 2,
+        "desiredNumberScheduled": 8,
+        "numberAvailable": 2,
+        "numberMisscheduled": 0,
+        "numberReady": 2,
+        "numberUnavailable": 6,
+        "observedGeneration": 1,
+        "updatedNumberScheduled": 2
+    }
+}

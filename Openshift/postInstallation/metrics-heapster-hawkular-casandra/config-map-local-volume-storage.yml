@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: local-volume-config
+data:
+    storageClassMap: |
+        local-virtualdisk-metric:
+            hostDir:  /mnt/local-storage/virtual/metric
+            mountDir: /mnt/local-storage/virtual/metric
