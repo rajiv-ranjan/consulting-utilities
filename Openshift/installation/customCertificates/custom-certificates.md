@@ -90,18 +90,35 @@ stackexchange.com.server.crt: OK
 1. Generate Root key and read the key details (if you are interested). 
 
 ```sh
-openssl genrsa -out RootCA.key
+openssl genrsa -out RootCA.key 4096
 ```
 Please note the default is 2048 bit.
 ```sh
 openssl rsa -in RootCA.key -text -noout
 ```
 2. Generate Root certificate
+```sh
+openssl req -new -x509 -days 5475 -key RootCA.key -out RootCA.crt
+```
 3. Generate Intermediate Certificate Authority key
+```sh
+openssl genrsa -out IntermediateCA.key 4096
+```
 4. Create Intermediate Certificate Signing Request (CSR)
+```sh
+openssl req -new -key IntermediateCA.key -out IntermediateCA.csr
+```
 5. Generate Intermediate Certificate signed by Root CA
-6. Add certificates to Operating system's trust (Debian/deb-ish)
+```sh
+openssl x509 -req -days 3650 -in IntermediateCA.csr -CA RootCA.crt -CAkey RootCA.key -CAcreateserial  -out IntermediateCA.crt
+```
+6. Add certificates to RHEL
+```sh
+
+```
 7. Generate RSA server key
+
+
 8. Create server certificate signing request, to be signed by intermediate
 9.  Sign CSR, by intermediate CA
 10. Verify everything
