@@ -1,0 +1,53 @@
+          def mvnCmd = "mvn -s configuration/cicd-settings-nexus3.xml"
+
+          pipeline {
+            agent {
+              label 'maven-appdev'
+            }
+            stages {
+              stage('Deploy DEV') {
+                steps {
+                  script {
+                    openshift.withCluster() {
+                      openshift.withProject(env.DEV_PROJECT) {
+                        openshift.selector("dc", "tasks").rollout().latest();
+                      }
+                    }
+                  }
+                }
+              }
+              stage('Promote to STAGE?') {
+                agent {
+                  label 'maven-appdev'
+                }
+                steps {
+                  timeout(time:15, unit:'MINUTES') {
+                      input message: "Promote to STAGE?", ok: "Promote"
+                  }
+
+                  script {
+                    openshift.withCluster() {
+                      if (env.ENABLE_QUAY.toBoolean()) {
+                        withCredentials([usernamePassword(credentialsId: "${openshift.project()}-quay-cicd-secret", usernameVariable: "QUAY_USER", passwordVariable: "QUAY_PWD")]) {
+                          sh "skopeo copy docker://quay.io/${QUAY_USERNAME}/${QUAY_REPOSITORY}:latest docker://quay.io/${QUAY_USERNAME}/${QUAY_REPOSITORY}:stage --src-creds \"$QUAY_USER:$QUAY_PWD\" --dest-creds \"$QUAY_USER:$QUAY_PWD\" --src-tls-verify=false --dest-tls-verify=false"
+                        }
+                      } else {
+                        openshift.tag("${env.DEV_PROJECT}/tasks:latest", "${env.STAGE_PROJECT}/tasks:stage")
+                      }
+                    }
+                  }
+                }
+              }
+              stage('Deploy STAGE') {
+                steps {
+                  script {
+                    openshift.withCluster() {
+                      openshift.withProject(env.STAGE_PROJECT) {
+                        openshift.selector("dc", "tasks").rollout().latest();
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }

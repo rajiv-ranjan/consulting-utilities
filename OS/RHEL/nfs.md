@@ -41,6 +41,7 @@ nfs-utils-1.3.0-0.61.el7.x86_64
 $ rpm -qa rpcbind
 rpcbind-0.2.0-47.el7.x86_64
 ```
+
 ### Start a nfs server
 
 ```sh

@@ -56,7 +56,7 @@ master.crt: OK
 ```
 
 ### Some helpful commands
-#### To get the certificat chain details 
+#### To get the certificate chain details 
 
  ```sh
 openssl s_client -connect stackexchange.com:443 -showcerts 

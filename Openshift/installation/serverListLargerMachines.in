@@ -41,3 +41,7 @@ master-int.c1-ocp.surakshakavach.com        10.74.177.88
 
 yaml where the resource limitations are given.
 https://gitlab.cee.redhat.com/cee_ops/quicklab/blob/master/playbooks/vars/defaults/osp.yaml#L26
+
+
+
+NFS exports have been configured for metric, monitoring and logging on bastion server.

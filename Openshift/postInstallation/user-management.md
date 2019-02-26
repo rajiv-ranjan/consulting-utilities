@@ -2,8 +2,8 @@
 oc describe clusterrole.rbac admin basic-user
 
 * what can a user do?
-    oc policy can-i --list --loglevel=8
-    oc policy can-i <verb> <resource> --scopes=user:info
+    oc auth can-i --list --loglevel=8
+    oc auth can-i <verb> <resource> --scopes=user:info
 
 
 ### Create User

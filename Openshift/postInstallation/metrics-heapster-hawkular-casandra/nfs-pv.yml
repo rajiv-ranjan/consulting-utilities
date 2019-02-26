@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv0001 
+spec:
+  capacity:
+    storage: 3Gi 
+  accessModes:
+  - ReadWriteOnce 
+  nfs: 
+    path: /exports/nfs/metrics
+    server: node-0.rajranjabastion.lab.pnq2.cee.redhat.com
+  persistentVolumeReclaimPolicy: Retain

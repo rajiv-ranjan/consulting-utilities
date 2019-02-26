@@ -1,3 +1,4 @@
+## Using local volume provisioner - Its in tech preview in 3.11
 ### configure local volume
 > https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html-single/configuring_clusters/#install-config-configuring-local
 
@@ -83,3 +84,50 @@ oc new-app -p CONFIGMAP=local-volume-config \
   --labels="app=local-storage-provisioner-label" \
   --template=local-storage/local-storage-provisioner
 
+## Using NFS exports as pv
+
+## Steps to run the metrics installer
+
+#### inventory file looks like below for local volume based metric
+```ini
+############## METRICS #################
+openshift_metrics_install_metrics=true
+openshift_metrics_duration=5
+openshift_metrics_resolution=1m
+openshift_metrics_cassandra_pvc_size=10Gi
+openshift_metrics_cassandra_pvc_storage_class_name=local-virtualdisk-metric
+openshift_metrics_cassandra_storage_type=pv
+openshift_metrics_cassandra_replicas=3
+```
+
+#### inventory file for nfs based metrics
+```ini
+############## METRICS #################
+openshift_metrics_install_metrics=true
+openshift_metrics_duration=1
+openshift_metrics_resolution=15s
+openshift_metrics_cassandra_pvc_size=3Gi
+#openshift_metrics_cassandra_pvc_storage_class_name=local-virtualdisk-metric
+openshift_metrics_cassandra_storage_type=pv
+openshift_metrics_cassandra_replicas=1
+openshift_metrics_cassandra_nodeselector={"node-role.kubernetes.io/infra":"true"}
+openshift_metrics_hawkular_nodeselector={"node-role.kubernetes.io/infra":"true"}
+openshift_metrics_heapster_nodeselector={"node-role.kubernetes.io/infra":"true"}
+```
+Also follow the below links 
+1. Set the ownership of the NFS export on the server to nfsnobody:nfsnobody 
+
+```sh
+chown nfsnobody:nfsnobody -R /exports/nfs/metrics
+chown nfsnobody:nfsnobody -R /exports/nfs/monitoring
+chown nfsnobody:nfsnobody -R /exports/nfs/logging
+```
+2. Disabling ID mapping on NFSv4 if using NFS v4 server
+
+```sh
+# On both the NFS client and server, run
+echo 'Y' > /sys/module/nfsd/parameters/nfs4_disable_idmapping
+```
+
+3. If there are permission related challenges in pods post installation then follow the article 
+   * https://access.redhat.com/solutions/2688571#perms

@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-prometheus-0001 
+spec:
+  capacity:
+    storage: 3Gi 
+  accessModes:
+  - ReadWriteOnce 
+  nfs: 
+    path: /exports/nfs/monitoring
+    server: node-0.rajranjabastion.lab.pnq2.cee.redhat.com
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: prometheus-non-dynamic-storage-class

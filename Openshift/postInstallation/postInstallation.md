@@ -45,5 +45,9 @@ check the HAProxy urls i.e. http://lbserver:9000
 
 ### Top Cluster Admin Tasks
 * install oc client
+```sh
+yum install -y atomic-openshift-clients.x86_64
+```
+
 * User managements - create users with required roles https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html-single/architecture/#roles
 * 

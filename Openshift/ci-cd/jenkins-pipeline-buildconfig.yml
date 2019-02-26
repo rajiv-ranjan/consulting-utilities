@@ -1,0 +1,44 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  annotations:
+    pipeline.alpha.openshift.io/uses: '[{"name": "jenkins", "namespace": "", "kind": "DeploymentConfig"}]'
+  labels:
+    app: cicd-pipeline
+    name: cicd-pipeline
+  name: tasks-pipeline
+spec:
+  source:
+    type: None
+  strategy:
+    type: JenkinsPipeline
+    jenkinsPipelineStrategy:
+      env:
+      - name: DEV_PROJECT
+        value: dev-env
+      - name: STAGE_PROJECT
+        value: stage-env
+      - name: ENABLE_QUAY
+        value: true
+      jenkinsfile: |-
+          def mvnCmd = "mvn -s configuration/cicd-settings-nexus3.xml"
+
+          pipeline {
+            agent {
+              label 'maven-appdev'
+            }
+            stages {
+              stage('Deploy DEV') {
+                steps {
+                  script {
+                    openshift.withCluster() {
+                      openshift.withProject(env.DEV_PROJECT) {
+                        openshift.selector("dc", "tasks").rollout().latest();
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+    

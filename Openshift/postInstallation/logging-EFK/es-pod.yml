@@ -1,0 +1,228 @@
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  creationTimestamp: 2019-01-09T09:01:03Z
+  generation: 5
+  labels:
+    component: es
+    deployment: logging-es-data-master-af7l0zr8
+    logging-infra: elasticsearch
+    provider: openshift
+  name: logging-es-data-master-af7l0zr8
+  namespace: openshift-logging
+  resourceVersion: "7898883"
+  selfLink: /apis/apps.openshift.io/v1/namespaces/openshift-logging/deploymentconfigs/logging-es-data-master-af7l0zr8
+  uid: 17dbaab3-13ed-11e9-9a40-fa163e6bb7d1
+spec:
+  replicas: 1
+  revisionHistoryLimit: 0
+  selector:
+    component: es
+    deployment: logging-es-data-master-af7l0zr8
+    logging-infra: elasticsearch
+    provider: openshift
+  strategy:
+    activeDeadlineSeconds: 21600
+    recreateParams:
+      timeoutSeconds: 600
+    resources: {}
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        component: es
+        deployment: logging-es-data-master-af7l0zr8
+        logging-infra: elasticsearch
+        provider: openshift
+      name: logging-es-data-master-af7l0zr8
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: logging-infra
+                  operator: In
+                  values:
+                  - elasticsearch
+              topologyKey: kubernetes.io/hostname
+            weight: 100
+      containers:
+      - env:
+        - name: DC_NAME
+          value: logging-es-data-master-af7l0zr8
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+        - name: KUBERNETES_TRUST_CERT
+          value: "true"
+        - name: SERVICE_DNS
+          value: logging-es-cluster
+        - name: CLUSTER_NAME
+          value: logging-es
+        - name: INSTANCE_RAM
+          value: 16Gi
+        - name: HEAP_DUMP_LOCATION
+          value: /elasticsearch/persistent/heapdump.hprof
+        - name: NODE_QUORUM
+          value: "2"
+        - name: RECOVER_EXPECTED_NODES
+          value: "3"
+        - name: RECOVER_AFTER_TIME
+          value: 5m
+        - name: READINESS_PROBE_TIMEOUT
+          value: "30"
+        - name: POD_LABEL
+          value: component=es
+        - name: IS_MASTER
+          value: "true"
+        - name: HAS_DATA
+          value: "true"
+        - name: PROMETHEUS_USER
+          value: system:serviceaccount:openshift-metrics:prometheus
+        - name: PRIMARY_SHARDS
+          value: "1"
+        - name: REPLICA_SHARDS
+          value: "0"
+        image: registry.redhat.io/openshift3/ose-logging-elasticsearch5:v3.11.43
+        imagePullPolicy: IfNotPresent
+        name: elasticsearch
+        ports:
+        - containerPort: 9200
+          name: restapi
+          protocol: TCP
+        - containerPort: 9300
+          name: cluster
+          protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - /usr/share/elasticsearch/probe/readiness.sh
+          failureThreshold: 3
+          initialDelaySeconds: 10
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 30
+        resources:
+          requests:
+            cpu: 500m
+            memory: 512Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /etc/elasticsearch/secret
+          name: elasticsearch
+          readOnly: true
+        - mountPath: /usr/share/java/elasticsearch/config
+          name: elasticsearch-config
+          readOnly: true
+        - mountPath: /elasticsearch/persistent
+          name: elasticsearch-storage
+        - mountPath: /etc/podinfo
+          name: podinfo
+          readOnly: true
+      - args:
+        - --upstream-ca=/etc/elasticsearch/secret/admin-ca
+        - --https-address=:4443
+        - -provider=openshift
+        - -client-id=system:serviceaccount:openshift-logging:aggregated-logging-elasticsearch
+        - -client-secret-file=/var/run/secrets/kubernetes.io/serviceaccount/token
+        - -cookie-secret=UTdxalcyVEZzQ1hSQTkxRg==
+        - -basic-auth-password=B18Oyki0BJg3reGy
+        - -upstream=https://localhost:9200
+        - '-openshift-sar={"namespace": "openshift-logging", "verb": "view", "resource":
+          "prometheus", "group": "metrics.openshift.io"}'
+        - '-openshift-delegate-urls={"/": {"resource": "prometheus", "verb": "view",
+          "group": "metrics.openshift.io", "namespace": "openshift-logging"}}'
+        - --tls-cert=/etc/tls/private/tls.crt
+        - --tls-key=/etc/tls/private/tls.key
+        - -pass-access-token
+        - -pass-user-headers
+        image: registry.redhat.io/openshift3/oauth-proxy:v3.11.43
+        imagePullPolicy: IfNotPresent
+        name: proxy
+        ports:
+        - containerPort: 4443
+          name: proxy
+          protocol: TCP
+        resources:
+          limits:
+            memory: 64Mi
+          requests:
+            cpu: 100m
+            memory: 64Mi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /etc/tls/private
+          name: proxy-tls
+          readOnly: true
+        - mountPath: /etc/elasticsearch/secret
+          name: elasticsearch
+          readOnly: true
+      dnsPolicy: ClusterFirst
+      nodeSelector:
+        node-role.kubernetes.io/infra: "true"
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        supplementalGroups:
+        - 65534
+      serviceAccount: aggregated-logging-elasticsearch
+      serviceAccountName: aggregated-logging-elasticsearch
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: proxy-tls
+        secret:
+          defaultMode: 420
+          secretName: prometheus-tls
+      - name: elasticsearch
+        secret:
+          defaultMode: 420
+          secretName: logging-elasticsearch
+      - configMap:
+          defaultMode: 420
+          name: logging-elasticsearch
+        name: elasticsearch-config
+      - downwardAPI:
+          defaultMode: 420
+          items:
+          - path: mem_limit
+            resourceFieldRef:
+              containerName: elasticsearch
+              divisor: "0"
+              resource: limits.memory
+        name: podinfo
+      - name: elasticsearch-storage
+        persistentVolumeClaim:
+          claimName: logging-es-2
+  test: false
+  triggers: []
+status:
+  availableReplicas: 0
+  conditions:
+  - lastTransitionTime: 2019-01-09T09:01:04Z
+    lastUpdateTime: 2019-01-09T09:01:04Z
+    message: Deployment config does not have minimum availability.
+    status: "False"
+    type: Available
+  - lastTransitionTime: 2019-01-09T09:44:55Z
+    lastUpdateTime: 2019-01-09T09:44:55Z
+    message: replication controller "logging-es-data-master-af7l0zr8-3" has failed
+      progressing
+    reason: ProgressDeadlineExceeded
+    status: "False"
+    type: Progressing
+  details:
+    causes:
+    - type: Manual
+    message: manual change
+  latestVersion: 3
+  observedGeneration: 5
+  replicas: 0
+  unavailableReplicas: 0
+  updatedReplicas: 0

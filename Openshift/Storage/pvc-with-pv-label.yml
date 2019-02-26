@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: gluster-claim
+spec:
+  accessModes:
+  - ReadWriteMany
+  resources:
+     requests:
+       storage: 1Gi
+  selector: 
+    matchLabels:
+      storage-tier: gold
+      aws-availability-zone: us-east-1

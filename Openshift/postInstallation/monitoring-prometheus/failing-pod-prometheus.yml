@@ -1,0 +1,328 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    openshift.io/scc: restricted
+  creationTimestamp: 2019-01-06T19:05:48Z
+  generateName: prometheus-k8s-
+  labels:
+    app: prometheus
+    controller-revision-hash: prometheus-k8s-66c696758c
+    prometheus: k8s
+    statefulset.kubernetes.io/pod-name: prometheus-k8s-0
+  name: prometheus-k8s-0
+  namespace: openshift-monitoring
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: StatefulSet
+    name: prometheus-k8s
+    uid: 137a3bbe-11e6-11e9-9a40-fa163e6bb7d1
+  resourceVersion: "7281500"
+  selfLink: /api/v1/namespaces/openshift-monitoring/pods/prometheus-k8s-0
+  uid: 1393da6f-11e6-11e9-a272-fa163e4feb58
+spec:
+  affinity:
+    podAntiAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - podAffinityTerm:
+          labelSelector:
+            matchExpressions:
+            - key: prometheus
+              operator: In
+              values:
+              - k8s
+          namespaces:
+          - openshift-monitoring
+          topologyKey: kubernetes.io/hostname
+        weight: 100
+  containers:
+  - args:
+    - --web.console.templates=/etc/prometheus/consoles
+    - --web.console.libraries=/etc/prometheus/console_libraries
+    - --config.file=/etc/prometheus/config_out/prometheus.env.yaml
+    - --storage.tsdb.path=/prometheus
+    - --storage.tsdb.retention=15d
+    - --web.enable-lifecycle
+    - --storage.tsdb.no-lockfile
+    - --web.external-url=https://prometheus-k8s-openshift-monitoring.apps.c1-ocp.surakshakavach.com/
+    - --web.route-prefix=/
+    - --web.listen-address=127.0.0.1:9090
+    image: registry.redhat.io/openshift3/prometheus:v3.11.43
+    imagePullPolicy: IfNotPresent
+    name: prometheus
+    resources: {}
+    securityContext:
+      capabilities:
+        drop:
+        - KILL
+        - MKNOD
+        - SETGID
+        - SETUID
+      runAsUser: 1000080000
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /etc/prometheus/config_out
+      name: config-out
+      readOnly: true
+    - mountPath: /prometheus
+      name: prometheus-k8s-db
+      subPath: prometheus-db
+    - mountPath: /etc/prometheus/rules/prometheus-k8s-rulefiles-0
+      name: prometheus-k8s-rulefiles-0
+    - mountPath: /etc/prometheus/secrets/prometheus-k8s-tls
+      name: secret-prometheus-k8s-tls
+      readOnly: true
+    - mountPath: /etc/prometheus/secrets/prometheus-k8s-proxy
+      name: secret-prometheus-k8s-proxy
+      readOnly: true
+    - mountPath: /etc/prometheus/secrets/prometheus-k8s-htpasswd
+      name: secret-prometheus-k8s-htpasswd
+      readOnly: true
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: prometheus-k8s-token-qgmtk
+      readOnly: true
+  - args:
+    - --log-format=logfmt
+    - --reload-url=http://localhost:9090/-/reload
+    - --config-file=/etc/prometheus/config/prometheus.yaml
+    - --config-envsubst-file=/etc/prometheus/config_out/prometheus.env.yaml
+    command:
+    - /bin/prometheus-config-reloader
+    env:
+    - name: POD_NAME
+      valueFrom:
+        fieldRef:
+          apiVersion: v1
+          fieldPath: metadata.name
+    image: registry.redhat.io/openshift3/ose-prometheus-config-reloader:v3.11.43
+    imagePullPolicy: IfNotPresent
+    name: prometheus-config-reloader
+    resources:
+      limits:
+        cpu: 10m
+        memory: 50Mi
+      requests:
+        cpu: 10m
+        memory: 50Mi
+    securityContext:
+      capabilities:
+        drop:
+        - KILL
+        - MKNOD
+        - SETGID
+        - SETUID
+      runAsUser: 1000080000
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /etc/prometheus/config
+      name: config
+    - mountPath: /etc/prometheus/config_out
+      name: config-out
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: prometheus-k8s-token-qgmtk
+      readOnly: true
+  - args:
+    - -provider=openshift
+    - -https-address=:9091
+    - -http-address=
+    - -email-domain=*
+    - -upstream=http://localhost:9090
+    - -htpasswd-file=/etc/proxy/htpasswd/auth
+    - -openshift-service-account=prometheus-k8s
+    - '-openshift-sar={"resource": "namespaces", "verb": "get"}'
+    - '-openshift-delegate-urls={"/": {"resource": "namespaces", "verb": "get"}}'
+    - -tls-cert=/etc/tls/private/tls.crt
+    - -tls-key=/etc/tls/private/tls.key
+    - -client-secret-file=/var/run/secrets/kubernetes.io/serviceaccount/token
+    - -cookie-secret-file=/etc/proxy/secrets/session_secret
+    - -openshift-ca=/etc/pki/tls/cert.pem
+    - -openshift-ca=/var/run/secrets/kubernetes.io/serviceaccount/ca.crt
+    - -skip-auth-regex=^/metrics
+    image: registry.redhat.io/openshift3/oauth-proxy:v3.11.43
+    imagePullPolicy: IfNotPresent
+    name: prometheus-proxy
+    ports:
+    - containerPort: 9091
+      name: web
+      protocol: TCP
+    resources: {}
+    securityContext:
+      capabilities:
+        drop:
+        - KILL
+        - MKNOD
+        - SETGID
+        - SETUID
+      runAsUser: 1000080000
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /etc/tls/private
+      name: secret-prometheus-k8s-tls
+    - mountPath: /etc/proxy/secrets
+      name: secret-prometheus-k8s-proxy
+    - mountPath: /etc/proxy/htpasswd
+      name: secret-prometheus-k8s-htpasswd
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: prometheus-k8s-token-qgmtk
+      readOnly: true
+  - args:
+    - --webhook-url=http://localhost:9090/-/reload
+    - --volume-dir=/etc/prometheus/rules/prometheus-k8s-rulefiles-0
+    image: registry.redhat.io/openshift3/ose-configmap-reloader:v3.11.43
+    imagePullPolicy: IfNotPresent
+    name: rules-configmap-reloader
+    resources:
+      limits:
+        cpu: 5m
+        memory: 10Mi
+      requests:
+        cpu: 5m
+        memory: 10Mi
+    securityContext:
+      capabilities:
+        drop:
+        - KILL
+        - MKNOD
+        - SETGID
+        - SETUID
+      runAsUser: 1000080000
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /etc/prometheus/rules/prometheus-k8s-rulefiles-0
+      name: prometheus-k8s-rulefiles-0
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: prometheus-k8s-token-qgmtk
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  hostname: prometheus-k8s-0
+  imagePullSecrets:
+  - name: prometheus-k8s-dockercfg-hplch
+  nodeName: node-1.rajranjainfra.lab.pnq2.cee.redhat.com
+  nodeSelector:
+    node-role.kubernetes.io/infra: "true"
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1000080000
+    seLinuxOptions:
+      level: s0:c9,c4
+  serviceAccount: prometheus-k8s
+  serviceAccountName: prometheus-k8s
+  subdomain: prometheus-operated
+  terminationGracePeriodSeconds: 600
+  tolerations:
+  - effect: NoSchedule
+    key: node.kubernetes.io/memory-pressure
+    operator: Exists
+  volumes:
+  - name: prometheus-k8s-db
+    persistentVolumeClaim:
+      claimName: prometheus-k8s-db-prometheus-k8s-0
+  - name: config
+    secret:
+      defaultMode: 420
+      secretName: prometheus-k8s
+  - emptyDir: {}
+    name: config-out
+  - configMap:
+      defaultMode: 420
+      name: prometheus-k8s-rulefiles-0
+    name: prometheus-k8s-rulefiles-0
+  - name: secret-prometheus-k8s-tls
+    secret:
+      defaultMode: 420
+      secretName: prometheus-k8s-tls
+  - name: secret-prometheus-k8s-proxy
+    secret:
+      defaultMode: 420
+      secretName: prometheus-k8s-proxy
+  - name: secret-prometheus-k8s-htpasswd
+    secret:
+      defaultMode: 420
+      secretName: prometheus-k8s-htpasswd
+  - name: prometheus-k8s-token-qgmtk
+    secret:
+      defaultMode: 420
+      secretName: prometheus-k8s-token-qgmtk
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: 2019-01-06T19:47:05Z
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: 2019-01-06T20:15:24Z
+    message: 'containers with unready status: [prometheus]'
+    reason: ContainersNotReady
+    status: "False"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: null
+    message: 'containers with unready status: [prometheus]'
+    reason: ContainersNotReady
+    status: "False"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: 2019-01-06T19:47:05Z
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://3930cc1a49128e5ef765a6580063ca3ce25b6bab0e22c057e750d78a0f04484e
+    image: registry.redhat.io/openshift3/prometheus:v3.11.43
+    imageID: docker-pullable://registry.redhat.io/openshift3/prometheus@sha256:002e8fea5cecff231f93cbb518b484ad205fc882b67e979388d26af85548111b
+    lastState:
+      terminated:
+        containerID: docker://3930cc1a49128e5ef765a6580063ca3ce25b6bab0e22c057e750d78a0f04484e
+        exitCode: 1
+        finishedAt: 2019-01-06T20:15:24Z
+        reason: Error
+        startedAt: 2019-01-06T20:15:23Z
+    name: prometheus
+    ready: false
+    restartCount: 10
+    state:
+      waiting:
+        message: Back-off 5m0s restarting failed container=prometheus pod=prometheus-k8s-0_openshift-monitoring(1393da6f-11e6-11e9-a272-fa163e4feb58)
+        reason: CrashLoopBackOff
+  - containerID: docker://2953d3985361935a765a722bdc11e15f2c8053723ceb5b72a56dc2e41379ad5e
+    image: registry.redhat.io/openshift3/ose-prometheus-config-reloader:v3.11.43
+    imageID: docker-pullable://registry.redhat.io/openshift3/ose-prometheus-config-reloader@sha256:3b1e71d5beab8e638634876fbf0571f6468d135a1abdfe83960b3d634478b264
+    lastState: {}
+    name: prometheus-config-reloader
+    ready: true
+    restartCount: 0
+    state:
+      running:
+        startedAt: 2019-01-06T19:48:07Z
+  - containerID: docker://bceb4627bb5aab6f5c46ab8a2e02ec792b87b07333ef6a7ba300b3c9847ad34e
+    image: registry.redhat.io/openshift3/oauth-proxy:v3.11.43
+    imageID: docker-pullable://registry.redhat.io/openshift3/oauth-proxy@sha256:79597ad9f331bb84e7213b3f858b3d79c4f44aefcd6ed87b671078eeb43a2834
+    lastState: {}
+    name: prometheus-proxy
+    ready: true
+    restartCount: 0
+    state:
+      running:
+        startedAt: 2019-01-06T19:48:22Z
+  - containerID: docker://0386d46ce7f93802df7925b13e2cc52ab4ff892d452cd87bbbe02fc6ec59a75e
+    image: registry.redhat.io/openshift3/ose-configmap-reloader:v3.11.43
+    imageID: docker-pullable://registry.redhat.io/openshift3/ose-configmap-reloader@sha256:ce4656b6ebdc7d5af9f3e6c290b137bfcd194508f8fe7ef93fa6aceb14707f00
+    lastState: {}
+    name: rules-configmap-reloader
+    ready: true
+    restartCount: 0
+    state:
+      running:
+        startedAt: 2019-01-06T19:48:51Z
+  hostIP: 10.74.176.232
+  phase: Running
+  podIP: 10.130.2.11
+  qosClass: Burstable
+  startTime: 2019-01-06T19:47:05Z

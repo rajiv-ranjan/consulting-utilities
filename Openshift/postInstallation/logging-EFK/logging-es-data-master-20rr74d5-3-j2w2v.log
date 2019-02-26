@@ -1,0 +1,58 @@
+﻿[2019-01-09 12:27:00,389][INFO ][container.run            ] Begin Elasticsearch startup script
+[2019-01-09 12:27:00,437][INFO ][container.run            ] Comparing the specified RAM to the maximum recommended for Elasticsearch...
+[2019-01-09 12:27:00,439][INFO ][container.run            ] Inspecting the maximum RAM available...
+[2019-01-09 12:27:00,444][INFO ][container.run            ] ES_JAVA_OPTS: '-Dmapper.allow_dots_in_name=true -Xms244m -Xmx244m'
+[2019-01-09 12:27:00,446][INFO ][container.run            ] Building required jks files and truststore
+[2019-01-09 12:27:00,463][INFO ][container.run            ] Checking if Elasticsearch is ready
+[2019-01-09 12:27:00,469][INFO ][container.run            ] Setting heap dump location /elasticsearch/persistent/heapdump.hprof
+[2019-01-09 12:27:00,471][INFO ][container.run            ] ES_JAVA_OPTS: '-Dmapper.allow_dots_in_name=true -Xms244m -Xmx244m -XX:HeapDumpPath=/elasticsearch/persistent/heapdump.hprof -Dsg.display_lic_none=false -Dio.netty.recycler.maxCapacityPerThread=0 -Dio.netty.allocator.type=unpooled'
+
+
+### LICENSE NOTICE Search Guard ###
+
+If you use one or more of the following features in production
+make sure you have a valid Search Guard license
+(See https://floragunn.com/searchguard-validate-license )
+
+* Kibana Multitenancy
+* LDAP authentication/authorization
+* Active Directory authentication/authorization
+* REST Management API
+* JSON Web Token (JWT) authentication/authorization
+* Kerberos authentication/authorization
+* Document- and Fieldlevel Security (DLS/FLS)
+* Auditlogging
+
+In case of any doubt mail to <sales@floragunn.com>
+### LICENSE NOTICE Search Guard ###
+
+If you use one or more of the following features in production
+make sure you have a valid Search Guard license
+(See https://floragunn.com/searchguard-validate-license )
+
+* Kibana Multitenancy
+* LDAP authentication/authorization
+* Active Directory authentication/authorization
+* REST Management API
+* JSON Web Token (JWT) authentication/authorization
+* Kerberos authentication/authorization
+* Document- and Fieldlevel Security (DLS/FLS)
+* Auditlogging
+
+In case of any doubt mail to <sales@floragunn.com>
+###################################
+###################################
+Consider setting -Djdk.tls.rejectClientInitiatedRenegotiation=true to prevent DoS attacks through client side initiated TLS renegotiation.
+Consider setting -Djdk.tls.rejectClientInitiatedRenegotiation=true to prevent DoS attacks through client side initiated TLS renegotiation.
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder  for further details.
+[2019-01-09 12:27:16,373][INFO ][container.run            ] Elasticsearch is ready and listening
+/usr/share/elasticsearch/init ~
+[2019-01-09 12:27:16,684][INFO ][container.run            ] Forcing the seeding of ACL documents
+[2019-01-09 12:27:16,691][INFO ][container.run            ] Seeding the searchguard ACL index.  Will wait up to 604800 seconds.
+[2019-01-09 12:27:16,768][INFO ][container.run            ] Seeding the searchguard ACL index.  Will wait up to 604800 seconds.
+/etc/elasticsearch /usr/share/elasticsearch/init
+Search Guard Admin v5
+Will connect to localhost:9300 ... done
+ERROR StatusLogger No Log4j 2 configuration file found. Using default configuration (logging only errors to the console), or user programmatically provided configurations. Set system property 'log4j2.debug' to show Log4j 2 internal initialization logging. See https://logging.apache.org/log4j/2.x/manual/configuration.html  for instructions on how to configure Log4j 2

@@ -1,4 +1,7 @@
-[root@node-0 ~]# lsblk
+```sh
+lsblk
+```
+```sh
 NAME   MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
 vda    253:0    0  40G  0 disk
 `-vda1 253:1    0  40G  0 part /
@@ -6,6 +9,7 @@ vdb    253:16   0  10G  0 disk
 `-vdb1 253:17   0  10G  0 part
 vdc    253:32   0  10G  0 disk
 `-vdc1 253:33   0  10G  0 part
+```
 
 [root@node-0 ~]# pvcreate /dev/vdb1
   Physical volume "/dev/vdb1" successfully created.
@@ -75,3 +79,76 @@ tmpfs                                  379M     0  379M   0% /run/user/1000
 /dev/mapper/vg--registry-lv--registry   10G   33M   10G   1% /exports/registry
 /dev/mapper/vg--apps-lv--apps           10G   33M   10G   1% /exports/apps
 [root@node-0 ~]#
+
+
+### Similar process for metric, logging and monitoring NFS too
+*I have chosen extra volume available on bastion server*
+```sh
+mkdir /exports/nfs/metrics -p
+mkdir /exports/nfs/logging -p
+mkdir /exports/nfs/monitoring -p
+```
+
+```sh
+lsblk
+```
+
+```sh
+NAME   MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+vda    253:0    0  40G  0 disk
+`-vda1 253:1    0  40G  0 part /
+vdb    253:16   0  10G  0 disk
+|-vdb1 253:17   0   3G  0 part
+|-vdb2 253:18   0   3G  0 part
+`-vdb3 253:19   0   4G  0 part
+```
+
+```sh
+# export volume prep for metric NFS
+pvcreate /dev/vdb1
+vgcreate vg-metrics /dev/vdb1
+lvcreate -n lv-metrics -l 100%VG vg-metrics
+mkfs.xfs /dev/mapper/vg--metrics-lv--metrics
+mount -t xfs /dev/vg-metrics/lv-metrics /exports/nfs/metrics
+# export volume prep for monitoring NFS
+pvcreate /dev/vdb2
+vgcreate vg-monitoring /dev/vdb2
+lvcreate -n lv-monitoring -l 100%VG vg-monitoring
+mkfs.xfs /dev/mapper/vg--monitoring-lv--monitoring
+mount -t xfs /dev/vg-monitoring/lv-monitoring /exports/nfs/monitoring
+
+# export volume prep for logging NFS
+pvcreate /dev/vdb3
+vgcreate vg-logging /dev/vdb3
+lvcreate -n lv-logging -l 100%VG vg-logging
+mkfs.xfs /dev/mapper/vg--logging-lv--logging
+mount -t xfs /dev/vg-logging/lv-logging /exports/nfs/logging
+```
+Output
+
+```sh
+[root@node-0 ~]# lsblk
+NAME                              MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+vda                               253:0    0  40G  0 disk
+`-vda1                            253:1    0  40G  0 part /
+vdb                               253:16   0  10G  0 disk
+|-vdb1                            253:17   0   3G  0 part
+| `-vg--metrics-lv--metrics       252:0    0   3G  0 lvm  /exports/nfs/metrics
+|-vdb2                            253:18   0   3G  0 part
+| `-vg--monitoring-lv--monitoring 252:1    0   3G  0 lvm  /exports/nfs/monitoring
+`-vdb3                            253:19   0   4G  0 part
+  `-vg--logging-lv--logging       252:2    0   4G  0 lvm  /exports/nfs/logging
+```
+After changing the exports config file
+```sh
+cat /etc/exports
+```
+```sh
+/exports/nfs/metrics node-0.rajranjainfra.lab.pnq2.cee.redhat.com(rw,root_squash) node-1.rajranjainfra.lab.pnq2.cee.redhat.com(rw,no_root_squash) node-2.rajranjainfra.lab.pnq2.cee.redhat.com(rw,root_squash)
+/exports/nfs/monitoring node-0.rajranjainfra.lab.pnq2.cee.redhat.com(rw,root_squash) node-1.rajranjainfra.lab.pnq2.cee.redhat.com(rw,no_root_squash) node-2.rajranjainfra.lab.pnq2.cee.redhat.com(rw,root_squash)
+/exports/nfs/logging node-0.rajranjainfra.lab.pnq2.cee.redhat.com(rw,root_squash) node-1.rajranjainfra.lab.pnq2.cee.redhat.com(rw,no_root_squash) node-2.rajranjainfra.lab.pnq2.cee.redhat.com(rw,root_squash)
+```
+To verify run exports should be mountable on the infra nodes
+```sh
+mount -t nfs node-0.rajranjabastion.lab.pnq2.cee.redhat.com:/exports/nfs/metrics /mnt/metrics
+```
