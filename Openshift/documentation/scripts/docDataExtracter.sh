@@ -4,7 +4,7 @@
 unset MASTER_PUBLIC_URL MASTER_INTERNAL_URL WILDCARD_APP_SUBDOMAIN 
 unset INVENTORY_FILE_PATH MASTER_PUB_CERT_FILE_PATH WILDCARD_APP_CERT_FILE_PATH 
 unset INTERMEDIATE_CERT_FILE_PATH ROOT_CERT_FILE_PATH
-
+unset OPENSHIFT_CLUSTER_ADMIN_USERNAME OPENSHIFT_CLUSTER_ADMIN_PASSWORD
 
 usage()
 {
@@ -15,10 +15,11 @@ usage()
                              [-A WILDCARD_APP_SUBDOMAIN ]
                              [-a WILDCARD_APP_CERT_FILE_PATH]
                              [-y INTERMEDIATE_CERT_FILE_PATH]
-                             [-z ROOT_CERT_FILE_PATH]"
+                             [-z ROOT_CERT_FILE_PATH]
+                             [-e OPENSHIFT_CLUSTER_ADMIN_USERNAME]
+                             [-d OPENSHIFT_CLUSTER_ADMIN_PASSWORD]"
   exit 2
 }
-
 
 while getopts 'n:I:P:p:A:a:y:z:' c
 do
@@ -31,6 +32,8 @@ do
         a) WILDCARD_APP_CERT_FILE_PATH=$OPTARG;;
         y) INTERMEDIATE_CERT_FILE_PATH=$OPTARG;;
         z) ROOT_CERT_FILE_PATH=$OPTARG;;
+        e) OPENSHIFT_CLUSTER_ADMIN_USERNAME=$OPTARG;;
+        d) OPENSHIFT_CLUSTER_ADMIN_PASSWORD=$OPTARG;;
         h|?) usage ;;
     esac
 done
