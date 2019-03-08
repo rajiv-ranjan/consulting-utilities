@@ -1,0 +1,16 @@
+# node-0.rajranjabastion.lab.pnq2.cee.redhat.com is the hostname
+
+dn: olcDatabase={2}hdb,cn=config
+changetype: modify
+replace: olcSuffix
+olcSuffix: dc=rajranjabastion,dc=lab,dc=pnq2,dc=cee,dc=redhat,dc=com
+
+dn: olcDatabase={2}hdb,cn=config
+changetype: modify
+replace: olcRootDN
+olcRootDN: cn=ldapadmin,dc=rajranjabastion,dc=lab,dc=pnq2,dc=cee,dc=redhat,dc=com
+
+dn: olcDatabase={2}hdb,cn=config
+changetype: modify
+replace: olcRootPW
+olcRootPW: {SSHA}Qli9D1FDkBHxpuVFh5epzM535r7B3GOH

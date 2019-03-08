@@ -1,0 +1,17 @@
+dn: uid=rajiv,ou=People,dc=rajranjabastion,dc=lab,dc=pnq2,dc=cee,dc=redhat,dc=com
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+objectClass: shadowAccount
+cn: rajiv
+uid: rajiv
+uidNumber: 9999
+gidNumber: 100
+homeDirectory: /home/rajiv
+loginShell: /bin/bash
+gecos: Rajiv [local (at) cluster]
+userPassword: {crypt}x
+shadowLastChange: 17058
+shadowMin: 0
+shadowMax: 99999
+shadowWarning: 7

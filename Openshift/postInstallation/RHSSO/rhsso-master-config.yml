@@ -1,0 +1,21 @@
+  - name: rh_sso
+    challenge: false
+    login: true
+    mappingInfo: add
+    provider:
+      apiVersion: v1
+      kind: OpenIDIdentityProvider
+      clientID: openshift-demo
+      clientSecret: 1b1cc06b-d404-4006-827c-0959a5f7a4b1
+      ca: xpaas.crt
+      urls:
+        authorize: https://secure-sso-sso-app-demo.apps.c1-ocp.surakshakavach.com/auth/realms/OpenShift/protocol/openid-connect/auth
+        token: https://secure-sso-sso-app-demo.apps.c1-ocp.surakshakavach.com/auth/realms/OpenShift/protocol/openid-connect/token
+        userInfo: https://secure-sso-sso-app-demo.apps.c1-ocp.surakshakavach.com/auth/realms/OpenShift/protocol/openid-connect/userinfo
+      claims:
+        id:
+        - sub
+        preferredUsername:
+        - preferred_username
+        name:
+        - name

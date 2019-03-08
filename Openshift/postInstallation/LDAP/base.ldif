@@ -1,0 +1,17 @@
+dn: dc=rajranjabastion,dc=lab,dc=pnq2,dc=cee,dc=redhat,dc=com
+dc: rajranjabastion
+objectClass: top
+objectClass: domain
+
+dn: cn=ldapadmin,dc=rajranjabastion,dc=lab,dc=pnq2,dc=cee,dc=redhat,dc=com
+objectClass: organizationalRole
+cn: ldapadmin
+description: LDAP Manager
+
+dn: ou=People,dc=rajranjabastion,dc=lab,dc=pnq2,dc=cee,dc=redhat,dc=com
+objectClass: organizationalUnit
+ou: People
+
+dn: ou=Group,dc=rajranjabastion,dc=lab,dc=pnq2,dc=cee,dc=redhat,dc=com
+objectClass: organizationalUnit
+ou: Group
