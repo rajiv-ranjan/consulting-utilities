@@ -62,6 +62,10 @@ ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'systemctl is-active docker' > docker-i
 ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'lsblk' > lsblk.log
 ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'cat /etc/ntp.conf' > ntp.log
 ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'ifconfig' > ifconfig.log
+ansible -i $INVENTORY_FILE_PATH masters -a 'cat /etc/fstab' > fstab_masters.log
+ansible -i $INVENTORY_FILE_PATH masters -a 'sysctl net.ipv4.ip_forward' > ipv4forward.log
+sudo cat /etc/fstab > fstab_bastion.log
+
 
 # run below from bastion server
 # get app wild card resolution
@@ -89,6 +93,28 @@ oc get identities
 # storage data
 oc get pv > pv.log
 oc get sc > sc.log
+
+###### Gluster related info 
+
+oc get storageclass > storageclass.log
+
+#gluster storage data
+oc get pvc -n default > pvc.log
+
+#Verify registry using gluster
+oc describe dc/docker-registry -n default | grep -A3 Volumes > registryVerification.log
+
+echo "export HEKETI_POD=$(oc get pods -l glusterfs=heketi-storage-pod -n app-storage -o jsonpath="{.items[0].metadata.name}")
+export HEKETI_CLI_SERVER=http://$(oc get route/heketi-storage -n app-storage -o jsonpath='{.spec.host}')
+export HEKETI_CLI_KEY=$(oc get pod/$HEKETI_POD -n app-storage -o jsonpath='{.spec.containers[0].env[?(@.name=="HEKETI_ADMIN_KEY")].value}')
+export HEKETI_ADMIN_KEY_SECRET=$(echo -n ${HEKETI_CLI_KEY} | base64)
+export HEKETI_CLI_USER=admin" > heketi-exports-app
+
+source heketi-exports-app
+
+heketi-cli cluster list > clusterlist.log
+heketi-cli volume list > volumelist.log
+heketi-cli topology info > topologyinfo.log
 
 # network details
 oc get clusternetwork > clusternetwork.log
