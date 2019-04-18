@@ -63,6 +63,7 @@ ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'lsblk' > lsblk.log
 ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'cat /etc/ntp.conf' > ntp.log
 ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'ifconfig' > ifconfig.log
 ansible -i $INVENTORY_FILE_PATH masters -a 'cat /etc/fstab' > fstab_masters.log
+ansible -i $INVENTORY_FILE_PATH masters -a 'route -n' > route.log
 sudo cat /etc/fstab > fstab_bastion.log
 
 # run below from bastion server
