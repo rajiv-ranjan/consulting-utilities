@@ -62,8 +62,8 @@ ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'systemctl is-active docker' > docker-i
 ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'lsblk' > lsblk.log
 ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'cat /etc/ntp.conf' > ntp.log
 ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'ifconfig' > ifconfig.log
-ansible -i $INVENTORY_FILE_PATH masters -a 'cat /etc/fstab' > fstab_masters.log
-ansible -i $INVENTORY_FILE_PATH masters -a 'sysctl net.ipv4.ip_forward' > ipv4forward.log
+ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'cat /etc/fstab' > fstab_masters.log
+ansible -i $INVENTORY_FILE_PATH OSEv3 -a 'sysctl net.ipv4.ip_forward' > ipv4forward.log
 sudo cat /etc/fstab > fstab_bastion.log
 
 
@@ -123,6 +123,13 @@ oc get netnamespaces > netnamespaces.log
 
 # components health
 oc get componentstatuses > componentstatuses.log
+
+#Memory Consumption of all nodes
+oc adm top nodes > nodeMem.log
+
+#Memory Consumption of all pods
+oc adm top pods > podsMem.log
+
 
 ############# EXTRACT K8S OBJECT DETAIL FROM OC PROJECTS
 ./extractK8sObjects
