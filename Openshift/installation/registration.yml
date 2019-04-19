@@ -1,4 +1,5 @@
 ---
+# ansible-playbook -i hosts -u quicklab --key quicklab.key -e username='' -e password='' -e pool_ids='' -vvvv useful-ansible/reg-masters.yml
 - hosts: OSEv3
   tasks:
     - name: Register the cluster with Red Hat OCP Subscription

@@ -1,0 +1,16 @@
+---
+# ansible-playbook -i hosts -u quicklab --key quicklab.key -e hosts=masters -e devicePath='/dev/vdb' -vvvv useful-ansible/docker-setup-update.yml
+- hosts: "{{ hosts }}"
+  tasks:
+    - name: Update the docker-storage-setup file
+      lineinfile:
+        path: /etc/sysconfig/docker-storage-setup
+        line: DEVS="{{ devicePath }}"
+    - name: Update the docker-storage-setup file
+      lineinfile:
+        path: /etc/sysconfig/docker-storage-setup
+        line: VG=docker-vg
+    - name: Update the docker-storage-setup file
+      lineinfile:
+        path: /etc/sysconfig/docker-storage-setup
+        line: WIPE_SIGNATURES=true

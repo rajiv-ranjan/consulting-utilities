@@ -1,3 +1,5 @@
+> TODO Complete the steps by following [link](https://access.redhat.com/documentation/en-us/red_hat_single_sign-on/7.3/html-single/red_hat_single_sign-on_for_openshift/#using_the_red_hat_single_sign_on_for_openshift_image_streams_and_application_templates) and [example documentation](https://access.redhat.com/documentation/en-us/red_hat_jboss_middleware_for_openshift/3/html-single/red_hat_single_sign-on_for_openshift/index#Example-Deploying-SSO)
+
 * Login to OCP cluster as system admin
 
 ```sh

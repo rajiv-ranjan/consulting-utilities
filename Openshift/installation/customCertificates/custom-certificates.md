@@ -55,6 +55,13 @@ output
 master.crt: OK
 ```
 
+12. How to read a csr file
+
+```sh
+openssl req -noout -text -in server.csr
+
+```
+
 ### Some helpful commands
 #### To get the certificate chain details 
 

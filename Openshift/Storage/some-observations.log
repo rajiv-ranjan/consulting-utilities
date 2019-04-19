@@ -1,0 +1,4 @@
+                PVC             PV                  endpoint
+Registry -->    registry-claim  registry-volume     glusterfs-registry-endpoints (path: glusterfs-registry-volume)(default) 
+                                                    10.10.92.212, 10.10.92.219, 10.10.92.66, 10.10.92.69 port 1
+

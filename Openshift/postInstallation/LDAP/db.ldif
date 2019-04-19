@@ -13,4 +13,4 @@ olcRootDN: cn=ldapadmin,dc=rajranjabastion,dc=lab,dc=pnq2,dc=cee,dc=redhat,dc=co
 dn: olcDatabase={2}hdb,cn=config
 changetype: modify
 replace: olcRootPW
-olcRootPW: {SSHA}Qli9D1FDkBHxpuVFh5epzM535r7B3GOH
+olcRootPW: {SSHA}****HASHEDPASSWORD****

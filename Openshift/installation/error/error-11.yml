@@ -1,0 +1,268 @@
+{
+  "attempts": 30,
+  "changed": false,
+  "results":
+    {
+      "cmd": "/bin/oc get pod --selector=glusterfs=deploy-heketi-storage-pod -o json -n app-storage",
+      "results":
+        [
+          {
+            "apiVersion": "v1",
+            "items":
+              [
+                {
+                  "apiVersion": "v1",
+                  "kind": "Pod",
+                  "metadata":
+                    {
+                      "annotations":
+                        {
+                          "openshift.io/deployment-config.latest-version": "1",
+                          "openshift.io/deployment-config.name": "deploy-heketi-storage",
+                          "openshift.io/deployment.name": "deploy-heketi-storage-1",
+                          "openshift.io/scc": "restricted",
+                        },
+                      "creationTimestamp": "2019-03-17T13:41:55Z",
+                      "generateName": "deploy-heketi-storage-1-",
+                      "labels":
+                        {
+                          "deploy-heketi": "support",
+                          "deployment": "deploy-heketi-storage-1",
+                          "deploymentconfig": "deploy-heketi-storage",
+                          "glusterfs": "deploy-heketi-storage-pod",
+                        },
+                      "name": "deploy-heketi-storage-1-9hrfw",
+                      "namespace": "app-storage",
+                      "ownerReferences":
+                        [
+                          {
+                            "apiVersion": "v1",
+                            "blockOwnerDeletion": true,
+                            "controller": true,
+                            "kind": "ReplicationController",
+                            "name": "deploy-heketi-storage-1",
+                            "uid": "69a23230-48ba-11e9-9f34-fa163e161366",
+                          },
+                        ],
+                      "resourceVersion": "7032",
+                      "selfLink": "/api/v1/namespaces/app-storage/pods/deploy-heketi-storage-1-9hrfw",
+                      "uid": "6dd4214e-48ba-11e9-9f34-fa163e161366",
+                    },
+                  "spec":
+                    {
+                      "containers":
+                        [
+                          {
+                            "env":
+                              [
+                                {
+                                  "name": "HEKETI_USER_KEY",
+                                  "value": "sRn1RlBH+DEY3f9y11YXDyud6aBYiXm6u4J2ICJ72d0=",
+                                },
+                                {
+                                  "name": "HEKETI_ADMIN_KEY",
+                                  "value": "9SVUmoj2GM1prKvSwIjP2ARefh3I+DiVkyshdPxqLeA=",
+                                },
+                                {
+                                  "name": "HEKETI_EXECUTOR",
+                                  "value": "kubernetes",
+                                },
+                                {
+                                  "name": "HEKETI_FSTAB",
+                                  "value": "/var/lib/heketi/fstab",
+                                },
+                                {
+                                  "name": "HEKETI_SNAPSHOT_LIMIT",
+                                  "value": "14",
+                                },
+                                {
+                                  "name": "HEKETI_KUBE_GLUSTER_DAEMONSET",
+                                  "value": "1",
+                                },
+                                {
+                                  "name": "HEKETI_IGNORE_STALE_OPERATIONS",
+                                  "value": "true",
+                                },
+                              ],
+                            "image": "registry.redhat.io/rhgs3/rhgs-volmanager-rhel7:v3.11",
+                            "imagePullPolicy": "IfNotPresent",
+                            "livenessProbe":
+                              {
+                                "failureThreshold": 3,
+                                "httpGet":
+                                  {
+                                    "path": "/hello",
+                                    "port": 8080,
+                                    "scheme": "HTTP",
+                                  },
+                                "initialDelaySeconds": 30,
+                                "periodSeconds": 10,
+                                "successThreshold": 1,
+                                "timeoutSeconds": 3,
+                              },
+                            "name": "heketi",
+                            "ports":
+                              [{ "containerPort": 8080, "protocol": "TCP" }],
+                            "readinessProbe":
+                              {
+                                "failureThreshold": 3,
+                                "httpGet":
+                                  {
+                                    "path": "/hello",
+                                    "port": 8080,
+                                    "scheme": "HTTP",
+                                  },
+                                "initialDelaySeconds": 3,
+                                "periodSeconds": 10,
+                                "successThreshold": 1,
+                                "timeoutSeconds": 3,
+                              },
+                            "resources": {},
+                            "securityContext":
+                              {
+                                "capabilities":
+                                  {
+                                    "drop":
+                                      ["KILL", "MKNOD", "SETGID", "SETUID"],
+                                  },
+                                "runAsUser": 1000120000,
+                              },
+                            "terminationMessagePath": "/dev/termination-log",
+                            "terminationMessagePolicy": "File",
+                            "volumeMounts":
+                              [
+                                {
+                                  "mountPath": "/var/lib/heketi",
+                                  "name": "db",
+                                },
+                                {
+                                  "mountPath": "/etc/heketi",
+                                  "name": "config",
+                                },
+                                {
+                                  "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                                  "name": "heketi-storage-service-account-token-n8kpz",
+                                  "readOnly": true,
+                                },
+                              ],
+                          },
+                        ],
+                      "dnsPolicy": "ClusterFirst",
+                      "imagePullSecrets":
+                        [
+                          {
+                            "name": "heketi-storage-service-account-dockercfg-x6ml6",
+                          },
+                        ],
+                      "nodeName": "node-2.rajranjaregistryocs.lab.rdu2.cee.redhat.com",
+                      "priority": 0,
+                      "restartPolicy": "Always",
+                      "schedulerName": "default-scheduler",
+                      "securityContext":
+                        {
+                          "fsGroup": 1000120000,
+                          "seLinuxOptions": { "level": "s0:c11,c5" },
+                        },
+                      "serviceAccount": "heketi-storage-service-account",
+                      "serviceAccountName": "heketi-storage-service-account",
+                      "terminationGracePeriodSeconds": 30,
+                      "volumes":
+                        [
+                          { "emptyDir": {}, "name": "db" },
+                          {
+                            "name": "config",
+                            "secret":
+                              {
+                                "defaultMode": 420,
+                                "secretName": "heketi-storage-config-secret",
+                              },
+                          },
+                          {
+                            "name": "heketi-storage-service-account-token-n8kpz",
+                            "secret":
+                              {
+                                "defaultMode": 420,
+                                "secretName": "heketi-storage-service-account-token-n8kpz",
+                              },
+                          },
+                        ],
+                    },
+                  "status":
+                    {
+                      "conditions":
+                        [
+                          {
+                            "lastProbeTime": null,
+                            "lastTransitionTime": "2019-03-17T13:41:55Z",
+                            "status": "True",
+                            "type": "Initialized",
+                          },
+                          {
+                            "lastProbeTime": null,
+                            "lastTransitionTime": "2019-03-17T13:41:55Z",
+                            "message": "containers with unready status: [heketi]",
+                            "reason": "ContainersNotReady",
+                            "status": "False",
+                            "type": "Ready",
+                          },
+                          {
+                            "lastProbeTime": null,
+                            "lastTransitionTime": null,
+                            "message": "containers with unready status: [heketi]",
+                            "reason": "ContainersNotReady",
+                            "status": "False",
+                            "type": "ContainersReady",
+                          },
+                          {
+                            "lastProbeTime": null,
+                            "lastTransitionTime": "2019-03-17T13:41:56Z",
+                            "status": "True",
+                            "type": "PodScheduled",
+                          },
+                        ],
+                      "containerStatuses":
+                        [
+                          {
+                            "containerID": "docker://8330318f5d373154104c5fce6769b17a04e01cc1f101e47a4d550b7ac2d8d227",
+                            "image": "registry.redhat.io/rhgs3/rhgs-volmanager-rhel7:v3.11",
+                            "imageID": "docker-pullable://registry.redhat.io/rhgs3/rhgs-volmanager-rhel7@sha256:6f66e88c1802b2360d1dfb7714efb38352be934232ca7144bb8e7614eaed1693",
+                            "lastState":
+                              {
+                                "terminated":
+                                  {
+                                    "containerID": "docker://8330318f5d373154104c5fce6769b17a04e01cc1f101e47a4d550b7ac2d8d227",
+                                    "exitCode": 1,
+                                    "finishedAt": "2019-03-17T13:47:50Z",
+                                    "reason": "Error",
+                                    "startedAt": "2019-03-17T13:47:50Z",
+                                  },
+                              },
+                            "name": "heketi",
+                            "ready": false,
+                            "restartCount": 6,
+                            "state":
+                              {
+                                "waiting":
+                                  {
+                                    "message": "Back-off 5m0s restarting failed container=heketi pod=deploy-heketi-storage-1-9hrfw_app-storage(6dd4214e-48ba-11e9-9f34-fa163e161366)",
+                                    "reason": "CrashLoopBackOff",
+                                  },
+                              },
+                          },
+                        ],
+                      "hostIP": "10.10.92.66",
+                      "phase": "Running",
+                      "podIP": "10.128.12.2",
+                      "qosClass": "BestEffort",
+                      "startTime": "2019-03-17T13:41:55Z",
+                    },
+                },
+              ],
+            "kind": "List",
+            "metadata": { "resourceVersion": "", "selfLink": "" },
+          },
+        ],
+      "returncode": 0,
+    },
+  "state": "list",
+}

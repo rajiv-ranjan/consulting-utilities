@@ -22,7 +22,7 @@ $ ansible -i /home/quicklab/c1-ocp/hosts --key-file=/home/quicklab/c1-ocp/quickl
 /usr/local/bin/master-restart controllers
 
 ```sh
-ansible -i /home/quicklab/c1-ocp/hosts --key-file=/home/quicklab/c1-ocp/quicklab.key masters -a '/usr/local/bin/master-restart api'
+ansible -i /home/quicklab/c1-ocp/hosts --key-file=/home/quicklab/c1-ocp/quicklab.key masters -a '/usr/local/bin/master-restart api api'
 
 node-2.rajranjamaster.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
 2
@@ -33,7 +33,7 @@ node-1.rajranjamaster.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
 ```
 
 ```sh
-ansible -i /home/quicklab/c1-ocp/hosts --key-file=/home/quicklab/c1-ocp/quicklab.key masters -a '/usr/local/bin/master-restart controllers'
+ansible -i /home/quicklab/c1-ocp/hosts --key-file=/home/quicklab/c1-ocp/quicklab.key masters -a '/usr/local/bin/master-restart controllers controllers'
 
 node-0.rajranjamaster.lab.pnq2.cee.redhat.com | SUCCESS | rc=0 >>
 2

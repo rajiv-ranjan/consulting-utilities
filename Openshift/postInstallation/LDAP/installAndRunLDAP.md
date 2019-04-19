@@ -50,7 +50,36 @@ slappasswd -h {SSHA} -s ldapadmin
 ```
 * Create a db.ldif file to edit the domain server, root user and password. See the content of the [db.ldif](db.ldif) for more detail.
 
-> TODO add the content of the db.ldif
+* Update the LDAP server with configs in db.ldif
+
+```sh
+ldapmodify -Y EXTERNAL  -H ldapi:/// -f db.ldif
+```
+* Restrict the monitor access only to ldap root (ldapadm) user not to others. Create a [monitor.ldif](monitor.ldif) and update the changes to the LDAP server.
+
+```sh
+ldapmodify -Y EXTERNAL  -H ldapi:/// -f monitor.ldif
+```
+* To config ldap database; use a sample config file and load the LDAP schemas.
+
+```sh
+cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+chown ldap:ldap /var/lib/ldap/*
+ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/cosine.ldif
+ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/nis.ldif 
+ldapadd -Y EXTERNAL -H ldapi:/// -f /etc/openldap/schema/inetorgperson.ldif
+```
+
+* Create the base org structure for users to be stored. See [base.ldif](base.ldif).
+```sh
+ldapadd -x -W -D "cn=ldapadmin,dc=rajranjabastion,dc=lab,dc=pnq2,dc=cee,dc=redhat,dc=com" -f base.ldif
+```
+
+* create your first user. Review the file [rajiv.ldif](rajiv.ldif)
+```sh
+ldapadd -x -W -D "cn=ldapadmin,dc=rajranjabastion,dc=lab,dc=pnq2,dc=cee,dc=redhat,dc=com" -f rajiv.ldif
+```
+
 
 ## Setup logging in LDAP
 * check whether logging is active. In a new installation it will not be.
@@ -124,3 +153,11 @@ dn: olcDatabase={2}hdb,cn=config
 ```sh
 journalctl -u slapd -n 0 -f
 ```
+
+Useful link for further read.
+
+|Topic|Link|
+|----|----|
+|OPENLDAP|[Click Here](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system-level_authentication_guide/openldap#s2-ldap-configuration)|
+|How to Configure OpenLDAP server in Red Hat Enterprise Linux 7 using cn=config method?|[Click Here](https://access.redhat.com/solutions/2484371)|
+|||

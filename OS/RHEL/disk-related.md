@@ -5,6 +5,7 @@
 |fdisk /dev/sda|To start the partitioing in interactive mode|
 |fdisk -l /dev/sda|To list the partitions|
 |partprobe|To reload the partition changes made via (w command) fdisk. If using parted then it writes at the same time as the commands are executed|
+|partx -u <device>|partx -u /dev/vda Execute partx (provided by util-linux package) with --update option on the block device to update the in-memory kernel partition table from the on-disk partition table|
 |parted|To create partitions|
 |cat /proc/filesystem |To see what file system types are in use.|
 |mke2fs -t ext4 -n /dev/sda2|To create an ext2/ext3/ext4 filesystem where type choosen in ext4 and should use the partition /dev/sda2. -n option asks question before executing acting as safety net|
