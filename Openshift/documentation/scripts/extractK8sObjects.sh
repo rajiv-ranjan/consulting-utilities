@@ -20,6 +20,8 @@ do
         do
                 echo "export data from object: $OBJECT and namespace: $PROJECT"
                 oc get -o yaml --export $OBJECT > $OBJECT.yaml
+                oc get $OBJECT &> $OBJECT-GET.yaml
+                oc describe $OBJECT &> $OBJECT-DESCRIBE.yaml
         done
         echo "Exporting project object definition for $PROJECT and other k8s objects"
         oc get project $PROJECT -o yaml > $PROJECT.yaml
@@ -31,4 +33,6 @@ for OBJECT in $RESOURCES_NOT_NAMESPACED
 do
         echo "export data from object: $OBJECT"
         oc get -o yaml --export $OBJECT > $OBJECT.yaml
+        oc get $OBJECT &> $OBJECT-GET.yaml
+        oc describe $OBJECT &> $OBJECT-DESCRIBE.yaml
 done
