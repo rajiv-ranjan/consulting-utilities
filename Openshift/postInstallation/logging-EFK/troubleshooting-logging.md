@@ -131,7 +131,8 @@ curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/
 * GET Queries
 
 ```sh
-curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key https://logging-es:9200/project.fuse-3.cc88c784-741a-11e9-82a0-fa163e0bcd4d.2019.05.15/_search?pretty -d '{ "query": {"match_all" : {}} }'
+export indexName=project.fuse-3.cc88c784-741a-11e9-82a0-fa163e0bcd4d.2019.05.17
+curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key https://logging-es:9200/$indexName/_search?pretty -d '{ "query": {"match_all" : {}} }'
 ```
 
 
