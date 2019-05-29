@@ -46,6 +46,21 @@ curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/
 
 
 
+curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key -XGET https://logging-es-ops:9200/_cat/shards?h=index,shard,prirep,state,unassigned.reason | grep UNASSIGNED 
+curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key https://logging-es-ops:9200/_cat/health?v
+curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key https://logging-es-ops:9200/_cat/allocation?v
+curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key https://logging-es-ops:9200/_cluster/allocation/explain?pretty
+curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key https://logging-es-ops:9200/_cat/indices?v 
+
+export logging-es-pod=logging-es-ops-data-master-6gsh7iga-3-l6rh6
+oc exec logging-es-ops-data-master-6gsh7iga-3-l6rh6 — curl -s —key /etc/elasticsearch/secret/admin-key —cert /etc/elasticsearch/secret/admin-cert —cacert /etc/elasticsearch/secret/admin-ca https://localhost:9200/.operations.2019.05.24/_search? | python -mjson.tool | more
+
+4e74cbe9-8538-4b25-869b-0babbc5a29a5
+10.128.62.79
+~~~~~~~~~~~~~~~~
+
+
+
 curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key https://logging-es:9200/_cat/health?v
 
 * To delete the searchgaurd es_util can be used from the pod

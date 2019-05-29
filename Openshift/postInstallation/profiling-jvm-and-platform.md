@@ -17,14 +17,14 @@ tar -xvf java-ocp-diagnostic-tools.tar.gz
 ```
 
 
-#### Approach 1
+#### Approach 2
 For further reading see the [article](https://access.redhat.com/solutions/18178) on how to get the thread dump in Linux.
 ```sh
 export POD=<your-pod-name>; 
-PID=$(oc exec $POD ps aux | grep java | awk '{print $2}'); oc exec $POD -- bash -c "for x in {1..10}; do jstack -l $PID > /opt/eap/standalone/tmp/jstack.out; sleep 2; done"; oc rsync $POD:/opt/eap/standalone/tmp/jstack.out .
+PID=$(oc exec $POD ps aux | grep java | awk '{print $2}'); oc exec $POD -- bash -c "for x in {1..10}; do jstack -l $PID > /tmp/jstack.out; sleep 2; done"; oc rsync $POD:/tmp/jstack.out .
 ```
 
-#### Approach 2
+#### Approach 3
 Great [article](https://access.redhat.com/solutions/46596) on how to identify high CPU usages
 
 ```sh
