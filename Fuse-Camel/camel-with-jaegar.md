@@ -1,0 +1,1 @@
+>TODO https://medium.com/jaegertracing/using-jaeger-to-trace-an-apache-camel-application-2b8118efbb4d
