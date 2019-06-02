@@ -58,12 +58,6 @@ oc set volume deploymentconfig.apps.openshift.io/logging-es-data-master-20rr74d5
 
 #### Number of Shards, Replicas and Data Nodes
 Points to remember:
-* Final Variables with storage provided as hostPath on the local device mount point /logging
-```yaml
-openshift_logging_es_cluster_size=3
-openshift_logging_es_number_of_replicas=1
-openshift_logging_es_number_of_shards=2
-```
 * Below is the data from elasticsearch documentation. 
 >To summarize, each index can be split into multiple shards. An index can also be replicated zero (meaning no replicas) or more times. Once replicated, each index will have primary shards (the original shards that were replicated from) and replica shards (the copies of the primary shards).
 >
@@ -73,8 +67,13 @@ openshift_logging_es_number_of_shards=2
 >
 >Note: Each Elasticsearch shard is a Lucene index. There is a maximum number of documents you can have in a single Lucene index. As of LUCENE-5843, the limit is 2,147,483,519 (= Integer.MAX_VALUE - 128) documents. You can monitor shard sizes using the _cat/shards API.
 
-* Changes made to the number of shards and replica; post installation; needs to for next index to be created. As the indexes are created from template unique for each day; sysadmin has to wait for next day for it to reflect. E.g. Observe the index project.cicd-admin.*; number of shards were increased from 1 to 2 on 31-May-2019 and it got relfected on 01-Jun-2019 index.
-
+* Final Variables with storage provided as hostPath on the local device mount point /logging
+```yaml
+openshift_logging_es_cluster_size=3
+openshift_logging_es_number_of_replicas=1
+openshift_logging_es_number_of_shards=2
+```
+* Changes made to the number of shards and replica; post installation; needs to for next index to be created. As the indexes are created from template unique for each day; sysadmin has to wait for next day for it to reflect. E.g. Observe the index project.cicd-admin.*; number of shards were increased from 1 to 2 on 31-May-2019 and it got relfected on 01-Jun-2019 index. Observe the primary shards and replicas hosts per index.
 
 ```sh
 sh-4.2$ curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key https://logging-es:9200/_cat/indices?v
