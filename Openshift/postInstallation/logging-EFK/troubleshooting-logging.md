@@ -57,7 +57,7 @@ oc exec logging-es-ops-data-master-6gsh7iga-3-l6rh6 — curl -s —key /etc/elas
 
 4e74cbe9-8538-4b25-869b-0babbc5a29a5
 10.128.62.79
-~~~~~~~~~~~~~~~~
+
 
 
 
@@ -98,6 +98,7 @@ https://access.redhat.com/solutions/3214991
 
 * Delete the documents in index
 
+> TODO correct this
 curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key -XGET https://logging-es:9200/_cat/indices?v | grep -i '.operations' | awk {'print $3'} | xargs -i curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key -X POST "https://localhost:9200/{}/_delete_by_query?conflicts=proceed" -H 'Content-Type: application/json' -d'
 {
   "query": {
@@ -106,27 +107,27 @@ curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/
 }
 '
 
-.operations.2019.05.16
-project.app-storage.d04ea3b7-48b9-11e9-adf0-fa163e7ec45b.2019.05.14
-.operations.2019.04.26
-.operations.2019.04.24
-.operations.2019.05.04
-.operations.2019.05.09
-.operations.2019.05.13
-.operations.2019.04.28
-project.app-storage.d04ea3b7-48b9-11e9-adf0-fa163e7ec45b.2019.05.15
-.operations.2019.05.10
-.operations.2019.05.15
-project.app-storage.d04ea3b7-48b9-11e9-adf0-fa163e7ec45b.2019.05.16
-project.app-storage.d04ea3b7-48b9-11e9-adf0-fa163e7ec45b.2019.05.11
-.operations.2019.05.12
-.operations.2019.05.05
-.operations.2019.05.11
-.operations.2019.05.14
-.operations.2019.04.27
-.operations.2019.05.07
-.operations.2019.05.03
-.operations.2019.05.06
+```sh
+# alternative is below
+curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key -XGET https://logging-es:9200/_cat/indices?v | grep -i '.operations' | awk {'print $3'} > indexes.in
+curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key -XGET https://logging-es:9200/_cat/indices?v | grep -i '.orphaned' | awk {'print $3'} >> indexes.in
+cat indexes.in
+
+# create a file with deleteIndexDocument.sh
+#!/bin/bash 
+while IFS= read -r line
+do
+  echo "deleting documents from index: $line";
+  curl -s -k --cert /etc/elasticsearch/secret/admin-cert --key /etc/elasticsearch/secret/admin-key -X POST https://logging-es:9200/$line/_delete_by_query?conflicts=proceed -H 'Content-Type: application/json' -d'{  "query": {"match_all": {}}}';
+  echo "completed for index: $line";
+done < indexes.in
+
+chmod +x deleteIndexDocument.sh
+
+nohup ./deleteIndexDocument.sh &
+
+```
+
 
 for index in 
 
