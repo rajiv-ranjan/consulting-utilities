@@ -1,3 +1,5 @@
+> Sample code is [here](https://github.com/rajiv-ranjan/spring-boot-cxf-jaxrs)
+
 * Include the dependencies for using json logback libraries. While using Spring Boot, the versions of the logback dependencies imported by Spring Boot starter need to be excluded, as they are older versions
 
 ```xml
@@ -78,3 +80,4 @@ import net.logstash.logback.marker.Markers;
        return messageString;
    }
 ```
+
