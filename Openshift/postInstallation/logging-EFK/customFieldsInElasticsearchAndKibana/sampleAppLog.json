@@ -1,0 +1,1 @@
+{"@timestamp":"2019-05-11T22:02:13.119+05:30","@version":1,"message":"{\"message\":\"Hello rajiv-ranjan, Welcome to CXF RS Spring Boot World!!!\",\"podIp\":\"192.168.1.106\"}","logger_name":"io.fabric8.quickstarts.cxf.jaxrs.HelloServiceImpl","thread_name":"XNIO-3 task-1","level":"INFO","level_value":20000,"appPodIp":"192.168.1.106","appGreeterName":"rajiv-ranjan"}
