@@ -1,0 +1,5 @@
+Hello AWS. 
+
+This is version 6
+
+To test the replication. REALLY!
