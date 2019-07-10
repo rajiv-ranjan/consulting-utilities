@@ -3,6 +3,7 @@
 ### PRE-REQUISITE
 # minishift
 # env with variable MINISHIFT_USERNAME, MINISHIFT_PASSWORD, REGISTRY_USERNAME, REGISTRY_PASSWORD
+# reference: https://github.com/redhat-cop/pathfinder
 ###
 
 if [[ ( -z "${MINISHIFT_USERNAME}" ) || ( -z "${MINISHIFT_PASSWORD}" ) || ( -z "${REGISTRY_USERNAME}" ) || ( -z "${REGISTRY_PASSWORD}" ) ]]; then
