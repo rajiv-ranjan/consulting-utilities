@@ -1,0 +1,58 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/rajranja/github/rajiv-ranjan/consulting-utilities/dotnet/myApp/myApp.csproj": {}
+  },
+  "projects": {
+    "/Users/rajranja/github/rajiv-ranjan/consulting-utilities/dotnet/myApp/myApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/rajranja/github/rajiv-ranjan/consulting-utilities/dotnet/myApp/myApp.csproj",
+        "projectName": "myApp",
+        "projectPath": "/Users/rajranja/github/rajiv-ranjan/consulting-utilities/dotnet/myApp/myApp.csproj",
+        "packagesPath": "/Users/rajranja/.nuget/packages/",
+        "outputPath": "/Users/rajranja/github/rajiv-ranjan/consulting-utilities/dotnet/myApp/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/rajranja/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
