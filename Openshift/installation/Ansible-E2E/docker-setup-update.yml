@@ -1,0 +1,77 @@
+---
+# ansible-playbook -i hosts -u quicklab --key quicklab.key -e DEVICE= -vvvv useful-ansible/docker-setup-update.yml
+# References
+# https://docs.ansible.com/ansible/latest/modules/lineinfile_module.html
+# https://docs.ansible.com/ansible/latest/modules/blockinfile_module.html
+# https://docs.ansible.com/ansible/2.6/modules/systemd_module.html
+# https://docs.ansible.com/ansible/latest/modules/file_module.html
+- hosts: OSEv3,!lb,!extras
+  tasks:
+    - name: Stop service docker, if running
+      systemd:
+        name: docker
+        state: stopped
+
+#    - name: remove any previous content of docker
+#      shell: rm -rf /var/lib/docker/*
+#      args:
+#        executable: /bin/bash
+
+    - name: Delete DEVS, VG, STORAGE_DRIVER and WIPE_SIGNATURES from docker storage setup
+      lineinfile:
+        path:  /etc/sysconfig/docker-storage-setup
+        regexp: '(ANSIBLE)|(DEVS)|(VG)|(STORAGE_DRIVER)|(WIPE_SIGNATURES)'
+        state: absent
+        backup: no
+      register: delete-docker-storage-setup
+
+    - name: Add docker setup content
+      blockinfile:
+        path:  /etc/sysconfig/docker-storage-setup
+        block: |
+           DEVS={{ DEVICE }}
+           VG=docker-vg
+           STORAGE_DRIVER=overlay2
+           WIPE_SIGNATURES=true
+
+    - name: umount the disk
+      command: umount {{ DEVICE  }}
+      ignore_errors: yes
+      register: umount_result
+    - name: umount_result
+      debug:
+        var: umount_result
+        verbosity: 4
+
+    - name: Run docker storage setup
+      shell: docker-storage-setup
+      ignore_errors: yes
+      register: run-docker-storage-setup
+    - name: Run docker storage setup results
+      debug:
+        var: run-docker-storage-setup
+        verbosity: 4
+
+    - name: Delete OPTIONS from docker config file
+      lineinfile:
+        path:  /etc/sysconfig/docker
+        regexp: '(OPTIONS=)|(ANSIBLE MANAGED BLOCK)'
+        state: absent
+        backup: yes
+      register: delete-options-from-docker-config
+
+    - name: Add OPTIONS to docker config
+      lineinfile:
+        path:  /etc/sysconfig/docker
+        line: OPTIONS=' --selinux-enabled --log-opt  max-size=1M --log-opt max-file=10 --log-driver=json-file --signature-verification=false'
+        insertbefore: BOF
+
+
+    - name: Check the content of docker config
+      shell: cat /etc/sysconfig/docker
+
+    - name: Start and Enable service docker
+      systemd:
+        name: docker
+        state: started
+        enabled: yes

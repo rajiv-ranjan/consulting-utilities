@@ -1,0 +1,9 @@
+---
+- hosts: OSEv3
+  tasks:
+    - name: Register the cluster with Red Hat OCP Subscription
+      redhat_subscription:
+        state: present
+        username: "{{ username }}"
+        password: "{{ password }}"
+        pool_ids: "{{ pool_ids }}"

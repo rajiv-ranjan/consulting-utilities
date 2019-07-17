@@ -1,0 +1,13 @@
+---
+# ansible-playbook -i hosts -u quicklab --key quicklab.key -vvvv useful-ansible/no-proxy-env.yml
+- hosts: OSEv3
+  tasks:
+    - name: Add custom no proxy
+      lineinfile:
+        path: /etc/environment
+#        regexp: 'no_proxy'
+        line: 'no_proxy=.c1-ocp.surakshakavach.com,10.10.92.252,10.10.92.67,10.10.93.8,.cluster.local,.svc,localhost,127.0.0.1,172.30.0.1'
+        state: present
+        backup: yes
+#      check_mode: yes
+      register: custom-proxy-out
