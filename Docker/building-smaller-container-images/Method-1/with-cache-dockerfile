@@ -1,0 +1,4 @@
+FROM fedora:28
+LABEL maintainer Chris Collins <collins.christopher@gmail.com>
+
+RUN dnf install -y nginx

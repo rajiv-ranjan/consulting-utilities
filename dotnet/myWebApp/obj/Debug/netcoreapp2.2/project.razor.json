@@ -2982,5 +2982,6 @@
       "TargetPath": "Pages/_ViewImports.cshtml",
       "FileKind": "mvc"
     }
-  ]
+  ],
+  "SerializationFormat": "0.1"
 }
