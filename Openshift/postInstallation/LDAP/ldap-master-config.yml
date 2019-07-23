@@ -13,6 +13,8 @@
         - cn
         preferredUsername: 
         - uid
+      # Note that if the cn has special characters then use double quotes there and the entire string of bindDN in single quote
+      # e.g. bindDN: 'cn="_ldapadmin",dc=rajranjabastion,dc=lab,dc=pnq2,dc=cee,dc=redhat,dc=com' 
       bindDN: "cn=ldapadmin,dc=rajranjabastion,dc=lab,dc=pnq2,dc=cee,dc=redhat,dc=com" 
       bindPassword: "ldapadmin" 
       # ca: my-ldap-ca-bundle.crt 
