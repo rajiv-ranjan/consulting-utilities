@@ -272,3 +272,132 @@ docker container run -d --rm -p 80:80 -v $(pwd):/usr/share/nginx/html --name ngi
 docker container run --rm -v pgsqldb:/var/lib/postgresql/data postgres:9.6.1
 docker container run --rm -v pgsqldb:/var/lib/postgresql/data postgres:9.6.2
 ```
+
+### Docker Compose
+* Sample docker compose file
+
+```yaml
+version: '3'
+
+services:
+  proxy:
+    image: nginx:1.13 # this will use the latest version of 1.13.x
+    ports:
+      - '80:80' # expose 80 on host and sent to 80 in container
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+  web:
+    image: httpd  # this will use httpd:latest
+```
+
+```sh
+docker compose up -d # option -d will run the containers in detached mode
+
+```
+
+```sh
+docker-compose logs
+
+Attaching to compose-sample-2_web_2, compose-sample-2_proxy_1, compose-sample-2_web_1
+proxy_1  | 172.21.0.1 - - [29/Jul/2019:09:46:22 +0000] "GET / HTTP/1.1" 200 45 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36" "-"
+proxy_1  | 172.21.0.1 - - [29/Jul/2019:09:46:27 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36" "-"
+proxy_1  | 172.21.0.1 - - [29/Jul/2019:09:46:28 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36" "-"
+
+
+docker-compose logs web
+
+Attaching to compose-sample-2_web_2, compose-sample-2_web_1
+web_1    | AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.21.0.2. Set the 'ServerName' directive globally to suppress this message
+web_1    | AH00558: httpd: Could not reliably determine the server's fully qualified domain name, using 172.21.0.2. Set the 'ServerName' directive globally to suppress this message
+```
+
+```sh
+# preferred command is docker-compose up --scale web=2
+docker-compose scale web=2 
+
+
+WARNING: The scale command is deprecated. Use the up command with the --scale flag instead.
+Starting compose-sample-2_web_1 ... done
+Creating compose-sample-2_web_2 ... done
+```
+
+```sh
+docker compose down
+Stopping compose-sample-2_web_2   ... done
+Stopping compose-sample-2_proxy_1 ... done
+Stopping compose-sample-2_web_1   ... done
+Removing compose-sample-2_web_2   ... done
+Removing compose-sample-2_proxy_1 ... done
+Removing compose-sample-2_web_1   ... done
+Removing network compose-sample-2_default
+```
+
+### Docker swarm
+
+* by default the swarm is not active on the local docker instance
+
+```sh
+docker info | grep -i swarm
+Swarm: inactive
+```
+
+* start a single node swarm
+
+```sh
+docker swarm init
+
+Swarm initialized: current node (hw2jk28tdwd7o8ofn1r8nf6p4) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token XXXXXXXXXXXXXXX 192.168.65.3:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+```
+
+* list swarm nodes
+
+```sh
+docker node ls
+
+ID                            HOSTNAME                STATUS              AVAILABILITY        MANAGER STATUS      ENGINE VERSION
+hw2jk28tdwd7o8ofn1r8nf6p4 *   linuxkit-025000000001   Ready               Active              Leader              18.09.2
+
+```
+
+* Docker services
+
+```sh
+docker service create alpine ping 8.8.8.8
+
+3u2eoni6v7dwalw5ixizwoud0
+overall progress: 1 out of 1 tasks
+1/1: running   [==================================================>]
+verify: Service converged
+```
+```sh
+# list of docker services
+docker service ls
+
+ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
+3u2eoni6v7dw        amazing_easley      replicated          1/1                 alpine:latest
+```
+```sh
+# list of services against the service
+docker service ps amazing_easley
+
+ID                  NAME                IMAGE               NODE                    DESIRED STATE       CURRENT STATE                ERROR               PORTS
+9cami0dm9ar6        amazing_easley.1    alpine:latest       linuxkit-025000000001   Running             Running about a minute ago
+```
+
+```sh
+# scale the service to 3
+docker service scale amazing_easley=3
+
+amazing_easley scaled to 3
+overall progress: 3 out of 3 tasks
+1/3: running   [==================================================>]
+2/3: running   [==================================================>]
+3/3: running   [==================================================>]
+verify: Service converged
+```
