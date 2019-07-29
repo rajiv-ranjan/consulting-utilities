@@ -231,3 +231,44 @@ docker container run --rm --name alpine-test --network=my-app-network  -it cento
   "tagline" : "You Know, for Search"
 }
 ```
+
+### Docker Images
+* Image history
+
+```sh
+docker image history
+docker image inspect
+docker image tag
+docker image push
+docker image prune
+docker system prune
+```
+
+* docker image building
+  * keep the steps that changes frequently towards the end and least changing steps on top in the dockerfile.
+
+### Docker Volume
+
+```sh
+docker volume prune
+docker container inspect a3f0e5a4b865
+docker volume ls
+docker volume inspect 9951e46a5
+```
+
+* docker named volume can be created from the docker container run command. E.g.
+
+```sh
+docker container run --rm -d -e MYSQL_ALLOW_EMPTY_PASSWORD=True --name mysql3 -v mysqldb3:/var/lib/mysql mysql
+```
+* docker bind mount is used to map a local volume into the container directly
+
+```sh
+docker container run -d --rm -p 80:80 -v $(pwd):/usr/share/nginx/html --name nginx-1 nginx
+```
+
+```sh
+# how two instances of postgres db share the same volume. This is helpful to upgrade the database's minor patches
+docker container run --rm -v pgsqldb:/var/lib/postgresql/data postgres:9.6.1
+docker container run --rm -v pgsqldb:/var/lib/postgresql/data postgres:9.6.2
+```

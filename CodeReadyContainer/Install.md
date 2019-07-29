@@ -6,3 +6,8 @@
 >    8 GB of memory
 >    20 GB of storage space
 >
+
+
+Useful links:
+* Install Go on RHEL https://developers.redhat.com/HW/Go-RHEL-7/
+* Install Python on RHEL https://developers.redhat.com/blog/2018/08/13/install-python3-rhel/

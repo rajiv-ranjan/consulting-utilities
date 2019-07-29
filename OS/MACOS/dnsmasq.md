@@ -1,0 +1,1 @@
+> TODO : [steps to install dnsmasq on mac](http://www.natemcintyre.com/blog/2016/8/25/configuring-your-own-dns-server-on-mac-os-x)
