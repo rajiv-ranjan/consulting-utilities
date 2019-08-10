@@ -382,16 +382,16 @@ docker service ls
 ID                  NAME                MODE                REPLICAS            IMAGE               PORTS
 3u2eoni6v7dw        amazing_easley      replicated          1/1                 alpine:latest
 ```
+* list of services against the service
 ```sh
-# list of services against the service
+
 docker service ps amazing_easley
 
 ID                  NAME                IMAGE               NODE                    DESIRED STATE       CURRENT STATE                ERROR               PORTS
 9cami0dm9ar6        amazing_easley.1    alpine:latest       linuxkit-025000000001   Running             Running about a minute ago
 ```
-
+* scale the service to 3
 ```sh
-# scale the service to 3
 docker service scale amazing_easley=3
 
 amazing_easley scaled to 3
@@ -399,5 +399,15 @@ overall progress: 3 out of 3 tasks
 1/3: running   [==================================================>]
 2/3: running   [==================================================>]
 3/3: running   [==================================================>]
+verify: Service converged
+```
+* another way to scale
+```sh
+docker service update amazing_easley --replicas=2
+
+amazing_easley
+overall progress: 2 out of 2 tasks
+1/2: running   [==================================================>]
+2/2: running   [==================================================>]
 verify: Service converged
 ```
