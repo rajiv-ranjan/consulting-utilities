@@ -1,0 +1,1 @@
+> TODO : http://learn.openshift.com/training/lci-apac
