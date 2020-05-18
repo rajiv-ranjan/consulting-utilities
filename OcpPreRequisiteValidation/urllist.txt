@@ -1,0 +1,5 @@
+https://access.redhat.com/containers/
+https://registry.redhat.io
+https://cdn.redhat.com
+https://subscription.rhsm.redhat.com/subscription
+https://subscription.rhn.redhat.com/subscription
